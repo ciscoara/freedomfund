@@ -581,46 +581,85 @@
       justify-content: center;
     }
     
-    /* Phone Frame - Detailed */
-    .phone-frame {
-      width: 280px;
-      height: 580px;
-      background: #1a1a1a;
-      border-radius: 40px;
-      padding: 12px;
-      box-shadow: 
-        0 50px 100px rgba(0,0,0,0.5),
-        0 0 0 1px rgba(255,255,255,0.1),
-        inset 0 0 0 1px rgba(255,255,255,0.05);
-      position: relative;
-    }
-    .phone-frame::before {
-      content: '';
-      position: absolute;
-      top: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 24px;
-      background: #1a1a1a;
-      border-radius: 20px;
-      z-index: 100;
-    }
-    .phone-screen {
-      width: 100%;
-      height: 100%;
-      background: var(--navy);
-      border-radius: 32px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .app-header-phone {
-      padding: 40px 20px 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+/* iPhone Frame */
+.phone-frame {
+  width: 280px;
+  height: 580px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  border-radius: 50px;
+  padding: 10px;
+  border: 2px solid var(--gold); /* Gold border */
+  box-shadow: 
+    0 50px 100px rgba(0,0,0,0.5),
+    0 0 20px rgba(198, 183, 122, 0.2), /* Gold glow */
+    inset 0 0 0 1px rgba(255,255,255,0.05),
+    inset 0 2px 4px rgba(255,255,255,0.1);
+  position: relative;
+}
+
+/* Dynamic Island */
+.phone-frame::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 28px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 100;
+}
+
+/* Side button - Power */
+.phone-frame::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 120px;
+  width: 3px;
+  height: 60px;
+  background: linear-gradient(180deg, #a89458, var(--gold-bright));
+  border-radius: 0 2px 2px 0;
+}
+
+/* Left side buttons */
+.phone-button {
+  position: absolute;
+  left: -3px;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold-bright), #a89458);
+  border-radius: 2px 0 0 2px;
+}
+
+/* Mute switch */
+.mute-switch {
+  top: 100px;
+  height: 28px;
+}
+
+/* Volume up */
+.volume-up {
+  top: 150px;
+  height: 45px;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: var(--navy);
+  border-radius: 42px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header-phone {
+  padding: 50px 20px 16px; /* Extra padding for Dynamic Island */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
     .app-logo-phone {
       height: 35px;
       width: auto;
@@ -1331,6 +1370,9 @@
         </div>
         <div class="app-mockup">
           <div class="phone-frame">
+            <div class="phone-button mute-switch"></div>
+            <div class="phone-button volume-up"></div>
+
             <div class="phone-screen">
               <!-- Header -->
               <div class="app-header-phone">
