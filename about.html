@@ -34,6 +34,7 @@
     h2 { font-size: clamp(2rem, 4vw, 3rem); }
     h3 { font-size: 1.35rem; font-weight: 500; }
     p { color: var(--slate); }
+    a { color: var(--gold); }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
     /* Navigation */
@@ -171,37 +172,180 @@
       line-height: 1.8;
       margin-bottom: 20px;
     }
+    
+    /* Flowing Abstract Visual */
     .story-visual {
       position: relative;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .story-card {
-      background: var(--navy);
-      border-radius: 24px;
-      padding: 48px;
+    .flow-container {
       position: relative;
-      overflow: hidden;
-    }
-    .story-card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -50%;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle, rgba(198, 183, 122, 0.15), transparent 60%);
+      overflow: visible;
     }
-    .story-card .big-number {
-      font-size: 5rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 12px;
-      position: relative;
+    
+    /* Flowing arcs */
+    .flow-arc {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      border: 2px solid transparent;
     }
-    .story-card p {
-      color: var(--slate-light);
-      font-size: 1.1rem;
-      position: relative;
+    .flow-arc-1 {
+      width: 320px;
+      height: 180px;
+      margin: -90px 0 0 -160px;
+      border-color: rgba(198, 183, 122, 0.5);
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      transform: rotate(-20deg);
+      animation: sway1 10s ease-in-out infinite;
+    }
+    .flow-arc-1::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: 30%;
+      width: 12px;
+      height: 12px;
+      background: var(--gold-bright);
+      border-radius: 50%;
+      box-shadow: 0 0 20px var(--gold), 0 0 40px var(--gold);
+    }
+    .flow-arc-2 {
+      width: 280px;
+      height: 220px;
+      margin: -110px 0 0 -140px;
+      border-color: rgba(198, 183, 122, 0.35);
+      border-left-color: transparent;
+      border-top-color: transparent;
+      transform: rotate(15deg);
+      animation: sway2 12s ease-in-out infinite;
+    }
+    .flow-arc-2::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      right: 25%;
+      width: 10px;
+      height: 10px;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 15px var(--gold);
+    }
+    .flow-arc-3 {
+      width: 380px;
+      height: 140px;
+      margin: -70px 0 0 -190px;
+      border-color: rgba(198, 183, 122, 0.25);
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(-5deg);
+      animation: sway3 14s ease-in-out infinite;
+    }
+    .flow-arc-4 {
+      width: 200px;
+      height: 260px;
+      margin: -130px 0 0 -100px;
+      border-color: rgba(198, 183, 122, 0.2);
+      border-top-color: transparent;
+      border-right-color: transparent;
+      transform: rotate(40deg);
+      animation: sway4 16s ease-in-out infinite;
+    }
+    .flow-arc-4::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 40%;
+      width: 8px;
+      height: 8px;
+      background: rgba(198, 183, 122, 0.9);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--gold);
+    }
+    
+    /* Accent line */
+    .flow-line {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      transform: translate(-50%, -50%) rotate(-30deg);
+      animation: shimmer 3s ease-in-out infinite;
+    }
+    
+    /* Background glow for depth */
+    .flow-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.35;
+    }
+    .flow-glow-1 {
+      width: 250px;
+      height: 250px;
+      background: var(--gold);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: breathe 6s ease-in-out infinite;
+    }
+    .flow-glow-2 {
+      width: 120px;
+      height: 120px;
+      background: var(--navy-light);
+      top: 15%;
+      right: 15%;
+      animation: float1 8s ease-in-out infinite;
+    }
+    .flow-glow-3 {
+      width: 80px;
+      height: 80px;
+      background: var(--gold-bright);
+      bottom: 20%;
+      left: 20%;
+      animation: float2 10s ease-in-out infinite;
+    }
+    
+    @keyframes sway1 {
+      0%, 100% { transform: rotate(-20deg) translateY(0); }
+      50% { transform: rotate(-15deg) translateY(-15px); }
+    }
+    @keyframes sway2 {
+      0%, 100% { transform: rotate(15deg) translateX(0); }
+      50% { transform: rotate(20deg) translateX(10px); }
+    }
+    @keyframes sway3 {
+      0%, 100% { transform: rotate(-5deg) translateY(0); }
+      50% { transform: rotate(0deg) translateY(10px); }
+    }
+    @keyframes sway4 {
+      0%, 100% { transform: rotate(40deg) translateX(0); }
+      50% { transform: rotate(35deg) translateX(-10px); }
+    }
+    @keyframes shimmer {
+      0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) rotate(-30deg) scaleX(1); }
+      50% { opacity: 0.8; transform: translate(-50%, -50%) rotate(-30deg) scaleX(1.1); }
+    }
+    @keyframes breathe {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.35; }
+      50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.5; }
+    }
+    @keyframes float1 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-15px, 15px); }
+    }
+    @keyframes float2 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(20px, -10px); }
     }
 
     /* Mission Section */
@@ -278,53 +422,104 @@
     .team-header p {
       font-size: 1.1rem;
     }
-    .team-grid {
+    .team-content {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-    .team-card {
-      background: var(--warm-white);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: all 0.3s ease;
+    .team-members {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
     }
-    .team-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(11, 30, 50, 0.1);
+    .team-member {
+      text-align: center;
     }
-    .team-photo {
-      aspect-ratio: 1;
+    .member-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--gold);
+      margin: 0 auto 16px;
+      overflow: hidden;
+      border: 3px solid var(--warm-white);
+      box-shadow: 0 10px 40px rgba(11, 30, 50, 0.15);
     }
-    .team-photo img {
+    .member-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
     }
-    .team-info {
-      padding: 28px;
+    .team-member:hover .member-photo img {
+      filter: grayscale(0%);
     }
-    .team-info h3 {
+    .member-info h3 {
       color: var(--navy);
       margin-bottom: 4px;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
     }
-    .team-role {
+    .member-role {
       color: var(--gold);
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       margin-bottom: 12px;
     }
-    .team-info p {
-      font-size: 0.9rem;
-      line-height: 1.6;
+    .linkedin-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--navy);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    .linkedin-link:hover {
+      background: var(--gold);
+    }
+    .linkedin-link svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--white);
+    }
+    .linkedin-link:hover svg {
+      stroke: var(--navy);
+    }
+    .team-credentials {
+      text-align: left;
+    }
+    .credentials-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .credential {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1rem;
+      color: var(--navy);
+    }
+    .credential-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    .credential-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--gold);
     }
 
     /* Approach Section */
@@ -422,75 +617,92 @@
     /* Footer */
     footer {
       background: var(--navy);
-      padding: 70px 0 36px;
+      padding: 50px 0 30px;
     }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 50px;
-      margin-bottom: 50px;
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 30px;
     }
     .footer-brand .logo {
       color: var(--white);
-      margin-bottom: 16px;
       display: inline-block;
     }
-    .footer-brand p {
-      color: var(--slate);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      max-width: 280px;
+    .footer-brand .logo img {
+      height: 32px;
+      width: auto;
     }
-    .footer-col h4 {
-      color: var(--white);
-      font-weight: 600;
-      margin-bottom: 20px;
-      font-size: 0.95rem;
+    .footer-contact {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
     }
-    .footer-col a, .footer-col p {
-      display: block;
+    .footer-contact a, .footer-contact p {
       color: var(--slate);
       text-decoration: none;
-      margin-bottom: 12px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      margin: 0;
       transition: color 0.2s;
     }
-    .footer-col a:hover { color: var(--gold); }
+    .footer-contact a:hover { color: var(--gold); }
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 36px;
+      padding-top: 24px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
       gap: 16px;
     }
-    .footer-bottom p {
-      color: var(--slate);
-      font-size: 0.9rem;
+    .footer-bottom p { color: var(--slate); font-size: 0.85rem; margin: 0; }
+    .footer-legal {
+      display: flex;
+      align-items: center;
+      gap: 24px;
     }
+    .footer-legal span { color: var(--slate); font-size: 0.85rem; }
+    .footer-legal a {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: var(--gold-bright); }
 
     /* Responsive */
     @media (max-width: 1024px) {
       .nav-links { display: none; }
       .mobile-menu-btn { display: block; }
       .story-grid, .approach-grid { grid-template-columns: 1fr; gap: 60px; }
-      .values-grid, .team-grid { grid-template-columns: 1fr 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .story-visual { height: 300px; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .team-content { grid-template-columns: 1fr; gap: 40px; }
+      .team-credentials { text-align: center; }
+      .credentials-list { align-items: center; }
+      .footer-content { flex-direction: column; align-items: center; text-align: center; }
+      .footer-contact { flex-direction: column; gap: 8px; text-align: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal { flex-direction: column; gap: 8px; }
     }
     @media (max-width: 600px) {
       .page-hero { padding: 140px 0 80px; }
-      .values-grid, .team-grid, .approach-stats { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
+      .values-grid, .approach-stats { grid-template-columns: 1fr; }
+      .team-members { flex-direction: column; gap: 40px; }
       .story, .mission, .team, .approach, .cta { padding: 80px 0; }
-      .story-card { padding: 36px; }
-      .story-card .big-number { font-size: 3.5rem; }
+      .story-visual { height: 250px; }
     }
   </style>
 </head>
 <body>
   <nav>
     <div class="nav-inner">
-      <a href="index.html" class="logo">FREEDOM FUND</a>
+      <a href="index.html" class="logo">
+        <img src="./assets/freedom1.png" alt="Freedom Fund" style="max-width: 250px;">
+      </a>
       <div class="nav-links">
         <a href="index.html#solutions">Solutions</a>
         <a href="index.html#how-it-works">How It Works</a>
@@ -525,9 +737,15 @@
           <p>Today, Freedom Fund manages three distinct funds, each designed to address specific investor needs while maintaining our unwavering commitment to capital preservation and transparent communication.</p>
         </div>
         <div class="story-visual">
-          <div class="story-card">
-            <div class="big-number">94.44%</div>
-            <p>of investor capital renewed after first term—a testament to our performance and partnership approach</p>
+          <div class="flow-container">
+            <div class="flow-glow flow-glow-1"></div>
+            <div class="flow-glow flow-glow-2"></div>
+            <div class="flow-glow flow-glow-3"></div>
+            <div class="flow-arc flow-arc-1"></div>
+            <div class="flow-arc flow-arc-2"></div>
+            <div class="flow-arc flow-arc-3"></div>
+            <div class="flow-arc flow-arc-4"></div>
+            <div class="flow-line"></div>
           </div>
         </div>
       </div>
@@ -584,40 +802,83 @@
       <div class="team-header">
         <span class="section-label">Leadership</span>
         <h2>Meet the Team</h2>
-        <p>Decades of combined experience across investment management, operations, and investor relations.</p>
+        <p>Award-winning founders with decades of experience in finance, banking, and private wealth management.</p>
       </div>
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-photo">
-            <!-- Replace with actual photo: <img src="team-member-1.jpg" alt="Name"> -->
-            JP
+      
+      <div class="team-content">
+        <div class="team-members">
+          <div class="team-member">
+            <div class="member-photo">
+              <img src="./assets/JessP.PNG" alt="Jess Phillips">
+            </div>
+            <div class="member-info">
+              <h3>Jess Phillips</h3>
+              <div class="member-role">Investor Management</div>
+              <a href="#LINKEDIN_URL" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+            </div>
           </div>
-          <div class="team-info">
-            <h3>Team Member Name</h3>
-            <div class="team-role">Title / Role</div>
-            <p>Brief bio about experience, background, and what they bring to Freedom Fund.</p>
+          <div class="team-member">
+            <div class="member-photo">
+              <img src="./assets/GaryS.PNG" alt="Gary S">
+            </div>
+            <div class="member-info">
+              <h3>Gary S</h3>
+              <div class="member-role">Risk/Financial Management</div>
+              <a href="#LINKEDIN_URL" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="team-card">
-          <div class="team-photo">
-            <!-- Replace with actual photo -->
-            TM
-          </div>
-          <div class="team-info">
-            <h3>Team Member Name</h3>
-            <div class="team-role">Title / Role</div>
-            <p>Brief bio about experience, background, and what they bring to Freedom Fund.</p>
-          </div>
-        </div>
-        <div class="team-card">
-          <div class="team-photo">
-            <!-- Replace with actual photo -->
-            TM
-          </div>
-          <div class="team-info">
-            <h3>Team Member Name</h3>
-            <div class="team-role">Title / Role</div>
-            <p>Brief bio about experience, background, and what they bring to Freedom Fund.</p>
+        
+        <div class="team-credentials">
+          <div class="credentials-list">
+            <div class="credential">
+              <span class="credential-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <span>Co-Founders of $2.7B finance company</span>
+            </div>
+            <div class="credential">
+              <span class="credential-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <span>Former Board Member of $1B bank</span>
+            </div>
+            <div class="credential">
+              <span class="credential-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <span>Founding Principal of a global bank</span>
+            </div>
+            <div class="credential">
+              <span class="credential-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <span>10+ years in private wealth management</span>
+            </div>
+            <div class="credential">
+              <span class="credential-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <span>Utah EY Entrepreneur of the Year Finalist</span>
+            </div>
+            <div class="credential">
+              <span class="credential-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <span>Utah Business 40 Under 40 Winner</span>
+            </div>
           </div>
         </div>
       </div>
@@ -685,34 +946,24 @@
 
   <footer>
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-content">
         <div class="footer-brand">
-          <a href="index.html" class="logo">FREEDOM FUND</a>
-          <p>Institutional-grade investing, without the institution. Safety, liquidity, and consistent returns—finally, all three.</p>
+          <a href="index.html" class="logo">
+            <img src="./assets/freedom1.png" alt="Freedom Fund" style="max-width: 250px;"> 
+          </a>
         </div>
-        <div class="footer-col">
-          <h4>Funds</h4>
-          <a href="index.html#solutions">Cash Reserves Fund</a>
-          <a href="index.html#solutions">Growth Fund</a>
-          <a href="index.html#solutions">Lending Fund</a>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <a href="index.html#why-us">Why Us</a>
-          <a href="index.html#how-it-works">How It Works</a>
-          <a href="about.html">About Us</a>
-          <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
+        <div class="footer-contact">
           <a href="tel:801-218-3504">801-218-3504</a>
           <a href="mailto:info@freedomfund.io">info@freedomfund.io</a>
-          <p>240 N E Promontory Suite 200<br>Farmington, Utah 84025</p>
+          <p>240 N E Promontory Suite 200, Farmington, Utah 84025</p>
         </div>
       </div>
       <div class="footer-bottom">
         <p>© 2025 Freedom Fund. All rights reserved.</p>
-        <p>SEC Registered & Compliant</p>
+        <div class="footer-legal">
+          <span>SEC Registered & Compliant</span>
+          <a href="#TERMS_LINK">Terms & Conditions</a>
+        </div>
       </div>
     </div>
   </footer>
