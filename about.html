@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Freedom Fund - Our story, mission, and leadership team.">
+  <title>About Us | Freedom Fund</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0b1e32;
+      --navy-dark: #060f1a;
+      --navy-light: #1a3354;
+      --gold: #c6b77a;
+      --gold-bright: #d4c78a;
+      --gold-light: rgba(198, 183, 122, 0.15);
+      --slate: #64748B;
+      --slate-light: #94A3B8;
+      --warm-white: #FAF9F7;
+      --white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.6;
+      background: var(--white);
+    }
+    h1, h2, h3 { font-weight: 600; line-height: 1.15; letter-spacing: -0.03em; }
+    h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); }
+    h3 { font-size: 1.35rem; font-weight: 500; }
+    p { color: var(--slate); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      background: rgba(11, 30, 50, 0.95);
+      backdrop-filter: blur(20px);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-dark {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .btn-dark:hover {
+      background: var(--navy-light);
+      transform: translateY(-2px);
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .mobile-menu-btn span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      margin: 5px 0;
+    }
+
+    /* Hero */
+    .page-hero {
+      padding: 160px 0 100px;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 100%;
+      height: 150%;
+      background: radial-gradient(ellipse 80% 50% at 70% 20%, rgba(198, 183, 122, 0.2), transparent);
+    }
+    .page-hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .page-hero h1 {
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .page-hero p {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: var(--slate-light);
+    }
+
+    /* Story Section */
+    .story {
+      padding: 120px 0;
+      background: var(--white);
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .story-content h2 {
+      margin-bottom: 28px;
+    }
+    .story-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .story-visual {
+      position: relative;
+    }
+    .story-card {
+      background: var(--navy);
+      border-radius: 24px;
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(198, 183, 122, 0.15), transparent 60%);
+    }
+    .story-card .big-number {
+      font-size: 5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .story-card p {
+      color: var(--slate-light);
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    /* Mission Section */
+    .mission {
+      padding: 120px 0;
+      background: var(--warm-white);
+    }
+    .mission-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 80px;
+    }
+    .mission-header h2 {
+      margin-bottom: 20px;
+    }
+    .mission-header p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .value-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      border: 1px solid rgba(11, 30, 50, 0.08);
+      transition: all 0.3s ease;
+    }
+    .value-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(11, 30, 50, 0.1);
+    }
+    .value-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .value-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--gold);
+    }
+    .value-card h3 {
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .value-card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Team Section */
+    .team {
+      padding: 120px 0;
+      background: var(--white);
+    }
+    .team-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+    .team-header h2 {
+      margin-bottom: 16px;
+    }
+    .team-header p {
+      font-size: 1.1rem;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .team-card {
+      background: var(--warm-white);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(11, 30, 50, 0.1);
+    }
+    .team-photo {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .team-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .team-info {
+      padding: 28px;
+    }
+    .team-info h3 {
+      color: var(--navy);
+      margin-bottom: 4px;
+      font-size: 1.25rem;
+    }
+    .team-role {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+    .team-info p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Approach Section */
+    .approach {
+      padding: 120px 0;
+      background: var(--navy);
+      position: relative;
+    }
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .approach-content .section-label {
+      text-align: left;
+    }
+    .approach-content h2 {
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .approach-content > p {
+      color: var(--slate-light);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .approach-list {
+      list-style: none;
+    }
+    .approach-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+      color: var(--white);
+      font-size: 1rem;
+    }
+    .approach-list .check {
+      width: 28px;
+      height: 28px;
+      background: var(--gold-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .approach-list .check svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--gold);
+    }
+    .approach-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .approach-stat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+    }
+    .approach-stat .stat-value {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .approach-stat p {
+      color: var(--slate-light);
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 120px 0;
+      background: var(--warm-white);
+      text-align: center;
+    }
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .cta h2 {
+      margin-bottom: 20px;
+    }
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      padding: 70px 0 36px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+    .footer-brand .logo {
+      color: var(--white);
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    .footer-brand p {
+      color: var(--slate);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      color: var(--white);
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    .footer-col a, .footer-col p {
+      display: block;
+      color: var(--slate);
+      text-decoration: none;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 36px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-bottom p {
+      color: var(--slate);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+      .story-grid, .approach-grid { grid-template-columns: 1fr; gap: 60px; }
+      .values-grid, .team-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .page-hero { padding: 140px 0 80px; }
+      .values-grid, .team-grid, .approach-stats { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .story, .mission, .team, .approach, .cta { padding: 80px 0; }
+      .story-card { padding: 36px; }
+      .story-card .big-number { font-size: 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">FREEDOM FUND</a>
+      <div class="nav-links">
+        <a href="index.html#solutions">Solutions</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#why-us">Why Us</a>
+        <a href="about.html">About</a>
+        <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Meet With Us</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="section-label">About Freedom Fund</span>
+        <h1>Built by Investors, For Investors</h1>
+        <p>Freedom Fund was founded on a simple premise: institutional-quality investing shouldn't require institutional connections. We bring decades of investment experience directly to individual investors.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-content">
+          <span class="section-label">Our Story</span>
+          <h2>From Frustration to Foundation</h2>
+          <p>Freedom Fund emerged from a fundamental frustration in the investment landscape. For too long, the most sophisticated investment strategies were reserved for institutions and the ultra-wealthy, leaving individual investors with a false choice: accept low returns for safety, sacrifice liquidity for growth, or take on excessive risk for meaningful yield.</p>
+          <p>Our founding team spent decades on both sides of the investment table—as fund managers and as individual investors. That dual perspective revealed a clear opportunity: create investment vehicles that deliver institutional-grade returns with the transparency, accessibility, and alignment of interests that individual investors deserve.</p>
+          <p>Today, Freedom Fund manages three distinct funds, each designed to address specific investor needs while maintaining our unwavering commitment to capital preservation and transparent communication.</p>
+        </div>
+        <div class="story-visual">
+          <div class="story-card">
+            <div class="big-number">94.44%</div>
+            <p>of investor capital renewed after first term—a testament to our performance and partnership approach</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission">
+    <div class="container">
+      <div class="mission-header">
+        <span class="section-label">Our Values</span>
+        <h2>Principles That Guide Every Decision</h2>
+        <p>These aren't just words on a wall. They're the operating principles that inform every investment decision, every communication, and every partnership.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <h3>Capital Preservation</h3>
+          <p>We prioritize protecting your principal above all else. Growth means nothing if you can't preserve what you've built.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <h3>Radical Transparency</h3>
+          <p>No black boxes. No jargon. You'll always understand exactly where your money is and how it's performing.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Aligned Interests</h3>
+          <p>Our team invests in every fund we offer. When you succeed, we succeed. It's that simple.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team">
+    <div class="container">
+      <div class="team-header">
+        <span class="section-label">Leadership</span>
+        <h2>Meet the Team</h2>
+        <p>Decades of combined experience across investment management, operations, and investor relations.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-photo">
+            <!-- Replace with actual photo: <img src="team-member-1.jpg" alt="Name"> -->
+            JP
+          </div>
+          <div class="team-info">
+            <h3>Team Member Name</h3>
+            <div class="team-role">Title / Role</div>
+            <p>Brief bio about experience, background, and what they bring to Freedom Fund.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo">
+            <!-- Replace with actual photo -->
+            TM
+          </div>
+          <div class="team-info">
+            <h3>Team Member Name</h3>
+            <div class="team-role">Title / Role</div>
+            <p>Brief bio about experience, background, and what they bring to Freedom Fund.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo">
+            <!-- Replace with actual photo -->
+            TM
+          </div>
+          <div class="team-info">
+            <h3>Team Member Name</h3>
+            <div class="team-role">Title / Role</div>
+            <p>Brief bio about experience, background, and what they bring to Freedom Fund.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="approach">
+    <div class="container">
+      <div class="approach-grid">
+        <div class="approach-content">
+          <span class="section-label">Our Approach</span>
+          <h2>Institutional Quality, Individual Focus</h2>
+          <p>We leverage the same strategies and relationships that have historically been reserved for institutional investors, but we structure them with individual investors in mind.</p>
+          <ul class="approach-list">
+            <li>
+              <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>Every strategy is validated with our own capital first</span>
+            </li>
+            <li>
+              <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>SEC-registered for full regulatory compliance</span>
+            </li>
+            <li>
+              <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>Diversified across strategies and asset classes</span>
+            </li>
+            <li>
+              <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>Clear, consistent communication every step of the way</span>
+            </li>
+          </ul>
+        </div>
+        <div class="approach-stats">
+          <div class="approach-stat">
+            <div class="stat-value">3</div>
+            <p>Fund Options</p>
+          </div>
+          <div class="approach-stat">
+            <div class="stat-value">SEC</div>
+            <p>Registered</p>
+          </div>
+          <div class="approach-stat">
+            <div class="stat-value">100%</div>
+            <p>Passive & Diversified</p>
+          </div>
+          <div class="approach-stat">
+            <div class="stat-value">94%</div>
+            <p>Renewal Rate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <span class="section-label">Get Started</span>
+        <h2>Ready to Get Started?</h2>
+        <p>Schedule a consultation to explore how Freedom Fund can help you achieve your investment goals.</p>
+        <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-dark">Meet With Us →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">FREEDOM FUND</a>
+          <p>Institutional-grade investing, without the institution. Safety, liquidity, and consistent returns—finally, all three.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Funds</h4>
+          <a href="index.html#solutions">Cash Reserves Fund</a>
+          <a href="index.html#solutions">Growth Fund</a>
+          <a href="index.html#solutions">Lending Fund</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="index.html#why-us">Why Us</a>
+          <a href="index.html#how-it-works">How It Works</a>
+          <a href="about.html">About Us</a>
+          <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:801-218-3504">801-218-3504</a>
+          <a href="mailto:info@freedomfund.io">info@freedomfund.io</a>
+          <p>240 N E Promontory Suite 200<br>Farmington, Utah 84025</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Freedom Fund. All rights reserved.</p>
+        <p>SEC Registered & Compliant</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
