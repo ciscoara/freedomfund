@@ -46,6 +46,7 @@
     .nav-links { display: flex; gap: 32px; align-items: center; }
     .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: var(--white); }
+    .nav-links .btn-primary { color: #0b1e32 !important; }
     .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001; }
     .mobile-menu-btn span { display: block; width: 24px; height: 2px; background: var(--white); margin: 5px 0; transition: 0.3s; }
     .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
@@ -155,7 +156,7 @@
     .app-mockup { display: flex; justify-content: center; }
 
     /* iPhone Frame */
-    .phone-frame { width: 280px; height: 580px; background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 50%, #a89458 100%); border-radius: 50px; padding: 10px; box-shadow: 0 50px 100px rgba(0,0,0,0.5), 0 0 30px rgba(198, 183, 122, 0.3), inset 0 2px 4px rgba(255,255,255,0.3); position: relative; }
+    .phone-frame { width: 280px; height: 580px; background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 50%, #a89458 100%); border-radius: 50px; padding: 6px; box-shadow: 0 50px 100px rgba(0,0,0,0.5), 0 0 30px rgba(198, 183, 122, 0.3), inset 0 2px 4px rgba(255,255,255,0.3); position: relative; }
     .phone-frame::before { content: ''; position: absolute; top: 18px; left: 50%; transform: translateX(-50%); width: 90px; height: 28px; background: #000; border-radius: 20px; z-index: 100; }
     .phone-frame::after { content: ''; position: absolute; right: -3px; top: 120px; width: 3px; height: 60px; background: linear-gradient(180deg, var(--gold-bright), #a89458); border-radius: 0 2px 2px 0; }
     .phone-button { position: absolute; left: -3px; width: 3px; background: linear-gradient(180deg, var(--gold-bright), #a89458); border-radius: 2px 0 0 2px; }
@@ -296,7 +297,7 @@
     @media (max-width: 600px) {
       .hero { padding: 100px 0 60px; min-height: auto; }
       .hero-badge { font-size: 0.75rem; padding: 8px 14px; }
-      .floating-card { padding: 24px; }
+      .floating-card { padding: 24px; display: none;}
       .floating-stat { font-size: 2.5rem; }
       .stats { margin-top: 0; }
       .stats-container { grid-template-columns: 1fr; padding: 28px; gap: 28px; }
@@ -392,10 +393,9 @@
           <div class="card-header" onclick="toggleCard('cashCard')">
             <div class="solution-icon">
               <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="12" cy="12" r="1"/>
-                <path d="M12 8v1"/><path d="M12 15v1"/><path d="M8 12h1"/><path d="M15 12h1"/>
+                <path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2"/>
+                <path d="M2 9v1c0 1.1.9 2 2 2h1"/>
+                <circle cx="16" cy="11" r="1"/>
               </svg>
             </div>
             <div class="tagline">Preserve & Protect</div>
@@ -420,7 +420,7 @@
               </ul>
               <div class="card-actions">
                 <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Schedule a Call</a>
-                <a href="#CASH_INVESTOR_DECK_LINK" class="btn btn-outline">View Investor Deck</a>
+                <a href="https://freedomfund.io/investordeck25" class="btn btn-outline">View Investor Deck</a>
               </div>
             </div>
           </div>
@@ -452,7 +452,7 @@
               </ul>
               <div class="card-actions">
                 <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Schedule a Call</a>
-                <a href="#GROWTH_INVESTOR_DECK_LINK" class="btn btn-outline">View Investor Deck</a>
+                <a href="https://freedomfund.io/investordeck26" _class="btn btn-outline">View Investor Deck</a>
               </div>
             </div>
           </div>
@@ -485,7 +485,7 @@
               </ul>
               <div class="card-actions">
                 <a href="#NOTIFY_FORM" class="btn btn-gold-outline">Notify Me When Available</a>
-                <a href="#LENDING_INVESTOR_DECK_LINK" class="btn btn-outline">View Investor Deck</a>
+                <a href="https://freedomfund.io/investordeck24" class="btn btn-outline">View Investor Deck</a>
               </div>
             </div>
           </div>
@@ -690,7 +690,7 @@
       </div>
       <div class="footer-bottom">
         <p>© 2025 Freedom Fund. All rights reserved.</p>
-        <a href="#TERMS_LINK">Terms & Conditions</a>
+        <a href="terms.html">Terms & Conditions</a>
       </div>
     </div>
   </footer>
