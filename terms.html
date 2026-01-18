@@ -218,88 +218,32 @@
       text-decoration: underline;
     }
 
-    /* Footer */
-    footer {
-      background: var(--navy);
-      padding: 50px 0 30px;
-    }
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin-bottom: 30px;
-    }
-    .footer-brand .logo {
-      color: var(--white);
-      display: inline-block;
-    }
-    .footer-brand .logo img {
-      height: 32px;
-      width: auto;
-    }
-    .footer-contact {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .footer-contact a, .footer-contact p {
-      color: var(--slate);
-      text-decoration: none;
-      font-size: 0.9rem;
-      margin: 0;
-      transition: color 0.2s;
-    }
+    /* Disclosure & Footer */
+    .disclosure { background: var(--navy); padding: 36px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .disclosure p { font-size: 0.85rem; color: var(--slate); max-width: 900px; margin: 0 auto; text-align: center; line-height: 1.8; }
+    footer { background: var(--navy); padding: 50px 0 30px; }
+    .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; margin-bottom: 30px; }
+    .footer-brand .logo { color: var(--white); display: inline-block; }
+    .footer-brand .logo img { height: 32px; width: auto; }
+    .footer-contact { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .footer-contact a, .footer-contact p { color: var(--slate); text-decoration: none; font-size: 0.9rem; margin: 0; transition: color 0.2s; }
     .footer-contact a:hover { color: var(--gold); }
-    .footer-middle {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 24px;
-      padding: 24px 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      margin-bottom: 24px;
-    }
-    .footer-duns {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .footer-duns span {
-      color: var(--slate);
-      font-size: 0.85rem;
-    }
-    .footer-legal span {
-      color: var(--slate);
-      font-size: 0.85rem;
-    }
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .footer-bottom p {
-      color: var(--slate);
-      font-size: 0.85rem;
-      margin: 0;
-    }
-    .footer-bottom a {
-      color: var(--gold);
-      text-decoration: none;
-      font-size: 0.85rem;
-    }
-    .footer-bottom a:hover { color: var(--gold-bright); }
+    .footer-middle { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
+    .footer-duns { display: flex; align-items: center; gap: 12px; }
+    /*.footer-duns img { height: 28px; width: auto; filter: brightness(0) invert(1); opacity: 0.7; }*/
+    .footer-duns span { color: var(--slate); font-size: 0.85rem; }
+    .duns-logo {
+  height: 22px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-bottom p { color: var(--slate); font-size: 0.85rem; margin: 0; }
+    .footer-legal { display: flex; align-items: center; gap: 24px; }
+    .footer-legal span { color: var(--slate); font-size: 0.85rem; }
+    .footer-legal a { color: var(--gold); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--gold-bright); }
 
     /* Responsive */
     @media (max-width: 1024px) {
@@ -454,12 +398,7 @@
       </div>
       <div class="footer-middle">
         <div class="footer-duns">
-          <svg viewBox="0 0 120 40" width="100" height="32" fill="none">
-            <rect width="120" height="40" rx="4" fill="#003366"/>
-            <text x="10" y="26" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">D&B</text>
-            <text x="45" y="22" font-family="Arial, sans-serif" font-size="8" fill="white">DUN &amp; BRADSTREET</text>
-            <text x="45" y="32" font-family="Arial, sans-serif" font-size="7" fill="#99ccff">VERIFIED</text>
-          </svg>
+          <img src="./assets/duns-logo.png" alt="D&B Verified" class="duns-logo">
           <span>DUNS: 117985322</span>
         </div>
         <div class="footer-legal">
@@ -467,11 +406,12 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 Freedom Fund. All rights reserved.</p>
+        <p>© 2026 Freedom Fund. All rights reserved.</p>
         <a href="terms.html">Terms & Conditions</a>
       </div>
     </div>
   </footer>
+
 
   <script>
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
