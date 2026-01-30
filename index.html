@@ -340,10 +340,27 @@
 @media (max-width: 1024px) {
   .testimonial-card { flex: 0 0 calc((100% - 24px) / 2); }
 }
-@media (max-width: 600px) {
-  .testimonial-card { flex: 0 0 100%; min-height: 260px; padding: 28px; }
-}
 
+@media (max-width: 600px) {
+  .testimonials {
+    overflow: hidden;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .testimonial-carousel {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+  }
+  .testimonial-card {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    min-height: 260px;
+    padding: 28px;
+    box-sizing: border-box;
+  }
+}
     /* CTA */
     .cta { padding: 140px 0; background: linear-gradient(180deg, var(--warm-white) 0%, var(--white) 100%); text-align: center; position: relative; }
     .cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(198, 183, 122, 0.15) 0%, transparent 70%); pointer-events: none; }
@@ -739,7 +756,7 @@
           </div>
           <div class="testimonial-card">
             <p class="quote">"The communication is clear, timely, and honest. I always know where my money is, how it's working, and what's coming next."</p>
-            <div class="author"><span class="author-name">Lane Monson</span><span class="author-title">Retired CEO of Tech Company</span></div>
+            <div class="author"><span class="author-name">Lane Monson</span><span class="author-title">Land Developer</span></div>
           </div>
           <div class="testimonial-card">
             <p class="quote">"Freedom Fund made investing straightforward and stress-free. The process was simple, and everything was explained in a way that actually made sense."</p>
@@ -747,7 +764,7 @@
           </div>
           <div class="testimonial-card">
             <p class="quote">"The returns have been exactly what was communicated, and the consistency is what keeps me invested for going on two years now. There are no surprises, just steady execution."</p>
-            <div class="author"><span class="author-name">Camille Hill</span><span class="author-title">Retired Luxury Home Builder</span></div>
+            <div class="author"><span class="author-name">Camille Hill</span><span class="author-title">Design Space Professional</span></div>
           </div>
         </div>
         <div class="carousel-controls">
@@ -806,171 +823,138 @@
     function closeMobileMenu(){mobileMenuBtn.classList.remove('active');mobileNav.classList.remove('active');document.body.style.overflow=''}
     function toggleCard(id){const card=document.getElementById(id),wasExpanded=card.classList.contains('expanded');document.querySelectorAll('.solution-card').forEach(c=>{c.classList.remove('expanded');const d=c.querySelector('.card-details');if(d){d.style.height='0';d.style.visibility='hidden'}});if(!wasExpanded){card.classList.add('expanded');const details=card.querySelector('.card-details');if(details){details.style.height='auto';details.style.visibility='visible'}}}
     document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.card-details').forEach(d=>{d.style.height='0';d.style.visibility='hidden'})});
-
+  
+    // Testimonial Carousel - Infinite Loop
     const track = document.getElementById('testimonialTrack');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-const gap = 24;
-const originalCards = 6;
-let autoScrollInterval;
-let isTransitioning = false;
-
-// Clone cards for infinite loop
-function setupInfiniteLoop() {
-  const cards = track.querySelectorAll('.testimonial-card');
-  const visibleCount = getVisibleCards();
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    const gap = 24;
+    const originalCards = 6;
+    let currentIndex = 0;
+    let autoScrollInterval;
+    let isTransitioning = false;
   
-  // Clone first cards and append to end
-  for (let i = 0; i < visibleCount; i++) {
-    const clone = cards[i].cloneNode(true);
-    clone.classList.add('clone');
-    track.appendChild(clone);
-  }
+    function getVisibleCards() {
+      return window.innerWidth < 600 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+    }
   
-  // Clone last cards and prepend to beginning
-  for (let i = originalCards - 1; i >= originalCards - visibleCount; i--) {
-    const clone = cards[i].cloneNode(true);
-    clone.classList.add('clone');
-    track.insertBefore(clone, track.firstChild);
+    function getCardWidth() {
+  const carousel = document.querySelector('.testimonial-carousel');
+  if (window.innerWidth < 600) {
+    return carousel.offsetWidth;
   }
-}
-
-function getVisibleCards() {
-  return window.innerWidth < 600 ? 1 : window.innerWidth < 1024 ? 2 : 3;
-}
-
-function getCardWidth() {
-  const containerWidth = track.parentElement.offsetWidth;
   const visibleCards = getVisibleCards();
-  return (containerWidth - (gap * (visibleCards - 1))) / visibleCards;
+  const carouselWidth = carousel.offsetWidth;
+  return (carouselWidth - (gap * (visibleCards - 1))) / visibleCards;
 }
-
-let currentIndex = getVisibleCards(); // Start at first real card (after clones)
-
-function updateCarousel(animate = true) {
-  const cardWidth = getCardWidth();
-  const offset = currentIndex * (cardWidth + gap);
   
-  if (!animate) {
-    track.style.transition = 'none';
+function setupCards() {
+  if (window.innerWidth >= 600) {
+    const cardWidth = getCardWidth();
+    const cards = track.querySelectorAll('.testimonial-card');
+    cards.forEach(card => {
+      card.style.width = cardWidth + 'px';
+      card.style.flex = `0 0 ${cardWidth}px`;
+    });
   } else {
-    track.style.transition = 'transform 0.5s ease';
+    const cards = track.querySelectorAll('.testimonial-card');
+    cards.forEach(card => {
+      card.style.width = '';
+      card.style.flex = '';
+    });
   }
-  
-  track.style.transform = `translateX(-${offset}px)`;
 }
-
-function nextSlide() {
-  if (isTransitioning) return;
-  isTransitioning = true;
   
-  currentIndex++;
-  updateCarousel(true);
+    function updateCarousel(animate = true) {
+      const cardWidth = getCardWidth();
+      const offset = currentIndex * (cardWidth + gap);
+      track.style.transition = animate ? 'transform 0.5s ease' : 'none';
+      track.style.transform = `translateX(-${offset}px)`;
+    }
   
-  setTimeout(() => {
-    const visibleCards = getVisibleCards();
-    const totalCards = originalCards + (visibleCards * 2);
-    
-    // If we've moved past the last real card, jump to the cloned first card position
-    if (currentIndex >= originalCards + visibleCards) {
-      currentIndex = visibleCards;
+    function nextSlide() {
+      if (isTransitioning) return;
+      isTransitioning = true;
+      
+      currentIndex++;
+      updateCarousel(true);
+      
+      setTimeout(() => {
+        if (currentIndex >= originalCards) {
+          currentIndex = 0;
+          updateCarousel(false);
+        }
+        isTransitioning = false;
+      }, 500);
+    }
+  
+    function prevSlide() {
+      if (isTransitioning) return;
+      isTransitioning = true;
+      
+      if (currentIndex === 0) {
+        currentIndex = originalCards;
+        updateCarousel(false);
+        setTimeout(() => {
+          currentIndex = originalCards - 1;
+          updateCarousel(true);
+          setTimeout(() => { isTransitioning = false; }, 500);
+        }, 50);
+      } else {
+        currentIndex--;
+        updateCarousel(true);
+        setTimeout(() => { isTransitioning = false; }, 500);
+      }
+    }
+  
+    function startAutoScroll() {
+      stopAutoScroll();
+      autoScrollInterval = setInterval(nextSlide, 5500);
+    }
+  
+    function stopAutoScroll() {
+      if (autoScrollInterval) clearInterval(autoScrollInterval);
+    }
+  
+    // Clone cards for infinite loop
+    function setupInfiniteLoop() {
+      const cards = track.querySelectorAll('.testimonial-card');
+      const visibleCards = getVisibleCards();
+      
+      // Clone first cards and append to end
+      for (let i = 0; i < visibleCards; i++) {
+        const clone = cards[i].cloneNode(true);
+        track.appendChild(clone);
+      }
+    }
+  
+    prevBtn.addEventListener('click', () => { stopAutoScroll(); prevSlide(); startAutoScroll(); });
+    nextBtn.addEventListener('click', () => { stopAutoScroll(); nextSlide(); startAutoScroll(); });
+    track.addEventListener('mouseenter', stopAutoScroll);
+    track.addEventListener('mouseleave', startAutoScroll);
+  
+    // Touch support
+    let touchStartX = 0;
+    track.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; stopAutoScroll(); }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
+      startAutoScroll();
+    }, { passive: true });
+  
+    // Resize
+    window.addEventListener('resize', () => {
+      setupCards();
+      currentIndex = Math.min(currentIndex, originalCards - 1);
       updateCarousel(false);
-    }
-    isTransitioning = false;
-  }, 520);
-}
-
-function prevSlide() {
-  if (isTransitioning) return;
-  isTransitioning = true;
+    });
   
-  currentIndex--;
-  updateCarousel(true);
-  
-  setTimeout(() => {
-    const visibleCards = getVisibleCards();
-    
-    // If we've moved before the first real card, jump to the cloned last card position
-    if (currentIndex < visibleCards) {
-      currentIndex = originalCards + visibleCards - 1;
-      updateCarousel(false);
-    }
-    isTransitioning = false;
-  }, 520);
-}
-
-function startAutoScroll() {
-  stopAutoScroll();
-  autoScrollInterval = setInterval(nextSlide, 5500);
-}
-
-function stopAutoScroll() {
-  if (autoScrollInterval) {
-    clearInterval(autoScrollInterval);
-  }
-}
-
-nextBtn.addEventListener('click', () => {
-  stopAutoScroll();
-  nextSlide();
-  startAutoScroll();
-});
-
-prevBtn.addEventListener('click', () => {
-  stopAutoScroll();
-  prevSlide();
-  startAutoScroll();
-});
-
-track.addEventListener('mouseenter', stopAutoScroll);
-track.addEventListener('mouseleave', startAutoScroll);
-
-// Touch/swipe support for mobile
-let touchStartX = 0;
-let touchEndX = 0;
-
-track.addEventListener('touchstart', (e) => {
-  touchStartX = e.changedTouches[0].screenX;
-  stopAutoScroll();
-}, { passive: true });
-
-track.addEventListener('touchend', (e) => {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
-  startAutoScroll();
-}, { passive: true });
-
-function handleSwipe() {
-  const swipeThreshold = 50;
-  const diff = touchStartX - touchEndX;
-  
-  if (Math.abs(diff) > swipeThreshold) {
-    if (diff > 0) {
-      nextSlide();
-    } else {
-      prevSlide();
-    }
-  }
-}
-
-// Handle resize
-let resizeTimeout;
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
-    // Reset to a safe position
-    currentIndex = getVisibleCards();
+    // Initialize
+    setupInfiniteLoop();
+    setupCards();
     updateCarousel(false);
-  }, 250);
-});
-
-// Initialize
-setupInfiniteLoop();
-updateCarousel(false);
-startAutoScroll();
-
+    startAutoScroll();
   </script>
-</script>
 </body>
 </html>
