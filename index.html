@@ -161,27 +161,83 @@
     .growth-dot-ring { opacity: 0; animation: ringPulse 2s ease-in-out infinite; animation-delay: 3s; }
     @keyframes ringPulse { 0% { opacity: 0.6; r: 6; } 100% { opacity: 0; r: 14; } }
 
-    /* Comparison */
-    .comparison { padding: 120px 0; background: var(--white); }
-    .comparison-table { max-width: 960px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(11, 30, 50, 0.08); }
-    .comparison-table table { width: 100%; border-collapse: collapse; background: var(--white); }
-    .comparison-table thead th { padding: 22px 20px; font-size: 0.85rem; font-weight: 600; text-align: center; color: var(--slate); border-bottom: 2px solid rgba(11, 30, 50, 0.06); position: relative; }
-    .comparison-table thead th:first-child { text-align: left; background: var(--warm-white); }
-    .comparison-table thead th.highlight { background: var(--navy); color: var(--gold); font-size: 0.9rem; }
-    .comparison-table thead th.col-2 { background: rgba(198,183,122,0.15); }
-    .comparison-table thead th.col-3 { background: rgba(100,116,139,0.1); color: var(--slate); }
-    .comparison-table thead th.col-4 { background: rgba(100,116,139,0.06); color: var(--slate-light); }
-    .comparison-table thead th.col-5 { background: rgba(100,116,139,0.03); color: var(--slate-light); opacity: 0.8; }
-    .comparison-table tbody td { padding: 16px 20px; font-size: 0.9rem; text-align: center; color: var(--navy); border-bottom: 1px solid rgba(11, 30, 50, 0.06); }
-    .comparison-table tbody td:first-child { text-align: left; font-weight: 500; }
-    .comparison-table tbody td.highlight { background: rgba(198, 183, 122, 0.12); font-weight: 600; }
-    .comparison-table tbody td.col-2 { background: rgba(198,183,122,0.05); }
-    .comparison-table tbody td.col-3 { background: rgba(100,116,139,0.04); color: var(--slate); }
-    .comparison-table tbody td.col-4 { background: rgba(100,116,139,0.08); color: var(--slate-light); }
-    .comparison-table tbody td.col-5 { background: rgba(100,116,139,0.03); color: var(--slate-light); opacity: 0.85; }
-    .comparison-table tbody tr:last-child td { border-bottom: none; }
+    /* Comparison — Updated */
+    .comparison {
+      padding: 120px 0;
+      background:
+        linear-gradient(
+          180deg,
+          var(--warm-white) 0%,
+          rgba(198, 183, 122, 0.05) 25%,
+          rgba(198, 183, 122, 0.09) 50%,
+          rgba(198, 183, 122, 0.05) 75%,
+          var(--warm-white) 100%
+        );
+      position: relative;
+      overflow: hidden;
+    }
+
+    .comparison .container {
+      position: relative;
+      z-index: 1;
+    }
+    .comparison-table-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(11, 30, 50, 0.08);
+    }
+    .comparison-table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) transparent;
+    }
+    .comparison-table-scroll::-webkit-scrollbar { height: 6px; }
+    .comparison-table-scroll::-webkit-scrollbar-track { background: rgba(198,183,122,0.1); }
+    .comparison-table-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+    .comparison-table-wrapper table { width: 100%; border-collapse: collapse; background: var(--white); min-width: 640px; }
+    .comparison-table-wrapper thead th { padding: 22px 20px; font-size: 0.85rem; font-weight: 600; text-align: center; color: var(--slate); border-bottom: 2px solid rgba(11, 30, 50, 0.06); position: relative; }
+    .comparison-table-wrapper thead th:first-child { text-align: left; background: var(--warm-white); position: sticky; left: 0; z-index: 2; min-width: 140px; }
+    .comparison-table-wrapper thead th.highlight {
+      background: linear-gradient(165deg, rgba(198,183,122,0.25) 0%, rgba(198,183,122,0.38) 100%);
+      color: var(--navy);
+      font-size: 0.9rem;
+      border-bottom: 3px solid var(--gold);
+    }
+    .comparison-table-wrapper thead th.col-2 { background: rgba(198,183,122,0.12); }
+    .comparison-table-wrapper thead th.col-3 { background: rgba(100,116,139,0.08); color: var(--slate); }
+    .comparison-table-wrapper thead th.col-4 { background: rgba(100,116,139,0.05); color: var(--slate-light); }
+    .comparison-table-wrapper thead th.col-5 { background: rgba(100,116,139,0.03); color: var(--slate-light); opacity: 0.8; }
+    .comparison-table-wrapper tbody td { padding: 16px 20px; font-size: 0.9rem; text-align: center; color: var(--navy); border-bottom: 1px solid rgba(11, 30, 50, 0.06); }
+    .comparison-table-wrapper tbody td:first-child { text-align: left; font-weight: 500; position: sticky; left: 0; z-index: 1; background: var(--white); min-width: 140px; }
+    .comparison-table-wrapper tbody td.highlight {
+      background: rgba(198, 183, 122, 0.10);
+      font-weight: 600;
+      border-left: 1px solid rgba(198, 183, 122, 0.15);
+      border-right: 1px solid rgba(198, 183, 122, 0.15);
+    }
+    .comparison-table-wrapper tbody td.col-2 { background: rgba(198,183,122,0.04); }
+    .comparison-table-wrapper tbody td.col-3 { background: rgba(100,116,139,0.03); color: var(--slate); }
+    .comparison-table-wrapper tbody td.col-4 { background: rgba(100,116,139,0.06); color: var(--slate-light); }
+    .comparison-table-wrapper tbody td.col-5 { background: rgba(100,116,139,0.02); color: var(--slate-light); opacity: 0.85; }
+    .comparison-table-wrapper tbody tr:last-child td { border-bottom: none; }
+    .ff-label { display: block; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; color: var(--gold); font-weight: 700; }
     .check-icon { color: #22c55e; font-weight: 700; font-size: 1.1rem; }
     .x-icon { color: #ef4444; font-weight: 700; font-size: 1.1rem; }
+    .scroll-hint {
+      display: none;
+      text-align: center;
+      margin-top: 16px;
+      font-size: 0.8rem;
+      color: var(--slate-light);
+      animation: fadeHint 2s ease-in-out infinite;
+    }
+    @keyframes fadeHint {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
 
     /* How it Works */
     .how-it-works { padding: 120px 0; background: var(--warm-white); position: relative; overflow: hidden; }
@@ -203,7 +259,7 @@
     .trust-list .check { width: 26px; height: 26px; background: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .trust-list .check svg { width: 14px; height: 14px; stroke: var(--gold); }
     .trust-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 28px; padding: 50px; text-align: center; position: relative; overflow: hidden; }
-    .trust-card::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(198, 183, 122, 0.2), transparent 60%); }
+    .trust-card::before { content: ''; position: absolute; top: -30%; right: -30%; width: 160%; height: 160%; background: radial-gradient(circle, rgba(198, 183, 122, 0.12), transparent 50%); pointer-events: none; }
     .trust-card .big-stat { font-size: 5rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 14px; position: relative; }
     .trust-card p { color: var(--slate-light); font-size: 1.1rem; position: relative; }
 
@@ -333,6 +389,13 @@
       .footer-bottom { flex-direction: column; text-align: center; }
       .footer-legal { flex-direction: column; gap: 8px; }
     }
+    @media (max-width: 700px) {
+      .comparison-table-wrapper tbody td:first-child,
+      .comparison-table-wrapper thead th:first-child {
+        box-shadow: 4px 0 12px rgba(11, 30, 50, 0.06);
+      }
+      .scroll-hint { display: block; }
+    }
     @media (max-width: 600px) {
       .hero { padding: 100px 0 60px; min-height: auto; }
       .hero-badge { font-size: 0.75rem; padding: 8px 14px; }
@@ -346,7 +409,7 @@
       .fund-showcase, .how-it-works, .testimonials, .trust, .app-preview, .comparison { padding: 80px 0; }
       .cta { padding: 100px 0; }
       .fund-card-bottom { flex-direction: column; }
-      .comparison-table thead th, .comparison-table tbody td { padding: 12px 8px; font-size: 0.75rem; }
+      .comparison-table-wrapper thead th, .comparison-table-wrapper tbody td { padding: 12px 8px; font-size: 0.75rem; }
       .phone-frame { width: 260px; height: 540px; }
       .testimonials { overflow: hidden; padding-left: 30px; padding-right: 30px; }
       .testimonial-carousel { margin: 0; padding: 0; overflow: hidden; width: 100%; }
@@ -485,31 +548,31 @@
           <div class="fund-card-right">
             <div class="fund-highlight">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>Zero Speculative Exposure</strong></span>
+              <span>Zero Speculative Exposure</span>
             </div>
             <div class="fund-highlight">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>Ultra-Low Volatility</strong> / Risk</span>
+              <span>Ultra-Low Volatility / Risk</span>
             </div>
             <div class="fund-highlight">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>5-Day Liquidity</strong> — access your capital fast</span>
+              <span>5-Day Liquidity — access your capital fast</span>
             </div>
             <div class="fund-highlight">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>~$500M</strong> under partner management</span>
+              <span>~$500M under partner management</span>
             </div>
             <div class="fund-highlight">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>5+ Years</strong> partnership experience</span>
+              <span>5+ Years partnership experience</span>
             </div>
             <div class="fund-highlight">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>~6% Yield</strong> based on AUM</span>
+              <span>~6% Yield based on AUM</span>
             </div>
             <div class="fund-highlight">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>SEC</strong> Compliant & Registered</span>
+              <span>SEC Compliant & Registered</span>
             </div>
           </div>
         </div>
@@ -521,7 +584,7 @@
     </div>
   </section>
 
-  <!-- Comparison Table -->
+  <!-- Comparison Table — Updated -->
   <section class="comparison" id="compare">
     <div class="container">
       <div class="section-header">
@@ -529,73 +592,76 @@
         <h2>See How We Stack Up</h2>
         <p>Freedom Fund vs. the alternatives your cash is sitting in today.</p>
       </div>
-      <div class="comparison-table">
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th class="highlight">
-                <img src="./assets/freedom1.png" alt="Freedom Fund" style="height:20px;width:auto;display:block;margin:0 auto 6px;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
-                Cash Reserves
-              </th>
-              <th class="col-2">Money<br>Market</th>
-              <th class="col-3">CDs</th>
-              <th class="col-4">High-Yield<br>Savings</th>
-              <th class="col-5">Treasury<br>Bills</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Annual Yield</td>
-              <td class="highlight"><strong>6%</strong></td>
-              <td class="col-2">3.9%</td>
-              <td class="col-3">3.4%</td>
-              <td class="col-4">3.2%</td>
-              <td class="col-5">2.0%</td>
-            </tr>
-            <tr>
-              <td>Quick Liquidity</td>
-              <td class="highlight"><span class="check-icon">✓</span> 5 days</td>
-              <td class="col-2"><span class="check-icon">✓</span></td>
-              <td class="col-3"><span class="x-icon">✗</span></td>
-              <td class="col-4"><span class="check-icon">✓</span></td>
-              <td class="col-5"><span class="x-icon">✗</span></td>
-            </tr>
-            <tr>
-              <td>No Market Movement Exposure</td>
-              <td class="highlight"><span class="check-icon">✓</span></td>
-              <td class="col-2"><span class="x-icon">✗</span></td>
-              <td class="col-3"><span class="check-icon">✓</span></td>
-              <td class="col-4"><span class="check-icon">✓</span></td>
-              <td class="col-5"><span class="x-icon">✗</span></td>
-            </tr>
-            <tr>
-              <td>Fixed Rate</td>
-              <td class="highlight"><span class="check-icon">✓</span></td>
-              <td class="col-2"><span class="x-icon">✗</span></td>
-              <td class="col-3"><span class="check-icon">✓</span></td>
-              <td class="col-4"><span class="x-icon">✗</span></td>
-              <td class="col-5"><span class="check-icon">✓</span></td>
-            </tr>
-            <tr>
-              <td>Fully Passive</td>
-              <td class="highlight"><span class="check-icon">✓</span></td>
-              <td class="col-2"><span class="check-icon">✓</span></td>
-              <td class="col-3"><span class="check-icon">✓</span></td>
-              <td class="col-4"><span class="check-icon">✓</span></td>
-              <td class="col-5"><span class="check-icon">✓</span></td>
-            </tr>
-            <tr>
-              <td>Cash Access with One Click</td>
-              <td class="highlight"><span class="check-icon">✓</span></td>
-              <td class="col-2"><span class="x-icon">✗</span></td>
-              <td class="col-3"><span class="x-icon">✗</span></td>
-              <td class="col-4"><span class="check-icon">✓</span></td>
-              <td class="col-5"><span class="x-icon">✗</span></td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="comparison-table-wrapper">
+        <div class="comparison-table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th class="highlight">
+                  <img src="./assets/freedomIconColor.png" alt="Freedom Fund" style="height:22px;width:auto;display:block;margin:0 auto 6px;" onerror="this.style.display='none'">
+                  Cash Reserves
+                </th>
+                <th class="col-2">Money<br>Market</th>
+                <th class="col-3">CDs</th>
+                <th class="col-4">High-Yield<br>Savings</th>
+                <th class="col-5">Treasury<br>Bills</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Annual Yield</td>
+                <td class="highlight"><strong>6%</strong></td>
+                <td class="col-2">3.9%</td>
+                <td class="col-3">3.4%</td>
+                <td class="col-4">3.2%</td>
+                <td class="col-5">2.0%</td>
+              </tr>
+              <tr>
+                <td>Quick Liquidity</td>
+                <td class="highlight"><span class="check-icon">✓</span> 5 days</td>
+                <td class="col-2"><span class="check-icon">✓</span></td>
+                <td class="col-3"><span class="x-icon">✗</span></td>
+                <td class="col-4"><span class="check-icon">✓</span></td>
+                <td class="col-5"><span class="x-icon">✗</span></td>
+              </tr>
+              <tr>
+                <td>No Market Movement Exposure</td>
+                <td class="highlight"><span class="check-icon">✓</span></td>
+                <td class="col-2"><span class="check-icon">✓</span></td>
+                <td class="col-3"><span class="check-icon">✓</span></td>
+                <td class="col-4"><span class="check-icon">✓</span></td>
+                <td class="col-5"><span class="x-icon">✗</span></td>
+              </tr>
+              <tr>
+                <td>Fixed Rate</td>
+                <td class="highlight"><span class="check-icon">✓</span></td>
+                <td class="col-2"><span class="x-icon">✗</span></td>
+                <td class="col-3"><span class="check-icon">✓</span></td>
+                <td class="col-4"><span class="x-icon">✗</span></td>
+                <td class="col-5"><span class="check-icon">✓</span></td>
+              </tr>
+              <tr>
+                <td>Fully Passive</td>
+                <td class="highlight"><span class="check-icon">✓</span></td>
+                <td class="col-2"><span class="check-icon">✓</span></td>
+                <td class="col-3"><span class="check-icon">✓</span></td>
+                <td class="col-4"><span class="check-icon">✓</span></td>
+                <td class="col-5"><span class="check-icon">✓</span></td>
+              </tr>
+              <tr>
+                <td>Cash Access with One Click</td>
+                <td class="highlight"><span class="check-icon">✓</span></td>
+                <td class="col-2"><span class="x-icon">✗</span></td>
+                <td class="col-3"><span class="x-icon">✗</span></td>
+                <td class="col-4"><span class="check-icon">✓</span></td>
+                <td class="col-5"><span class="x-icon">✗</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+      <p class="scroll-hint">← Swipe to see all columns →</p>
     </div>
   </section>
 
@@ -626,9 +692,9 @@
           <p>Our principals invest their own capital in the fund, validating performance before we extend access to clients.</p>
           <ul class="trust-list">
             <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Purpose-Built for Cash Investors</span></li>
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Fully Passive and Diversified</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Fully Passive</span></li>
             <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>SEC Registered & Fully Compliant</span></li>
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Mobile App Coming Soon</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Principals have $5M+ Personally Invested</span></li>
           </ul>
         </div>
         <div class="trust-visual">
