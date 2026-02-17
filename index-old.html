@@ -3,19 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Freedom Fund - Your Cash Deserves Better. Make It Work Harder.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://freedomfund.io/">
-  <meta property="og:title" content="Freedom Fund | Cash Reserves Fund">
-  <meta property="og:description" content="Safety, Liquidity, and Consistent Returns. Finally, All Three.">
-  <meta property="og:image" content="https://freedomfund.io/assets/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Freedom Fund | Cash Reserves Fund">
-  <meta name="twitter:description" content="Safety, Liquidity, and Consistent Returns. Finally, All Three.">
-  <meta name="twitter:image" content="https://freedomfund.io/assets/og-image.png">
-  <title>Freedom Fund | Cash Reserves Fund</title>
+  <meta name="description" content="Freedom Fund - Institutional-Grade Investing. Without the Institution.">
+  <!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freedomfund.io/">
+<meta property="og:title" content="Freedom Fund | Institutional-Grade Investing">
+<meta property="og:description" content="Safety, Liquidity, and Consistent Returns. Finally, All Three.">
+<meta property="og:image" content="https://freedomfund.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Freedom Fund | Institutional-Grade Investing">
+<meta name="twitter:description" content="Safety, Liquidity, and Consistent Returns. Finally, All Three.">
+<meta name="twitter:image" content="https://freedomfund.io/assets/og-image.png">
+
+  <title>Freedom Fund | Institutional-Grade Investing</title>
   <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -34,7 +38,14 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'IBM Plex Sans', -apple-system, sans-serif; font-weight: 400; color: var(--navy); line-height: 1.6; background: var(--white); overflow-x: hidden; }
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.6;
+      background: var(--white);
+      overflow-x: hidden;
+    }
     h1, h2, h3 { font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; }
     h1 { font-size: clamp(2.5rem, 7vw, 5rem); }
     h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
@@ -57,12 +68,39 @@
     .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
     .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-    .mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--navy); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
-    .mobile-nav.active { display: flex; }
-    .mobile-nav a { color: var(--white); text-decoration: none; font-size: 1.5rem; font-weight: 500; }
-    .mobile-nav a:hover { color: var(--gold); }
-    .mobile-nav .btn { margin-top: 20px; }
-    .mobile-nav .btn-primary { color: var(--navy) !important; background: var(--gold); }
+    .mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--navy);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.mobile-nav.active {
+  display: flex;
+}
+.mobile-nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.mobile-nav a:hover {
+  color: var(--gold);
+}
+.mobile-nav .btn {
+  margin-top: 20px;
+}
+.mobile-nav .btn-primary {
+  color: var(--navy) !important;
+  background: var(--gold);
+}
 
     /* Buttons */
     .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 100px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; }
@@ -74,6 +112,8 @@
     .btn-dark:hover { background: var(--navy-light); transform: translateY(-2px); }
     .btn-outline { background: transparent; color: var(--navy); border: 2px solid var(--navy); padding: 12px 24px; }
     .btn-outline:hover { background: var(--navy); color: var(--white); }
+    .btn-gold-outline { background: transparent; color: var(--gold); border: 2px solid var(--gold); padding: 12px 24px; }
+    .btn-gold-outline:hover { background: var(--gold); color: var(--navy); }
 
     /* Hero */
     .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 0 100px; background: var(--navy); position: relative; overflow: hidden; }
@@ -119,93 +159,135 @@
     .section-header h2 { margin-bottom: 20px; }
     .section-header p { font-size: 1.15rem; }
 
-    /* Fund Showcase */
-    .fund-showcase { padding: 120px 0; background: var(--warm-white); position: relative; }
-    .fund-card { max-width: 960px; margin: 0 auto; background: var(--white); border-radius: 28px; border: 1px solid rgba(11, 30, 50, 0.08); overflow: hidden; box-shadow: 0 30px 60px rgba(11, 30, 50, 0.08); }
-    .fund-card-top { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-    .fund-card-left { padding: 48px 40px; border-right: 1px solid rgba(11, 30, 50, 0.06); display: flex; flex-direction: column; }
-    .fund-card-right { padding: 48px 40px; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); display: flex; flex-direction: column; justify-content: center; }
-    .fund-tagline { font-size: 0.9rem; color: var(--gold); font-weight: 600; margin-bottom: 6px; }
-    .fund-card-left h3 { color: var(--navy); margin-bottom: 14px; font-size: 1.6rem; font-weight: 600; line-height: 1.2; }
-    .fund-card-left > p { line-height: 1.7; font-size: 1rem; margin-bottom: 28px; }
-    .fund-highlight { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .fund-highlight:last-child { border-bottom: none; }
-    .fund-highlight svg { width: 18px; height: 18px; stroke: var(--gold); flex-shrink: 0; }
-    .fund-highlight span { color: var(--white); font-size: 0.95rem; }
-    .fund-highlight strong { color: var(--gold); font-weight: 600; }
-    .fund-card-bottom { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 32px 40px; background: linear-gradient(135deg, rgba(198,183,122,0.08), rgba(198,183,122,0.15)); border-top: 1px solid rgba(198,183,122,0.2); }
+    /* Solutions */
+    .solutions { padding: 120px 0; background: var(--warm-white); position: relative; }
+    .solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; }
+    .solution-card { background: var(--white); border-radius: 20px; border: 1px solid rgba(11, 30, 50, 0.08); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; }
+    .solution-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-bright)); opacity: 0; transition: opacity 0.3s ease; }
+    .solution-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(11, 30, 50, 0.12); }
+    .solution-card:hover::before { opacity: 1; }
+/* Best in Class - Gold (flagship) */
+.solution-card.best-in-class { opacity: 1; }
+.best-in-class-banner { 
+  position: absolute; 
+  top: 24px; 
+  right: -35px; 
+  background: linear-gradient(135deg, #a89458, #c6b77a); 
+  color: var(--navy); 
+  padding: 6px 50px; 
+  font-size: 0.7rem; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  letter-spacing: 0.05em; 
+  transform: rotate(45deg); 
+  z-index: 10; 
+  box-shadow: 0 2px 10px rgba(198, 183, 122, 0.4); 
+}
 
-    /* Growth Visual */
-    .growth-visual { background: linear-gradient(135deg, rgba(198,183,122,0.06), rgba(198,183,122,0.12)); border: 1px solid rgba(198,183,122,0.2); border-radius: 16px; padding: 22px 24px; position: relative; overflow: hidden; flex: 1; display: flex; flex-direction: column; }
-    .growth-visual-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-    .growth-visual-header span { font-size: 0.75rem; font-weight: 600; color: var(--slate); text-transform: uppercase; letter-spacing: 0.05em; }
-    .growth-amounts-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 2px; }
-    .growth-amount { font-size: 1.8rem; font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; }
-    .growth-return { font-size: 0.85rem; color: #22c55e; font-weight: 600; }
-    .growth-legend { display: flex; gap: 18px; margin-bottom: 14px; }
-    .growth-legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; color: var(--slate); font-weight: 500; }
-    .growth-legend-dot { width: 10px; height: 10px; border-radius: 3px; }
-    .growth-legend-dot.initial { background: var(--navy); opacity: 0.15; }
-    .growth-legend-dot.returns { background: var(--gold); }
-    .growth-chart-wrapper { flex: 1; min-height: 110px; position: relative; overflow: hidden; }
-    .growth-chart-wrapper svg { width: 100%; height: 100%; display: block; }
-    .growth-months { display: flex; justify-content: space-between; margin-top: 6px; }
-    .growth-months span { font-size: 0.65rem; color: var(--slate-light); }
-    @keyframes drawLine { from { stroke-dashoffset: 600; } to { stroke-dashoffset: 0; } }
-    @keyframes fillArea { from { opacity: 0; } to { opacity: 1; } }
-    .growth-line-anim { stroke-dasharray: 600; stroke-dashoffset: 600; animation: drawLine 2.5s ease-out forwards; animation-delay: 0.5s; }
-    .growth-fill-anim { opacity: 0; animation: fillArea 1.5s ease-out forwards; animation-delay: 1.2s; }
-    .growth-base-anim { opacity: 0; animation: fillArea 0.8s ease-out forwards; animation-delay: 0.2s; }
-    .growth-dot { opacity: 0; animation: dotAppear 0.3s ease-out forwards; animation-delay: 2.8s; }
-    @keyframes dotAppear { from { opacity: 0; } to { opacity: 1; } }
-    .growth-dot-ring { opacity: 0; animation: ringPulse 2s ease-in-out infinite; animation-delay: 3s; }
-    @keyframes ringPulse { 0% { opacity: 0.6; r: 6; } 100% { opacity: 0; r: 14; } }
+/* Coming Soon - Navy */
+.solution-card.coming-soon { opacity: 0.95; }
+.coming-soon-banner { 
+  position: absolute; 
+  top: 24px; 
+  right: -35px; 
+  background: linear-gradient(135deg, #0b1e32, #1a3354); 
+  color: var(--gold); 
+  padding: 6px 50px; 
+  font-size: 0.7rem; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  letter-spacing: 0.05em; 
+  transform: rotate(45deg); 
+  z-index: 10; 
+  box-shadow: 0 2px 10px rgba(11, 30, 50, 0.4); 
+}
 
-    /* Comparison */
-    .comparison { padding: 120px 0; background: var(--white); }
-    .comparison-table { max-width: 960px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(11, 30, 50, 0.08); }
-    .comparison-table table { width: 100%; border-collapse: collapse; background: var(--white); }
-    .comparison-table thead th { padding: 22px 20px; font-size: 0.85rem; font-weight: 600; text-align: center; color: var(--slate); border-bottom: 2px solid rgba(11, 30, 50, 0.06); position: relative; }
-    .comparison-table thead th:first-child { text-align: left; background: var(--warm-white); }
-    .comparison-table thead th.highlight { background: var(--navy); color: var(--gold); font-size: 0.9rem; }
-    .comparison-table thead th.col-2 { background: rgba(198,183,122,0.15); }
-    .comparison-table thead th.col-3 { background: rgba(100,116,139,0.1); color: var(--slate); }
-    .comparison-table thead th.col-4 { background: rgba(100,116,139,0.06); color: var(--slate-light); }
-    .comparison-table thead th.col-5 { background: rgba(100,116,139,0.03); color: var(--slate-light); opacity: 0.8; }
-    .comparison-table tbody td { padding: 16px 20px; font-size: 0.9rem; text-align: center; color: var(--navy); border-bottom: 1px solid rgba(11, 30, 50, 0.06); }
-    .comparison-table tbody td:first-child { text-align: left; font-weight: 500; }
-    .comparison-table tbody td.highlight { background: rgba(198, 183, 122, 0.12); font-weight: 600; }
-    .comparison-table tbody td.col-2 { background: rgba(198,183,122,0.05); }
-    .comparison-table tbody td.col-3 { background: rgba(100,116,139,0.04); color: var(--slate); }
-    .comparison-table tbody td.col-4 { background: rgba(100,116,139,0.08); color: var(--slate-light); }
-    .comparison-table tbody td.col-5 { background: rgba(100,116,139,0.03); color: var(--slate-light); opacity: 0.85; }
-    .comparison-table tbody tr:last-child td { border-bottom: none; }
-    .check-icon { color: #22c55e; font-weight: 700; font-size: 1.1rem; }
-    .x-icon { color: #ef4444; font-weight: 700; font-size: 1.1rem; }
+/* Fund Full - Slate/Muted */
+.solution-card.fund-full { opacity: 0.95; }
+.fund-full-banner { 
+  position: absolute; 
+  top: 24px; 
+  right: -35px; 
+  background: linear-gradient(135deg, #64748B, #94A3B8); 
+  color: white; 
+  padding: 6px 50px; 
+  font-size: 0.7rem; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  letter-spacing: 0.05em; 
+  transform: rotate(45deg); 
+  z-index: 10; 
+  box-shadow: 0 2px 10px rgba(100, 116, 139, 0.4); 
+}
 
-    /* How it Works */
-    .how-it-works { padding: 120px 0; background: var(--warm-white); position: relative; overflow: hidden; }
-    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; position: relative; }
-    .steps::before { content: ''; position: absolute; top: 40px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), var(--gold), transparent); opacity: 0.3; }
-    .step { text-align: center; position: relative; }
-    .step-number { width: 72px; height: 72px; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 100%); color: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; margin: 0 auto 24px; box-shadow: 0 10px 30px rgba(198, 183, 122, 0.3); }
-    .step h3 { color: var(--navy); margin-bottom: 10px; font-size: 1.15rem; }
-    .step p { color: var(--slate); font-size: 0.95rem; line-height: 1.6; }
 
-    /* Trust */
-    .trust { padding: 120px 0; background: var(--navy); }
-    .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .trust-content .section-label { text-align: left; color: var(--gold); }
-    .trust-content h2 { margin-bottom: 20px; color: var(--white); }
-    .trust-content > p { font-size: 1.1rem; margin-bottom: 32px; line-height: 1.7; color: var(--slate-light); }
-    .trust-list { list-style: none; }
-    .trust-list li { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; font-size: 1rem; color: var(--white); }
-    .trust-list .check { width: 26px; height: 26px; background: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .trust-list .check svg { width: 14px; height: 14px; stroke: var(--gold); }
-    .trust-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 28px; padding: 50px; text-align: center; position: relative; overflow: hidden; }
-    .trust-card::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(198, 183, 122, 0.2), transparent 60%); }
-    .trust-card .big-stat { font-size: 5rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 14px; position: relative; }
-    .trust-card p { color: var(--slate-light); font-size: 1.1rem; position: relative; }
+    .card-header { padding: 40px 32px 24px; cursor: pointer; }
+    .solution-icon { width: 64px; height: 64px; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+    .solution-icon svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; }
+    .solution-card h3 { color: var(--navy); margin-bottom: 12px; font-size: 1.4rem; }
+    .solution-card .tagline { font-size: 0.9rem; color: var(--gold); font-weight: 600; margin-bottom: 12px; }
+    .solution-card p { line-height: 1.7; font-size: 0.95rem; }
+
+    .expand-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px;
+  background: linear-gradient(135deg, rgba(198, 183, 122, 0.08) 0%, rgba(198, 183, 122, 0.15) 100%);
+  border-top: 1px solid rgba(198, 183, 122, 0.2);
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.expand-indicator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(198, 183, 122, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.expand-indicator:hover {
+  background: linear-gradient(135deg, rgba(198, 183, 122, 0.15) 0%, rgba(198, 183, 122, 0.25) 100%);
+  color: var(--navy);
+}
+
+.expand-indicator:hover::before {
+  left: 100%;
+}
+
+.expand-indicator svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+  stroke: var(--gold);
+}
+
+.expand-indicator:hover svg {
+  stroke: var(--navy);
+}
+
+.solution-card.expanded .expand-indicator svg {
+  transform: rotate(180deg);
+}
+
+    .card-details { background: var(--warm-white); overflow: hidden; }
+    .card-details-inner { padding: 28px 32px; }
+    .card-details h4 { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate); margin-bottom: 12px; }
+    .card-details ul { list-style: none; margin-bottom: 24px; }
+    .card-details li { display: flex; align-items: center; gap: 10px; padding: 8px 0; font-size: 0.95rem; color: var(--navy); }
+    .card-details li svg { width: 16px; height: 16px; stroke: var(--gold); flex-shrink: 0; }
+    .card-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .card-actions .btn { padding: 12px 20px; font-size: 0.85rem; }
 
     /* App Preview */
     .app-preview { padding: 120px 0; background: var(--navy); position: relative; overflow: hidden; }
@@ -218,6 +300,8 @@
     .app-features li { display: flex; align-items: center; gap: 14px; padding: 12px 0; color: var(--white); font-size: 1rem; }
     .app-features li svg { width: 20px; height: 20px; stroke: var(--gold); flex-shrink: 0; }
     .app-mockup { display: flex; justify-content: center; }
+
+    /* iPhone Frame */
     .phone-frame { width: 280px; height: 580px; background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 50%, #a89458 100%); border-radius: 50px; padding: 4px; box-shadow: 0 50px 100px rgba(0,0,0,0.5), 0 0 30px rgba(198, 183, 122, 0.3), inset 0 2px 4px rgba(255,255,255,0.3); position: relative; }
     .phone-frame::before { content: ''; position: absolute; top: 18px; left: 50%; transform: translateX(-50%); width: 90px; height: 28px; background: #000; border-radius: 20px; z-index: 100; }
     .phone-frame::after { content: ''; position: absolute; right: -3px; top: 120px; width: 3px; height: 60px; background: linear-gradient(180deg, var(--gold-bright), #a89458); border-radius: 0 2px 2px 0; }
@@ -263,26 +347,88 @@
     .nav-label-phone { font-size: 7px; color: var(--slate-light); }
     .nav-item-phone.active .nav-label-phone { color: var(--gold); }
 
-    /* Testimonials */
-    .testimonials { padding: 120px 0; background: var(--warm-white); overflow: hidden; }
-    .testimonials .section-header { margin-bottom: 50px; }
-    .testimonial-carousel { position: relative; max-width: 1200px; margin: 0 auto; overflow: hidden; }
-    .testimonial-track { display: flex; gap: 24px; transition: transform 0.5s ease; }
-    .testimonial-card { flex: 0 0 calc((100% - 48px) / 3); min-height: 280px; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(11, 30, 50, 0.08); }
-    .testimonial-card .quote { font-size: 1rem; line-height: 1.7; color: var(--navy); margin-bottom: 24px; font-style: italic; flex: 1; }
-    .testimonial-card .author { text-align: right; display: flex; flex-direction: column; gap: 4px; }
-    .author-name { font-weight: 600; color: var(--navy); font-size: 0.95rem; }
-    .author-title { font-size: 0.8rem; color: var(--slate); }
-    .testimonial-card:nth-child(odd) { background: linear-gradient(145deg, #ffffff 0%, #f5f4f0 100%); }
-    .testimonial-card:nth-child(even) { background: linear-gradient(145deg, var(--navy) 0%, var(--navy-light) 100%); border: 1px solid rgba(198, 183, 122, 0.2); }
-    .testimonial-card:nth-child(even) .quote, .testimonial-card:nth-child(even) .author-name { color: var(--white); }
-    .testimonial-card:nth-child(even) .author-title { color: var(--gold); }
-    .carousel-controls { display: flex; justify-content: center; gap: 12px; margin-top: 40px; }
-    .carousel-btn { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(11, 30, 50, 0.15); background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
-    .carousel-btn:hover { background: var(--navy); border-color: var(--navy); }
-    .carousel-btn:hover svg { stroke: var(--white); }
-    .carousel-btn svg { width: 20px; height: 20px; stroke: var(--navy); }
+    /* How it Works */
+    .how-it-works { padding: 120px 0; background: var(--white); position: relative; overflow: hidden; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; position: relative; }
+    .steps::before { content: ''; position: absolute; top: 40px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), var(--gold), transparent); opacity: 0.3; }
+    .step { text-align: center; position: relative; }
+    .step-number { width: 72px; height: 72px; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 100%); color: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; margin: 0 auto 24px; box-shadow: 0 10px 30px rgba(198, 183, 122, 0.3); }
+    .step h3 { color: var(--navy); margin-bottom: 10px; font-size: 1.15rem; }
+    .step p { color: var(--slate); font-size: 0.95rem; line-height: 1.6; }
 
+    /* Trust */
+    .trust { padding: 120px 0; background: var(--navy); }
+    .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .trust-content .section-label { text-align: left; color: var(--gold); }
+    .trust-content h2 { margin-bottom: 20px; color: var(--white); }
+    .trust-content > p { font-size: 1.1rem; margin-bottom: 32px; line-height: 1.7; color: var(--slate-light); }
+    .trust-list { list-style: none; }
+    .trust-list li { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; font-size: 1rem; color: var(--white); }
+    .trust-list .check { width: 26px; height: 26px; background: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .trust-list .check svg { width: 14px; height: 14px; stroke: var(--gold); }
+    .trust-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 28px; padding: 50px; text-align: center; position: relative; overflow: hidden; }
+    .trust-card::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(198, 183, 122, 0.2), transparent 60%); }
+    .trust-card .big-stat { font-size: 5rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 14px; position: relative; }
+    .trust-card p { color: var(--slate-light); font-size: 1.1rem; position: relative; }
+
+    /* Testimonials */
+    .testimonial-carousel {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 12px;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s ease;
+}
+
+/* Testimonials */
+.testimonials { padding: 120px 0; background: var(--warm-white); overflow: hidden; }
+.testimonials .section-header { margin-bottom: 50px; }
+.testimonial-carousel { position: relative; max-width: 1200px; margin: 0 auto; overflow: hidden; }
+.testimonial-track { display: flex; gap: 24px; transition: transform 0.5s ease; }
+.testimonial-card { flex: 0 0 calc((100% - 48px) / 3); min-height: 280px; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(11, 30, 50, 0.08); }
+.testimonial-card .quote { font-size: 1rem; line-height: 1.7; color: var(--navy); margin-bottom: 24px; font-style: italic; flex: 1; }
+.testimonial-card .author { text-align: right; display: flex; flex-direction: column; gap: 4px; }
+.author-name { font-weight: 600; color: var(--navy); font-size: 0.95rem; }
+.author-title { font-size: 0.8rem; color: var(--slate); }
+.testimonial-card:nth-child(odd) { background: linear-gradient(145deg, #ffffff 0%, #f5f4f0 100%); }
+.testimonial-card:nth-child(even) { background: linear-gradient(145deg, var(--navy) 0%, var(--navy-light) 100%); border: 1px solid rgba(198, 183, 122, 0.2); }
+.testimonial-card:nth-child(even) .quote, .testimonial-card:nth-child(even) .author-name { color: var(--white); }
+.testimonial-card:nth-child(even) .author-title { color: var(--gold); }
+.carousel-controls { display: flex; justify-content: center; gap: 12px; margin-top: 40px; }
+.carousel-btn { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(11, 30, 50, 0.15); background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+.carousel-btn:hover { background: var(--navy); border-color: var(--navy); }
+.carousel-btn:hover svg { stroke: var(--white); }
+.carousel-btn svg { width: 20px; height: 20px; stroke: var(--navy); }
+
+@media (max-width: 1024px) {
+  .testimonial-card { flex: 0 0 calc((100% - 24px) / 2); }
+}
+
+@media (max-width: 600px) {
+  .testimonials {
+    overflow: hidden;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .testimonial-carousel {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+  }
+  .testimonial-card {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    min-height: 260px;
+    padding: 28px;
+    box-sizing: border-box;
+  }
+}
     /* CTA */
     .cta { padding: 140px 0; background: linear-gradient(180deg, var(--warm-white) 0%, var(--white) 100%); text-align: center; position: relative; }
     .cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(198, 183, 122, 0.15) 0%, transparent 70%); pointer-events: none; }
@@ -303,8 +449,14 @@
     .footer-contact a:hover { color: var(--gold); }
     .footer-middle { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
     .footer-duns { display: flex; align-items: center; gap: 12px; }
-    .duns-logo { height: 22px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; }
+    /*.footer-duns img { height: 28px; width: auto; filter: brightness(0) invert(1); opacity: 0.7; }*/
     .footer-duns span { color: var(--slate); font-size: 0.85rem; }
+    .duns-logo {
+  height: 22px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     .footer-bottom p { color: var(--slate); font-size: 0.85rem; margin: 0; }
     .footer-legal { display: flex; align-items: center; gap: 24px; }
@@ -319,12 +471,11 @@
       .hero-grid { grid-template-columns: 1fr; }
       .floating-card { max-width: 400px; margin-top: 40px; }
       .stats-container { grid-template-columns: repeat(2, 1fr); }
+      .solutions-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
       .steps { grid-template-columns: repeat(2, 1fr); }
       .steps::before { display: none; }
-      .testimonial-card { flex: 0 0 calc((100% - 24px) / 2); }
+      .testimonial-card { flex: 0 0 340px; }
       .trust-grid { grid-template-columns: 1fr; }
-      .fund-card-top { grid-template-columns: 1fr; }
-      .fund-card-left { border-right: none; border-bottom: 1px solid rgba(11, 30, 50, 0.06); }
       .app-preview-grid { grid-template-columns: 1fr; text-align: center; }
       .app-preview-content .section-label { text-align: center; }
       .app-features { display: inline-block; text-align: left; }
@@ -336,36 +487,33 @@
     @media (max-width: 600px) {
       .hero { padding: 100px 0 60px; min-height: auto; }
       .hero-badge { font-size: 0.75rem; padding: 8px 14px; }
-      .floating-card { padding: 24px; display: none; }
+      .floating-card { padding: 24px; display: none;}
+      .floating-stat { font-size: 2.5rem; }
       .stats { margin-top: 0; }
       .stats-container { grid-template-columns: 1fr; padding: 28px; gap: 28px; }
       .stat-value { font-size: 2rem; }
       .steps { grid-template-columns: 1fr; }
       .hero-buttons { flex-direction: column; }
       .hero-buttons .btn { width: 100%; justify-content: center; }
-      .fund-showcase, .how-it-works, .testimonials, .trust, .app-preview, .comparison { padding: 80px 0; }
-      .cta { padding: 100px 0; }
-      .fund-card-bottom { flex-direction: column; }
-      .comparison-table thead th, .comparison-table tbody td { padding: 12px 8px; font-size: 0.75rem; }
-      .phone-frame { width: 260px; height: 540px; }
-      .testimonials { overflow: hidden; padding-left: 30px; padding-right: 30px; }
-      .testimonial-carousel { margin: 0; padding: 0; overflow: hidden; width: 100%; }
-      .testimonial-card { width: 100% !important; flex: 0 0 100% !important; min-height: 260px; padding: 28px; box-sizing: border-box; }
+      .testimonial-card { flex: 0 0 calc(100vw - 48px); min-height: 260px; padding: 28px; }
+      .trust-card { padding: 36px; }
+      .trust-card .big-stat { font-size: 3.5rem; }
       .section-header { margin-bottom: 40px; }
+      .solutions, .how-it-works, .testimonials, .trust, .app-preview { padding: 80px 0; }
+      .cta { padding: 100px 0; }
+      .phone-frame { width: 260px; height: 540px; }
     }
   </style>
 </head>
 <body>
-
-  <!-- Navigation -->
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#" class="logo"><img src="./assets/freedom1.png" alt="Freedom Fund" style="max-width: 250px;"></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="#fund">The Fund</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#why-us">Why Us</a>
+        <a href="index.html#solutions">Solutions</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#why-us">Why Us</a>
         <a href="about.html">About</a>
         <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Meet With Us</a>
       </div>
@@ -377,14 +525,13 @@
 
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html" onclick="closeMobileMenu()">Home</a>
-    <a href="#fund" onclick="closeMobileMenu()">The Fund</a>
-    <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
-    <a href="#why-us" onclick="closeMobileMenu()">Why Us</a>
+    <a href="index.html#solutions" onclick="closeMobileMenu()">Solutions</a>
+    <a href="index.html#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+    <a href="index.html#why-us" onclick="closeMobileMenu()">Why Us</a>
     <a href="about.html" onclick="closeMobileMenu()">About</a>
     <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Meet With Us</a>
   </div>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="grid-pattern"></div>
@@ -396,18 +543,18 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <div class="hero-badge">The Smarter Place for Your Cash</div>
-          <h1>Your Cash Deserves Better. <span class="gradient-text">Make It Work Harder.</span></h1>
-          <p class="hero-subtitle">Stop settling for low-yield savings accounts and volatile markets. Freedom Fund's Cash Reserves Fund delivers safety, liquidity, and consistent returns — through institutional relationships cultivated over decades.</p>
+          <div class="hero-badge">Designed for Investors by Investors</div>
+          <h1>Institutional-Grade Investing. <span class="gradient-text">Without the Institution.</span></h1>
+          <p class="hero-subtitle">Traditional investment options force you to choose between safety, liquidity, and consistent returns. Freedom Fund delivers all three through institutional relationships cultivated over decades.</p>
           <div class="hero-buttons">
-            <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Put Your Cash to Work →</a>
-            <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+            <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Get Financial Freedom Flowing →</a>
+            <a href="#solutions" class="btn btn-secondary">Explore Our 3 Funds</a>
           </div>
         </div>
         <div class="floating-card">
-          <h4>Under Partner Management</h4>
-          <div class="floating-stat">~$500M</div>
-          <p>Institutional relationships cultivated over decades</p>
+          <h4>Investor Renewal Rate</h4>
+          <div class="floating-stat">94.44%</div>
+          <p>Capital renewed after first term</p>
           <div class="app-badge">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
             Mobile App Coming Soon
@@ -417,231 +564,132 @@
     </div>
   </section>
 
-  <!-- Stats -->
   <section class="stats">
     <div class="container">
       <div class="stats-container">
-        <div class="stat"><div class="stat-value"><span>~6%</span></div><p>Annual Yield</p></div>
-        <div class="stat"><div class="stat-value"><span>SEC</span></div><p>Registered & Compliant</p></div>
-        <div class="stat"><div class="stat-value"><span>5-Day</span></div><p>Liquidity</p></div>
         <div class="stat"><div class="stat-value"><span>94%</span></div><p>Capital Renewal Rate</p></div>
+        <div class="stat"><div class="stat-value"><span>SEC</span></div><p>Registered & Compliant</p></div>
+        <div class="stat"><div class="stat-value"><span>100%</span></div><p>Fully Passive & Diversified</p></div>
+        <div class="stat"><div class="stat-value"><span>3</span></div><p>Fund Options</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Fund Showcase -->
-  <section class="fund-showcase" id="fund">
+  <section class="solutions" id="solutions">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Our Fund</span>
-        <h2>One Fund. The Only One Your Cash Needs.</h2>
-        <p>6% yield, 5-day liquidity, and zero speculation through institutional relationships most investors never get access to.</p>
+        <span class="section-label">3 Investment Solutions</span>
+        <h2>Safety, Liquidity, and Consistent Returns. Finally, All Three.</h2>
+        <p>Choose the fund that fits your financial goals.</p>
       </div>
-      <div class="fund-card">
-        <div class="fund-card-top">
-          <div class="fund-card-left">
-            <div class="fund-tagline">Preserve & Protect</div>
+      <div class="solutions-grid">
+        <div class="solution-card best-in-class" id="cashCard">
+          <div class="best-in-class-banner">Best in Class</div>
+          <div class="card-header" onclick="toggleCard('cashCard')">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2"/>
+                <path d="M2 9v1c0 1.1.9 2 2 2h1"/>
+                <circle cx="16" cy="11" r="1"/>
+              </svg>
+            </div>
+            <div class="tagline">Preserve & Protect</div>
             <h3>Cash Reserves Fund</h3>
-            <p>Safety, liquidity, and consistent returns without compromise. Put your idle cash to work through institutional relationships most investors never get access to.</p>
-            <div class="growth-visual">
-              <div class="growth-visual-header">
-                <span>Simulated Growth</span>
-                <span>12 Months</span>
-              </div>
-              <div class="growth-amounts-row">
-                <div class="growth-amount" id="growthAmount">$100,000</div>
-                <div class="growth-return" id="growthReturn">+$0</div>
-              </div>
-              <div class="growth-legend">
-                <div class="growth-legend-item"><div class="growth-legend-dot initial"></div>Initial Investment</div>
-                <div class="growth-legend-item"><div class="growth-legend-dot returns"></div>Returns</div>
-              </div>
-              <div class="growth-chart-wrapper">
-                <svg viewBox="0 0 300 110" preserveAspectRatio="none" id="growthSvg">
-                  <defs>
-                    <linearGradient id="returnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" style="stop-color:rgba(198,183,122,0.6)"/>
-                      <stop offset="100%" style="stop-color:rgba(198,183,122,0.15)"/>
-                    </linearGradient>
-                    <linearGradient id="baseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" style="stop-color:rgba(11,30,50,0.12)"/>
-                      <stop offset="100%" style="stop-color:rgba(11,30,50,0.04)"/>
-                    </linearGradient>
-                  </defs>
-                  <rect class="growth-base-anim" x="0" y="30" width="300" height="80" fill="url(#baseGrad)" rx="0"/>
-                  <line class="growth-base-anim" x1="0" y1="30" x2="300" y2="30" stroke="rgba(11,30,50,0.1)" stroke-width="1" stroke-dasharray="4,4"/>
-                  <path class="growth-fill-anim" d="M0,30 L25,29.5 L50,28.5 L75,27 L100,25 L125,22.5 L150,19.5 L175,16 L200,12 L225,8 L250,5 L275,2.5 L300,1 L300,30 L0,30 Z" fill="url(#returnGrad)"/>
-                  <path class="growth-line-anim" d="M0,30 L25,29.5 L50,28.5 L75,27 L100,25 L125,22.5 L150,19.5 L175,16 L200,12 L225,8 L250,5 L275,2.5 L300,1" fill="none" stroke="#c6b77a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle class="growth-dot-ring" cx="300" cy="1" r="6" fill="none" stroke="rgba(198,183,122,0.4)" stroke-width="2"/>
-                  <circle class="growth-dot" cx="300" cy="1" r="3.5" fill="#c6b77a"/>
-                  <text class="growth-base-anim" x="6" y="44" font-size="7" fill="rgba(11,30,50,0.35)" font-family="IBM Plex Sans, sans-serif" font-weight="500">$100,000 invested</text>
-                </svg>
-              </div>
-              <div class="growth-months">
-                <span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span><span>Dec</span>
+            <p>Preserve capital with liquidity and stability. Ideal for investors seeking consistent, low-risk returns while maintaining easy access to funds.</p>
+          </div>
+          <div class="expand-indicator" onclick="toggleCard('cashCard')">
+            <span>View Details</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="card-details" style="height:0;visibility:hidden;overflow:hidden;">
+            <div class="card-details-inner">
+              <h4>Fund Highlights</h4>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Zero Speculative Exposure</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Ultra-Low Volatility/Risk</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>5+ Years Partnership experience with investment model</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>$500M under partner management</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>~6% Yield based on AUM</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>5-day Liquidity</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Rule 506(c) Private Debt Fund</li>
+              </ul>
+              <div class="card-actions">
+                <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Schedule a Call</a>
+                <a href="https://invest.freedomfund.io/fund25" class="btn btn-outline">View Investor Deck</a>
               </div>
             </div>
           </div>
-          <div class="fund-card-right">
-            <div class="fund-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>Zero Speculative Exposure</strong></span>
+        </div>
+
+        <div class="solution-card coming-soon" id="growthCard">
+          <div class="coming-soon-banner">Coming Soon</div>
+          <div class="card-header" onclick="toggleCard('growthCard')">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/><circle cx="20" cy="9" r="2"/><path d="M20 9v5"/>
+              </svg>
             </div>
-            <div class="fund-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>Ultra-Low Volatility</strong> / Risk</span>
-            </div>
-            <div class="fund-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>5-Day Liquidity</strong> — access your capital fast</span>
-            </div>
-            <div class="fund-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>~$500M</strong> under partner management</span>
-            </div>
-            <div class="fund-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>5+ Years</strong> partnership experience</span>
-            </div>
-            <div class="fund-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>~6% Yield</strong> based on AUM</span>
-            </div>
-            <div class="fund-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>SEC</strong> Compliant & Registered</span>
+            <div class="tagline">Build Long-Term Wealth</div>
+            <h3>Growth Fund</h3>
+            <p>Build long-term wealth through diversified growth strategies. Designed for investors with a longer horizon seeking higher return potential.</p>
+          </div>
+          <div class="expand-indicator" onclick="toggleCard('growthCard')">
+            <span>View Details</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="card-details" style="height:0;visibility:hidden;overflow:hidden;">
+            <div class="card-details-inner">
+              <h4>Fund Highlights</h4>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Capital Used for Real Estate Projects</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>12-15% Yield</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>12-30 Month Commitment</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>A Rule 506(c) Private Debt Fund</li>
+              </ul>
+              <div class="card-actions">
+                <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Schedule a Call</a>
+                <a href="https://invest.freedomfund.io/fund26" class="btn btn-outline">View Investor Deck</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="fund-card-bottom">
-          <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Schedule a Call</a>
-          <a href="https://invest.freedomfund.io/fund25" class="btn btn-outline">View Investor Deck</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Comparison Table -->
-  <section class="comparison" id="compare">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Compare</span>
-        <h2>See How We Stack Up</h2>
-        <p>Freedom Fund vs. the alternatives your cash is sitting in today.</p>
-      </div>
-      <div class="comparison-table">
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th class="highlight">
-                <img src="./assets/freedom1.png" alt="Freedom Fund" style="height:20px;width:auto;display:block;margin:0 auto 6px;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
-                Cash Reserves
-              </th>
-              <th class="col-2">Money<br>Market</th>
-              <th class="col-3">CDs</th>
-              <th class="col-4">High-Yield<br>Savings</th>
-              <th class="col-5">Treasury<br>Bills</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Annual Yield</td>
-              <td class="highlight"><strong>6%</strong></td>
-              <td class="col-2">3.9%</td>
-              <td class="col-3">3.4%</td>
-              <td class="col-4">3.2%</td>
-              <td class="col-5">2.0%</td>
-            </tr>
-            <tr>
-              <td>Quick Liquidity</td>
-              <td class="highlight"><span class="check-icon">✓</span> 5 days</td>
-              <td class="col-2"><span class="check-icon">✓</span></td>
-              <td class="col-3"><span class="x-icon">✗</span></td>
-              <td class="col-4"><span class="check-icon">✓</span></td>
-              <td class="col-5"><span class="x-icon">✗</span></td>
-            </tr>
-            <tr>
-              <td>No Market Movement Exposure</td>
-              <td class="highlight"><span class="check-icon">✓</span></td>
-              <td class="col-2"><span class="x-icon">✗</span></td>
-              <td class="col-3"><span class="check-icon">✓</span></td>
-              <td class="col-4"><span class="check-icon">✓</span></td>
-              <td class="col-5"><span class="x-icon">✗</span></td>
-            </tr>
-            <tr>
-              <td>Fixed Rate</td>
-              <td class="highlight"><span class="check-icon">✓</span></td>
-              <td class="col-2"><span class="x-icon">✗</span></td>
-              <td class="col-3"><span class="check-icon">✓</span></td>
-              <td class="col-4"><span class="x-icon">✗</span></td>
-              <td class="col-5"><span class="check-icon">✓</span></td>
-            </tr>
-            <tr>
-              <td>Fully Passive</td>
-              <td class="highlight"><span class="check-icon">✓</span></td>
-              <td class="col-2"><span class="check-icon">✓</span></td>
-              <td class="col-3"><span class="check-icon">✓</span></td>
-              <td class="col-4"><span class="check-icon">✓</span></td>
-              <td class="col-5"><span class="check-icon">✓</span></td>
-            </tr>
-            <tr>
-              <td>Cash Access with One Click</td>
-              <td class="highlight"><span class="check-icon">✓</span></td>
-              <td class="col-2"><span class="x-icon">✗</span></td>
-              <td class="col-3"><span class="x-icon">✗</span></td>
-              <td class="col-4"><span class="check-icon">✓</span></td>
-              <td class="col-5"><span class="x-icon">✗</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="how-it-works" id="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">How It Works</span>
-        <h2>A Simple, Transparent Process</h2>
-        <p>From introduction to investment in four straightforward steps.</p>
-      </div>
-      <div class="steps">
-        <div class="step"><div class="step-number">1</div><h3>Schedule a Call</h3><p>Meet with our team to discuss your goals and learn how the Cash Reserves Fund works.</p></div>
-        <div class="step"><div class="step-number">2</div><h3>Review the Offering</h3><p>Receive detailed materials including the Private Placement Memorandum and fund documentation.</p></div>
-        <div class="step"><div class="step-number">3</div><h3>Fund Your Account</h3><p>Complete your investment through our secure process with full transparency at every step.</p></div>
-        <div class="step"><div class="step-number">4</div><h3>Track Performance</h3><p>Monitor your investment with real-time updates and complete visibility.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Trust / Why Us -->
-  <section class="trust" id="why-us">
-    <div class="container">
-      <div class="trust-grid">
-        <div class="trust-content">
-          <span class="section-label">Why Freedom Fund</span>
-          <h2>We Have Skin in the Game</h2>
-          <p>Our principals invest their own capital in the fund, validating performance before we extend access to clients.</p>
-          <ul class="trust-list">
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Purpose-Built for Cash Investors</span></li>
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Fully Passive and Diversified</span></li>
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>SEC Registered & Fully Compliant</span></li>
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Mobile App Coming Soon</span></li>
-          </ul>
-        </div>
-        <div class="trust-visual">
-          <div class="trust-card">
-            <div class="big-stat">94.44%</div>
-            <p>Investor capital renewal rate after first term</p>
+        <div class="solution-card fund-full" id="lendCard">
+          <div class="fund-full-banner">Fund Full</div>
+          <div class="card-header" onclick="toggleCard('lendCard')">
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20"/><path d="M6 16h4"/><path d="M14 16h4"/>
+              </svg>
+            </div>
+            <div class="tagline">Generate Consistent Income</div>
+            <h3>Lending Fund</h3>
+            <p>Generate income through secured lending strategies. Benefit from consistent cash flow backed by real assets and institutional underwriting.</p>
+          </div>
+          <div class="expand-indicator" onclick="toggleCard('lendCard')">
+            <span>View Details</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="card-details" style="height:0;visibility:hidden;overflow:hidden;">
+            <div class="card-details-inner">
+              <h4>Fund Highlights</h4>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Real Estate backed hard money lending</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>5 years, 240+ projects, zero defaults</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Strict Underwriting Process</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>A Rule 506(b) Private Debt Fund</li>
+              </ul>
+              <div class="card-actions">
+                <a href="contact.html" class="btn btn-gold-outline">Notify Me When Available</a>
+                <a href="https://invest.freedomfund.io/fund24" class="btn btn-outline">View Investor Deck</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- App Preview -->
   <section class="app-preview" id="app">
     <div class="grid-pattern"></div>
     <div class="container">
@@ -669,7 +717,7 @@
                 <p class="app-subtitle-phone">Track your portfolio performance</p>
                 <div class="portfolio-card-phone">
                   <div class="card-header-phone">
-                    <div class="card-label-phone">Cash Reserves</div>
+                    <div class="card-label-phone">Growth Portfolio</div>
                     <div class="card-value-group-phone">
                       <div class="card-value-label-phone">Current Value</div>
                       <div class="card-value-phone">$258,857</div>
@@ -678,7 +726,7 @@
                   <div class="stats-row-phone">
                     <div class="stat-box-phone"><div class="stat-label-phone">Invested</div><div class="stat-value-phone">$250,000</div></div>
                     <div class="stat-box-phone"><div class="stat-label-phone">Returns</div><div class="stat-value-phone positive">+$8,857</div></div>
-                    <div class="stat-box-phone"><div class="stat-label-phone">Return %</div><div class="stat-value-phone gold">6.0%</div></div>
+                    <div class="stat-box-phone"><div class="stat-label-phone">Return %</div><div class="stat-value-phone gold">6.125%</div></div>
                   </div>
                   <div class="chart-header-phone"><div class="chart-toggle-phone"></div><span class="chart-label-phone">7-Month Performance</span></div>
                   <div class="chart-container-phone">
@@ -715,7 +763,46 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">How It Works</span>
+        <h2>A Simple, Transparent Process</h2>
+        <p>From introduction to investment in four straightforward steps.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-number">1</div><h3>Schedule a Call</h3><p>Meet with our team to discuss your goals and explore which fund fits your needs.</p></div>
+        <div class="step"><div class="step-number">2</div><h3>Review the Offering</h3><p>Receive detailed materials including the Private Placement Memorandum and fund documentation.</p></div>
+        <div class="step"><div class="step-number">3</div><h3>Fund Your Account</h3><p>Complete your investment through our secure process with full transparency at every step.</p></div>
+        <div class="step"><div class="step-number">4</div><h3>Track Performance</h3><p>Monitor your investments with real-time updates and complete visibility.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust" id="why-us">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-content">
+          <span class="section-label">Why Freedom Fund</span>
+          <h2>We Have Skin in the Game</h2>
+          <p>Our principals invest their own capital in every fund we offer, validating performance before we extend access to clients.</p>
+          <ul class="trust-list">
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>3 Fund Options Designed for Investors by Investors</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>All Funds are Fully Passive and Diversified</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>SEC Registered & Fully Compliant</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Mobile App Coming Soon</span></li>
+          </ul>
+        </div>
+        <div class="trust-visual">
+          <div class="trust-card">
+            <div class="big-stat">94.44%</div>
+            <p>Investor capital renewal rate after first term</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="testimonials" id="testimonials">
     <div class="container">
       <div class="section-header">
@@ -758,24 +845,21 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta">
     <div class="cta-content">
       <span class="section-label">Get Started</span>
-      <h2>Put Your Cash to Work</h2>
-      <p>Schedule a consultation to see how the Cash Reserves Fund can make your money work harder — without the risk.</p>
+      <h2>Get Financial Freedom Flowing</h2>
+      <p>Schedule a consultation to explore how Freedom Fund can help you achieve your investment goals.</p>
       <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-dark">Meet With Us →</a>
     </div>
   </section>
 
-  <!-- Disclosure -->
   <div class="disclosure">
     <div class="container">
       <p>This presentation is intended as a general summary and should not be solely relied upon for any legal or investment decisions by prospective investors. All investment details, terms, and conditions are outlined in the Private Placement Memorandum (PPM) that is filed with the U.S. Securities and Exchange Commission.</p>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-content">
@@ -796,118 +880,76 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Freedom Fund. All rights reserved.</p>
+        <p>© 2026 Freedom Fund. All rights reserved.</p>
         <a href="terms.html">Terms & Conditions</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // Nav scroll
-    window.addEventListener('scroll', () => {
-      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // Mobile menu
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenuBtn.classList.toggle('active');
-      mobileNav.classList.toggle('active');
-      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-    });
-    function closeMobileMenu() {
-      mobileMenuBtn.classList.remove('active');
-      mobileNav.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    // Growth animation
-    function animateGrowth() {
-      const amountEl = document.getElementById('growthAmount');
-      const returnEl = document.getElementById('growthReturn');
-      const startVal = 100000;
-      const endVal = 106000;
-      const duration = 2800;
-      const startTime = performance.now();
-      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
-      function update(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = easeOutCubic(progress);
-        const current = Math.round(startVal + (endVal - startVal) * eased);
-        const gain = current - startVal;
-        const pct = ((gain / startVal) * 100).toFixed(2);
-        amountEl.textContent = '$' + current.toLocaleString();
-        returnEl.textContent = '+$' + gain.toLocaleString() + ' (' + pct + '%)';
-        if (progress < 1) requestAnimationFrame(update);
-      }
-      setTimeout(() => requestAnimationFrame(update), 600);
-    }
-    const growthVisual = document.querySelector('.growth-visual');
-    let hasAnimated = false;
-    const growthObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !hasAnimated) {
-          hasAnimated = true;
-          animateGrowth();
-          growthVisual.querySelectorAll('.growth-line-anim, .growth-fill-anim, .growth-base-anim, .growth-dot, .growth-dot-ring').forEach(el => {
-            const clone = el.cloneNode(true);
-            el.parentNode.replaceChild(clone, el);
-          });
-        }
-      });
-    }, { threshold: 0.5 });
-    growthObserver.observe(growthVisual);
-
-    // Testimonial Carousel
+    window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)});
+    const mobileMenuBtn=document.getElementById('mobileMenuBtn'),mobileNav=document.getElementById('mobileNav');
+    mobileMenuBtn.addEventListener('click',()=>{mobileMenuBtn.classList.toggle('active');mobileNav.classList.toggle('active');document.body.style.overflow=mobileNav.classList.contains('active')?'hidden':''});
+    function closeMobileMenu(){mobileMenuBtn.classList.remove('active');mobileNav.classList.remove('active');document.body.style.overflow=''}
+    function toggleCard(id){const card=document.getElementById(id),wasExpanded=card.classList.contains('expanded');document.querySelectorAll('.solution-card').forEach(c=>{c.classList.remove('expanded');const d=c.querySelector('.card-details');if(d){d.style.height='0';d.style.visibility='hidden'}});if(!wasExpanded){card.classList.add('expanded');const details=card.querySelector('.card-details');if(details){details.style.height='auto';details.style.visibility='visible'}}}
+    document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.card-details').forEach(d=>{d.style.height='0';d.style.visibility='hidden'})});
+  
+    // Testimonial Carousel - Infinite Loop
     const track = document.getElementById('testimonialTrack');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    
     const gap = 24;
     const originalCards = 6;
     let currentIndex = 0;
     let autoScrollInterval;
     let isTransitioning = false;
-
+  
     function getVisibleCards() {
       return window.innerWidth < 600 ? 1 : window.innerWidth < 1024 ? 2 : 3;
     }
-
+  
     function getCardWidth() {
-      const carousel = document.querySelector('.testimonial-carousel');
-      if (window.innerWidth < 600) return carousel.offsetWidth;
-      const visibleCards = getVisibleCards();
-      return (carousel.offsetWidth - (gap * (visibleCards - 1))) / visibleCards;
-    }
-
-    function setupCards() {
-      if (window.innerWidth >= 600) {
-        const cardWidth = getCardWidth();
-        track.querySelectorAll('.testimonial-card').forEach(card => {
-          card.style.width = cardWidth + 'px';
-          card.style.flex = `0 0 ${cardWidth}px`;
-        });
-      } else {
-        track.querySelectorAll('.testimonial-card').forEach(card => {
-          card.style.width = '';
-          card.style.flex = '';
-        });
-      }
-    }
-
+  const carousel = document.querySelector('.testimonial-carousel');
+  if (window.innerWidth < 600) {
+    return carousel.offsetWidth;
+  }
+  const visibleCards = getVisibleCards();
+  const carouselWidth = carousel.offsetWidth;
+  return (carouselWidth - (gap * (visibleCards - 1))) / visibleCards;
+}
+  
+function setupCards() {
+  if (window.innerWidth >= 600) {
+    const cardWidth = getCardWidth();
+    const cards = track.querySelectorAll('.testimonial-card');
+    cards.forEach(card => {
+      card.style.width = cardWidth + 'px';
+      card.style.flex = `0 0 ${cardWidth}px`;
+    });
+  } else {
+    const cards = track.querySelectorAll('.testimonial-card');
+    cards.forEach(card => {
+      card.style.width = '';
+      card.style.flex = '';
+    });
+  }
+}
+  
     function updateCarousel(animate = true) {
       const cardWidth = getCardWidth();
       const offset = currentIndex * (cardWidth + gap);
       track.style.transition = animate ? 'transform 0.5s ease' : 'none';
       track.style.transform = `translateX(-${offset}px)`;
     }
-
+  
     function nextSlide() {
       if (isTransitioning) return;
       isTransitioning = true;
+      
       currentIndex++;
       updateCarousel(true);
+      
       setTimeout(() => {
         if (currentIndex >= originalCards) {
           currentIndex = 0;
@@ -916,10 +958,11 @@
         isTransitioning = false;
       }, 500);
     }
-
+  
     function prevSlide() {
       if (isTransitioning) return;
       isTransitioning = true;
+      
       if (currentIndex === 0) {
         currentIndex = originalCards;
         updateCarousel(false);
@@ -934,29 +977,34 @@
         setTimeout(() => { isTransitioning = false; }, 500);
       }
     }
-
+  
     function startAutoScroll() {
       stopAutoScroll();
       autoScrollInterval = setInterval(nextSlide, 5500);
     }
+  
     function stopAutoScroll() {
       if (autoScrollInterval) clearInterval(autoScrollInterval);
     }
-
+  
+    // Clone cards for infinite loop
     function setupInfiniteLoop() {
       const cards = track.querySelectorAll('.testimonial-card');
       const visibleCards = getVisibleCards();
+      
+      // Clone first cards and append to end
       for (let i = 0; i < visibleCards; i++) {
         const clone = cards[i].cloneNode(true);
         track.appendChild(clone);
       }
     }
-
+  
     prevBtn.addEventListener('click', () => { stopAutoScroll(); prevSlide(); startAutoScroll(); });
     nextBtn.addEventListener('click', () => { stopAutoScroll(); nextSlide(); startAutoScroll(); });
     track.addEventListener('mouseenter', stopAutoScroll);
     track.addEventListener('mouseleave', startAutoScroll);
-
+  
+    // Touch support
     let touchStartX = 0;
     track.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; stopAutoScroll(); }, { passive: true });
     track.addEventListener('touchend', (e) => {
@@ -964,17 +1012,42 @@
       if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
       startAutoScroll();
     }, { passive: true });
-
+  
+    // Resize
     window.addEventListener('resize', () => {
       setupCards();
       currentIndex = Math.min(currentIndex, originalCards - 1);
       updateCarousel(false);
     });
-
+  
+    // Initialize
     setupInfiniteLoop();
     setupCards();
     updateCarousel(false);
     startAutoScroll();
+
+// Direct link to fund cards via URL hash
+function openCardFromHash() {
+  const hash = window.location.hash.replace('#', '');
+  const validCards = ['cashCard', 'growthCard', 'lendCard'];
+  
+  if (validCards.includes(hash)) {
+    setTimeout(() => {
+      const card = document.getElementById(hash);
+      if (card) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => toggleCard(hash), 500);
+      }
+    }, 300);
+  }
+}
+
+// Run on page load
+window.addEventListener('DOMContentLoaded', openCardFromHash);
+
+// Run if hash changes while on page
+window.addEventListener('hashchange', openCardFromHash);
+
   </script>
 </body>
 </html>
