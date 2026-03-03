@@ -620,7 +620,11 @@
   <footer>
     <div class="container">
       <div class="footer-content">
-        <div class="footer-brand"><a href="#" class="logo"><img src="./assets/freedom1.png" alt="Freedom Fund" style="max-width: 250px;"></a></div>
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="./assets/freedom1.png" alt="Freedom Fund" style="max-width: 250px;">
+          </a>
+        </div>
         <div class="footer-contact">
           <a href="tel:801-218-3504">801-218-3504</a>
           <a href="mailto:info@freedomfund.io">info@freedomfund.io</a>
@@ -633,17 +637,26 @@
           <span>DUNS: 117985322</span>
         </div>
         <div class="footer-legal">
-          <span>SEC Registered & Compliant</span>
+          <span>SEC Registered &amp; Compliant</span>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Freedom Fund. All rights reserved.</p>
-        <a href="terms.html">Terms & Conditions</a>
+        <p>© 2026 Freedom Fund. All rights reserved.</p>
+        <div style="display:flex; gap: 24px;">
+          <a href="terms.html" style="color: var(--gold); text-decoration: none; font-size: 0.85rem;">Terms &amp; Conditions</a>
+          <a href="privacy.html" style="color: var(--gold); text-decoration: none; font-size: 0.85rem;">Privacy Policy</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
+    //redirect
+
+    if (location.pathname === "/about.html") {
+  location.replace("/");
+}
+
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileNav = document.getElementById('mobileNav');
 
