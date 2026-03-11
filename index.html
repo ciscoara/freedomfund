@@ -263,7 +263,7 @@
     .trust-card .big-stat { font-size: 5rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 14px; position: relative; }
     .trust-card p { color: var(--slate-light); font-size: 1.1rem; position: relative; }
 
-    /* App Preview */
+    /*App Preview */ 
     .app-preview { padding: 120px 0; background: var(--navy); position: relative; overflow: hidden; }
     .app-preview .grid-pattern { opacity: 0.5; }
     .app-preview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
@@ -318,6 +318,51 @@
     .nav-item-phone.active .nav-icon-phone { stroke: var(--gold); }
     .nav-label-phone { font-size: 7px; color: var(--slate-light); }
     .nav-item-phone.active .nav-label-phone { color: var(--gold); }
+
+/* Video Mock */
+
+.app-mockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+.video-frame {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.45);
+}
+
+.app-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+
+.app-store-badge {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.appstore-img {
+  height: 52px;
+  width: auto;
+  display: block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.appstore-img:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
 
     /* Testimonials */
     .testimonials { padding: 120px 0; background: var(--warm-white); overflow: hidden; }
@@ -729,57 +774,43 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Direct communication with our team</li>
           </ul>
         </div>
-        <div class="app-mockup">
-          <div class="phone-frame">
-            <div class="phone-button mute-switch"></div>
-            <div class="phone-button volume-up"></div>
-            <div class="phone-button volume-down"></div>
-            <div class="phone-screen">
-              <div class="app-header-phone"><img src="./assets/freedom1.png" alt="Freedom Fund" class="app-logo-phone"></div>
-              <div class="app-content-phone">
-                <h1 class="app-title-phone">Investment Accounts</h1>
-                <p class="app-subtitle-phone">Track your portfolio performance</p>
-                <div class="portfolio-card-phone">
-                  <div class="card-header-phone">
-                    <div class="card-label-phone">Cash Reserves</div>
-                    <div class="card-value-group-phone">
-                      <div class="card-value-label-phone">Current Value</div>
-                      <div class="card-value-phone">$258,857</div>
-                    </div>
-                  </div>
-                  <div class="stats-row-phone">
-                    <div class="stat-box-phone"><div class="stat-label-phone">Invested</div><div class="stat-value-phone">$250,000</div></div>
-                    <div class="stat-box-phone"><div class="stat-label-phone">Returns</div><div class="stat-value-phone positive">+$8,857</div></div>
-                    <div class="stat-box-phone"><div class="stat-label-phone">Return %</div><div class="stat-value-phone gold">6.0%</div></div>
-                  </div>
-                  <div class="chart-header-phone"><div class="chart-toggle-phone"></div><span class="chart-label-phone">7-Month Performance</span></div>
-                  <div class="chart-container-phone">
-                    <div class="chart-y-axis-phone"><span>$258k</span><span>$256k</span><span>$254k</span><span>$252k</span><span>$250k</span></div>
-                    <div class="chart-area-phone">
-                      <div class="chart-grid-line-phone" style="top:0%"></div>
-                      <div class="chart-grid-line-phone" style="top:25%"></div>
-                      <div class="chart-grid-line-phone" style="top:50%"></div>
-                      <div class="chart-grid-line-phone" style="top:75%"></div>
-                      <div class="chart-line-phone">
-                        <svg viewBox="0 0 200 100" preserveAspectRatio="none">
-                          <defs><linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgba(198,183,122,0.3)"/><stop offset="100%" style="stop-color:rgba(198,183,122,0)"/></linearGradient></defs>
-                          <path d="M0,100 L0,95 L33,92 L66,88 L100,75 L133,50 L166,30 L200,10 L200,100 Z" fill="url(#lineGradient)"/>
-                          <path d="M0,95 L33,92 L66,88 L100,75 L133,50 L166,30 L200,10" fill="none" stroke="#c6b77a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                          <circle cx="200" cy="10" r="4" fill="#c6b77a"/>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="chart-x-axis-phone"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span></div>
-                  </div>
-                </div>
+
+<!-- Video -->
+<div class="app-mockup">
+  <div class="video-frame">
+    <video
+      class="app-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      controls
+      preload="metadata"
+    >
+      <source src="./assets/freedomfund-demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="app-store-badge">
+    <a
+      href="https://apps.apple.com/us/app/freedom-fund/id6759612514
+      Freedom Fund"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Download on the App Store"
+    >
+      <img
+        src="./assets/appstore.svg"
+        alt="Download on the App Store"
+        class="appstore-img"
+      >
+    </a>
+  </div>
+</div>
+
               </div>
-              <div class="app-nav-phone">
-                <div class="nav-item-phone"><svg class="nav-icon-phone" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span class="nav-label-phone">Home</span></div>
-                <div class="nav-item-phone active"><svg class="nav-icon-phone" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg><span class="nav-label-phone">Accounts</span></div>
-                <div class="nav-item-phone"><svg class="nav-icon-phone" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span class="nav-label-phone">Invest</span></div>
-                <div class="nav-item-phone"><svg class="nav-icon-phone" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span class="nav-label-phone">What If</span></div>
-                <div class="nav-item-phone"><svg class="nav-icon-phone" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span class="nav-label-phone">Profile</span></div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -851,11 +882,7 @@
   <footer>
     <div class="container">
       <div class="footer-content">
-        <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <img src="./assets/freedom1.png" alt="Freedom Fund" style="max-width: 250px;">
-          </a>
-        </div>
+        <div class="footer-brand"><a href="#" class="logo"><img src="./assets/freedom1.png" alt="Freedom Fund" style="max-width: 250px;"></a></div>
         <div class="footer-contact">
           <a href="tel:801-218-3504">801-218-3504</a>
           <a href="mailto:info@freedomfund.io">info@freedomfund.io</a>
@@ -868,15 +895,12 @@
           <span>DUNS: 117985322</span>
         </div>
         <div class="footer-legal">
-          <span>SEC Registered &amp; Compliant</span>
+          <span>SEC Registered & Compliant</span>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Freedom Fund. All rights reserved.</p>
-        <div style="display:flex; gap: 24px;">
-          <a href="terms.html" style="color: var(--gold); text-decoration: none; font-size: 0.85rem;">Terms &amp; Conditions</a>
-          <a href="privacy.html" style="color: var(--gold); text-decoration: none; font-size: 0.85rem;">Privacy Policy</a>
-        </div>
+        <p>&copy; 2026 Freedom Fund. All rights reserved.</p>
+        <a href="terms.html">Terms & Conditions</a>
       </div>
     </div>
   </footer>
