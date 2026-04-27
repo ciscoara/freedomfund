@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="About Freedom Fund - Our story, mission, and leadership team.">
   <title>About Us | Freedom Fund</title>
-  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -21,8 +21,10 @@
       --warm-white: #FAF9F7;
       --white: #ffffff;
     }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       font-family: 'IBM Plex Sans', -apple-system, sans-serif;
       font-weight: 400;
@@ -30,15 +32,19 @@
       line-height: 1.6;
       background: var(--white);
     }
+
     h1, h2, h3 { font-weight: 600; line-height: 1.15; letter-spacing: -0.03em; }
     h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
     h2 { font-size: clamp(2rem, 4vw, 3rem); }
     h3 { font-size: 1.35rem; font-weight: 500; }
     p { color: var(--slate); }
     a { color: var(--gold); }
+
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* Navigation */
+    /* ========================================
+       Navigation
+       ======================================== */
     nav {
       position: fixed;
       top: 0;
@@ -74,6 +80,8 @@
     }
     .nav-links a:hover { color: var(--white); }
     .nav-links .btn-primary { color: #0b1e32 !important; }
+
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -87,19 +95,12 @@
       cursor: pointer;
       border: none;
     }
-    .btn-primary {
-      background: var(--gold);
-      color: var(--navy);
-    }
+    .btn-primary { background: var(--gold); color: var(--navy); }
     .btn-primary:hover { transform: translateY(-2px); }
-    .btn-dark {
-      background: var(--navy);
-      color: var(--white);
-    }
-    .btn-dark:hover {
-      background: var(--navy-light);
-      transform: translateY(-2px);
-    }
+    .btn-dark { background: var(--navy); color: var(--white); }
+    .btn-dark:hover { background: var(--navy-light); transform: translateY(-2px); }
+
+    /* Mobile Menu */
     .mobile-menu-btn {
       display: none;
       background: none;
@@ -148,7 +149,9 @@
       box-shadow: 0 4px 20px rgba(198, 183, 122, 0.4);
     }
 
-    /* Hero */
+    /* ========================================
+       Hero
+       ======================================== */
     .page-hero {
       padding: 160px 0 100px;
       background: var(--navy);
@@ -231,13 +234,17 @@
     .page-hero h1 { color: var(--white); margin-bottom: 24px; }
     .page-hero p { font-size: 1.25rem; line-height: 1.7; color: var(--slate-light); }
 
-    /* Story Section */
+    /* ========================================
+       Story Section
+       ======================================== */
     .story { padding: 120px 0; background: var(--white); }
     .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     .story-content h2 { margin-bottom: 28px; }
     .story-content p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; }
     .story-visual { position: relative; height: 400px; display: flex; align-items: center; justify-content: center; }
     .flow-container { position: relative; width: 100%; height: 100%; overflow: visible; }
+
+    /* Flow arcs */
     .flow-arc { position: absolute; top: 50%; left: 50%; border-radius: 50%; border: 2px solid transparent; }
     .flow-arc-1 { width: 320px; height: 180px; margin: -90px 0 0 -160px; border-color: rgba(198, 183, 122, 0.5); border-right-color: transparent; border-bottom-color: transparent; transform: rotate(-20deg); animation: sway1 5s ease-in-out infinite; }
     .flow-arc-1::before { content: ''; position: absolute; top: -6px; left: 30%; width: 12px; height: 12px; background: var(--gold-bright); border-radius: 50%; box-shadow: 0 0 20px var(--gold), 0 0 40px var(--gold); }
@@ -247,10 +254,14 @@
     .flow-arc-4 { width: 200px; height: 260px; margin: -130px 0 0 -100px; border-color: rgba(198, 183, 122, 0.2); border-top-color: transparent; border-right-color: transparent; transform: rotate(40deg); animation: sway4 8s ease-in-out infinite; }
     .flow-arc-4::before { content: ''; position: absolute; left: -4px; top: 40%; width: 8px; height: 8px; background: rgba(198, 183, 122, 0.9); border-radius: 50%; box-shadow: 0 0 12px var(--gold); }
     .flow-line { position: absolute; top: 50%; left: 50%; width: 200px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); transform: translate(-50%, -50%) rotate(-30deg); animation: shimmer 1.5s ease-in-out infinite; }
+
+    /* Flow glows */
     .flow-glow { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.35; }
     .flow-glow-1 { width: 250px; height: 250px; background: var(--gold); top: 50%; left: 50%; transform: translate(-50%, -50%); animation: breathe 3s ease-in-out infinite; }
     .flow-glow-2 { width: 120px; height: 120px; background: var(--navy-light); top: 15%; right: 15%; animation: float1 4s ease-in-out infinite; }
     .flow-glow-3 { width: 80px; height: 80px; background: var(--gold-bright); bottom: 20%; left: 20%; animation: float2 5s ease-in-out infinite; }
+
+    /* Flow animations */
     @keyframes sway1 { 0%, 100% { transform: rotate(-20deg) translateY(0); } 50% { transform: rotate(-15deg) translateY(-15px); } }
     @keyframes sway2 { 0%, 100% { transform: rotate(15deg) translateX(0); } 50% { transform: rotate(20deg) translateX(10px); } }
     @keyframes sway3 { 0%, 100% { transform: rotate(-5deg) translateY(0); } 50% { transform: rotate(0deg) translateY(10px); } }
@@ -260,43 +271,104 @@
     @keyframes float1 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-15px, 15px); } }
     @keyframes float2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(20px, -10px); } }
 
-    /* Mission Section */
+    /* ========================================
+       Mission / Values Section
+       ======================================== */
     .mission { padding: 120px 0; background: var(--warm-white); }
     .mission-header { text-align: center; max-width: 800px; margin: 0 auto 80px; }
     .mission-header h2 { margin-bottom: 20px; }
     .mission-header p { font-size: 1.2rem; line-height: 1.7; }
     .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    .value-card { background: var(--white); border-radius: 20px; padding: 40px; text-align: center; border: 1px solid rgba(11, 30, 50, 0.08); transition: all 0.3s ease; }
+    .value-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      border: 1px solid rgba(11, 30, 50, 0.08);
+      transition: all 0.3s ease;
+    }
     .value-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(11, 30, 50, 0.1); }
-    .value-icon { width: 72px; height: 72px; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+    .value-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
     .value-icon svg { width: 32px; height: 32px; stroke: var(--gold); }
     .value-card h3 { color: var(--navy); margin-bottom: 12px; }
     .value-card p { font-size: 0.95rem; line-height: 1.7; }
 
-    /* Team Section */
-    .team { padding: 120px 0; background: var(--white); }
+    /* ========================================
+       Team / Leadership Section
+       ======================================== */
+    .team { padding: 120px 0; background: var(--navy); }
     .team-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
-    .team-header h2 { margin-bottom: 16px; }
-    .team-header p { font-size: 1.1rem; }
-    .team-content { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1000px; margin: 0 auto; }
-    .team-members { display: flex; justify-content: center; gap: 40px; }
-    .team-member { text-align: center; }
-    .member-photo { width: 140px; height: 140px; border-radius: 50%; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700; color: var(--gold); margin: 0 auto 16px; overflow: hidden; border: 3px solid var(--warm-white); box-shadow: 0 10px 40px rgba(11, 30, 50, 0.15); }
-    .member-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: filter 0.3s ease; }
-    .team-member:hover .member-photo img { filter: grayscale(0%); }
-    .member-info h3 { color: var(--navy); margin-bottom: 4px; font-size: 1.1rem; }
-    .member-role { color: var(--gold); font-weight: 600; font-size: 0.85rem; margin-bottom: 12px; }
-    .linkedin-link { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: var(--navy); border-radius: 50%; transition: all 0.3s ease; }
-    .linkedin-link:hover { background: var(--gold); }
-    .linkedin-link svg { width: 18px; height: 18px; stroke: var(--white); }
-    .linkedin-link:hover svg { stroke: var(--navy); }
-    .team-credentials { text-align: left; }
-    .credentials-list { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
-    .credential { display: flex; align-items: center; gap: 14px; font-size: 1rem; color: var(--navy); text-align: left; }
+    .team-header h2 { margin-bottom: 16px; color: var(--white); }
+    .team-header p { font-size: 1.1rem; color: var(--slate-light); }
+    .team-content { max-width: 680px; margin: 0 auto; }
+    .credentials-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .credential {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1rem;
+      color: var(--white);
+      text-align: left;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 20px 24px;
+      transition: all 0.3s ease;
+    }
+    .credential:hover { border-color: rgba(198, 183, 122, 0.3); background: rgba(255,255,255,0.06); }
     .credential-icon { width: 24px; height: 24px; flex-shrink: 0; }
     .credential-icon svg { width: 24px; height: 24px; stroke: var(--gold); }
 
-    /* Approach Section */
+    /* Awards Card */
+    .awards-card {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 28px 40px;
+      transition: all 0.3s ease;
+    }
+    .awards-card:hover { border-color: rgba(198, 183, 122, 0.3); background: rgba(255,255,255,0.06); }
+    .awards-text-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.95rem;
+  color: var(--slate-light);
+}
+    .awards-logos-row { display: flex; align-items: center; justify-content: center; gap: 32px; }
+    .awards-amp { font-size: 1.1rem; color: rgba(255,255,255,0.3); font-weight: 300; }
+    .award-item { display: flex; align-items: center; gap: 12px; }
+    .award-logo { height: 32px; width: auto; opacity: 0.85; transition: opacity 0.2s ease; }
+    .awards-card:hover .award-logo { opacity: 1; }
+    .award-text { font-size: 1rem; color: var(--white); font-weight: 500; line-height: 1.3; }
+
+    /* ========================================
+       Section Transitions
+       ======================================== */
+    .section-bridge { width: 100%; height: 100px; position: relative; z-index: 1; }
+    .bridge-light-to-dark { background: linear-gradient(180deg, var(--warm-white) 0%, var(--navy) 100%); }
+    .bridge-dark-to-light { background: linear-gradient(180deg, var(--navy) 0%, var(--warm-white) 100%); }
+    .team-approach-divider { width: 100%; padding: 0; background: var(--navy); }
+    .team-approach-divider-inner { max-width: 600px; margin: 0 auto; height: 1px; background: linear-gradient(90deg, transparent, rgba(198, 183, 122, 0.3), transparent); }
+
+    /* ========================================
+       Approach Section
+       ======================================== */
     .approach { padding: 120px 0; background: var(--navy); position: relative; }
     .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     .approach-content .section-label { text-align: left; }
@@ -304,78 +376,118 @@
     .approach-content > p { color: var(--slate-light); font-size: 1.1rem; line-height: 1.8; margin-bottom: 32px; }
     .approach-list { list-style: none; }
     .approach-list li { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; color: var(--white); font-size: 1rem; }
-    .approach-list .check { width: 28px; height: 28px; background: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .approach-list .check {
+      width: 28px;
+      height: 28px;
+      background: var(--gold-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
     .approach-list .check svg { width: 14px; height: 14px; stroke: var(--gold); }
     .approach-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .approach-stat { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 32px; text-align: center; }
+    .approach-stat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+    }
     .approach-stat .stat-value { font-size: 3rem; font-weight: 700; color: var(--gold); margin-bottom: 8px; }
     .approach-stat p { color: var(--slate-light); font-size: 0.95rem; }
 
-    /* CTA */
+    /* ========================================
+       CTA Section
+       ======================================== */
     .cta { padding: 120px 0; background: var(--warm-white); text-align: center; }
     .cta-content { max-width: 700px; margin: 0 auto; }
     .cta h2 { margin-bottom: 20px; }
     .cta p { font-size: 1.2rem; margin-bottom: 40px; }
 
-    /* Disclosure & Footer */
+    /* ========================================
+       Disclosure & Footer
+       ======================================== */
     .disclosure { background: var(--navy); padding: 36px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
     .disclosure p { font-size: 0.85rem; color: var(--slate); max-width: 900px; margin: 0 auto; text-align: center; line-height: 1.8; }
+
     footer { background: var(--navy); padding: 50px 0 30px; }
     .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; margin-bottom: 30px; }
     .footer-brand .logo { color: var(--white); display: inline-block; }
     .footer-brand .logo img { height: 32px; width: auto; }
     .footer-contact { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
-    .footer-contact a, .footer-contact p { color: var(--slate); text-decoration: none; font-size: 0.9rem; margin: 0; transition: color 0.2s; }
+    .footer-contact a,
+    .footer-contact p { color: var(--slate); text-decoration: none; font-size: 0.9rem; margin: 0; transition: color 0.2s; }
     .footer-contact a:hover { color: var(--gold); }
-    .footer-middle { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
+    .footer-middle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding: 24px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 24px;
+    }
     .footer-duns { display: flex; align-items: center; gap: 12px; }
     .duns-logo { height: 22px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; }
-    .footer-duns span { color: var(--slate); font-size: 0.85rem; }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     .footer-bottom p { color: var(--slate); font-size: 0.85rem; margin: 0; }
+    .footer-bottom a { color: var(--gold); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-bottom a:hover { color: var(--gold-bright); }
     .footer-legal { display: flex; align-items: center; gap: 24px; }
-    .footer-legal span { color: var(--slate); font-size: 0.85rem; }
-    .footer-legal a { color: var(--gold); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-    .footer-legal a:hover { color: var(--gold-bright); }
+    .footer-legal a { color: var(--slate); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--gold); }
 
-    /* Responsive */
+    /* ========================================
+       Responsive
+       ======================================== */
     @media (max-width: 1024px) {
       .nav-links { display: none; }
       .mobile-menu-btn { display: block; }
       .story-grid, .approach-grid { grid-template-columns: 1fr; gap: 60px; }
       .story-visual { height: 300px; }
       .values-grid { grid-template-columns: 1fr 1fr; }
-      .team-content { grid-template-columns: 1fr; gap: 40px; }
-      .team-credentials { text-align: left; }
-      .credentials-list { align-items: flex-start; }
+      .credentials-list { grid-template-columns: 1fr 1fr; }
       .footer-content { flex-direction: column; align-items: center; text-align: center; }
       .footer-contact { flex-direction: column; gap: 8px; text-align: center; }
       .footer-bottom { flex-direction: column; text-align: center; }
       .footer-legal { flex-direction: column; gap: 8px; }
+      .footer-middle { flex-direction: column; align-items: center; text-align: center; }
       .corner-accent { display: none; }
     }
+
     @media (max-width: 600px) {
       .page-hero { padding: 140px 0 80px; }
       .values-grid, .approach-stats { grid-template-columns: 1fr; }
-      .team-members { flex-direction: column; gap: 40px; }
+      .credentials-list { grid-template-columns: 1fr; }
       .story, .mission, .team, .approach, .cta { padding: 80px 0; }
       .story-visual { height: 250px; }
+      .section-bridge { height: 60px; }
+      .awards-card { padding: 24px 20px; }
+      .awards-logos-row { flex-direction: column; gap: 16px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- ========================================
+       Navigation
+       ======================================== -->
   <nav>
     <div class="nav-inner">
       <a href="index.html" class="logo">
-        <img src="./assets/freedom1.png" alt="Freedom Fund" style="max-width: 250px;">
+        <img src="./assets/reserves1.svg" alt="Freedom Fund" style="max-width: 250px;">
       </a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="index.html#fund">The Fund</a>
+        <a href="index.html#account">Overview</a>
         <a href="index.html#how-it-works">How It Works</a>
         <a href="index.html#why-us">Why Us</a>
         <a href="about.html">About</a>
-        <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Meet With Us</a>
+        <a href="https://reserves.freedomfund.io/open-account" class="btn btn-primary">See Our Returns</a>
       </div>
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -383,15 +495,19 @@
     </div>
   </nav>
 
+  <!-- Mobile Navigation -->
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html" onclick="closeMobileMenu()">Home</a>
-    <a href="index.html#fund" onclick="closeMobileMenu()">The Fund</a>
+    <a href="index.html#account" onclick="closeMobileMenu()">Overview</a>
     <a href="index.html#how-it-works" onclick="closeMobileMenu()">How It Works</a>
     <a href="index.html#why-us" onclick="closeMobileMenu()">Why Us</a>
     <a href="about.html" onclick="closeMobileMenu()">About</a>
-    <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Meet With Us</a>
+    <a href="https://reserves.freedomfund.io/open-account" class="btn btn-primary">See Our Returns</a>
   </div>
 
+  <!-- ========================================
+       Hero
+       ======================================== -->
   <section class="page-hero">
     <div class="hero-bg"></div>
     <div class="dot-pattern"></div>
@@ -401,25 +517,27 @@
     <div class="hero-orb hero-orb-3"></div>
     <div class="corner-accent corner-accent-tl"></div>
     <div class="corner-accent corner-accent-br"></div>
-
     <div class="container">
       <div class="page-hero-content">
-        <span class="section-label">About Freedom Fund</span>
+        <span class="section-label">About Freedom Reserves</span>
         <h1>Built by Investors, <br>For Investors</h1>
-        <p>Freedom Fund was founded on a simple premise: institutional-quality investing shouldn't require institutional connections. We bring decades of investment experience directly to individual investors.</p>
+        <p>Freedom Reserves was founded on a simple premise: institutional-quality investing shouldn't require institutional connections. We bring decades of investment experience directly to individual investors.</p>
       </div>
     </div>
   </section>
 
+  <!-- ========================================
+       Our Story
+       ======================================== -->
   <section class="story">
     <div class="container">
       <div class="story-grid">
         <div class="story-content">
           <span class="section-label">Our Story</span>
           <h2>From Frustration to Foundation</h2>
-          <p>Freedom Fund emerged from a fundamental frustration in the investment landscape. For too long, the most sophisticated investment strategies were reserved for institutions and the ultra-wealthy, leaving individual investors with a false choice: accept low returns for safety, sacrifice liquidity for growth, or take on excessive risk for meaningful yield.</p>
+          <p>Freedom Reserves emerged from a fundamental frustration in the investment landscape. For too long, the most sophisticated investment strategies were reserved for institutions and the ultra-wealthy, leaving individual investors with a false choice: accept low returns for safety, sacrifice liquidity for growth, or take on excessive risk for meaningful yield.</p>
           <p>Our founding team spent decades on both sides of the investment table, as fund managers and as individual investors. That dual perspective revealed a clear opportunity: create investment vehicles that deliver institutional-grade returns with the transparency, accessibility, and alignment of interests that individual investors deserve.</p>
-          <p>Today, Freedom Fund's Cash Reserves Fund puts that philosophy into practice — delivering safety, liquidity, and consistent returns through institutional relationships most investors never get access to.</p>
+          <p>Today, Freedom Reserves' Cash Account puts that philosophy into practice — delivering safety, liquidity, and consistent returns through institutional relationships most investors never get access to.</p>
         </div>
         <div class="story-visual">
           <div class="flow-container">
@@ -437,6 +555,9 @@
     </div>
   </section>
 
+  <!-- ========================================
+       Our Values
+       ======================================== -->
   <section class="mission">
     <div class="container">
       <div class="mission-header">
@@ -476,81 +597,58 @@
             </svg>
           </div>
           <h3>Aligned Interests</h3>
-          <p>Our team invests in every fund we offer. When you succeed, we succeed. It's that simple.</p>
+          <p>Our team has $5M+ in the Freedom Reserves offering aligning interests and using the same products you do.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Bridge: Light to Dark -->
+  <div class="section-bridge bridge-light-to-dark"></div>
+
+  <!-- ========================================
+       Leadership
+       ======================================== -->
   <section class="team">
     <div class="container">
       <div class="team-header">
         <span class="section-label">Leadership</span>
-        <h2>Meet the Team</h2>
-        <p>Award-winning founders with decades of experience in finance, banking, and private wealth management.</p>
+        <h2>Led by Founders with a Proven Track Record.</h2>
+        <p>Decades of experience across billions in capital, banking, and private wealth — the kind typically reserved for institutions — now applied to your cash reserves.</p>
       </div>
-
       <div class="team-content">
-        <div class="team-members">
-          <div class="team-member">
-            <div class="member-photo">
-              <img src="./assets/JessP.PNG" alt="Jess Phillips">
-            </div>
-            <div class="member-info">
-              <h3>Jess Phillips</h3>
-              <div class="member-role">Investor Management</div>
-              <a href="https://www.linkedin.com/in/jess-phillips123/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                  <rect x="2" y="9" width="4" height="12"/>
-                  <circle cx="4" cy="4" r="2"/>
-                </svg>
-              </a>
-            </div>
+        <div class="credentials-list">
+          <div class="credential">
+            <span class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+            <span>Built and scaled a $2.7B finance platform</span>
           </div>
-          <div class="team-member">
-            <div class="member-photo">
-              <img src="./assets/GaryS.PNG" alt="Gary S">
-            </div>
-            <div class="member-info">
-              <h3>Gary Schmeichel</h3>
-              <div class="member-role">Risk/Financial Management</div>
-              <a href="https://www.linkedin.com/in/gary-schmeichel-55b45713b/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                  <rect x="2" y="9" width="4" height="12"/>
-                  <circle cx="4" cy="4" r="2"/>
-                </svg>
-              </a>
-            </div>
+          <div class="credential">
+            <span class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+            <span>Leadership experience at a $1B+ banking institution</span>
           </div>
-        </div>
+          <div class="credential">
+            <span class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+            <span>Founding leadership in a global bank</span>
+          </div>
+          <div class="credential">
+            <span class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+            <span>Over a decade managing private wealth and client capital</span>
+          </div>
 
-        <div class="team-credentials">
-          <div class="credentials-list">
-            <div class="credential">
+          <!-- Combined Awards Card -->
+          <div class="awards-card">
+            <div class="awards-text-row">
               <span class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-              <span>Co-Founders of $2.7B finance company</span>
-            </div>
-            <div class="credential">
-              <span class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-              <span>Former Board Member of $1B bank</span>
-            </div>
-            <div class="credential">
-              <span class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-              <span>Founding Principal of a global bank</span>
-            </div>
-            <div class="credential">
-              <span class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-              <span>10+ years in private wealth management</span>
-            </div>
-            <div class="credential">
-              <span class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-              <span>Utah EY Entrepreneur of the Year Finalist</span>
-            </div>
-            <div class="credential">
-              <span class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-              <span>Utah Business 40 Under 40 Winner</span>
+              <div class="award-text">Award-winning founders recognized by</div>
+              </div>
+            <div class="awards-logos-row">
+              <div class="award-item">
+                <img src="./assets/inc500.png" alt="INC 500" class="award-logo">
+              </div>
+              <div class="award-text">&</div>
+              <div class="award-item">
+                <img src="./assets/EY3.png" alt="EY" class="award-logo">
+              </div>
             </div>
           </div>
         </div>
@@ -558,6 +656,12 @@
     </div>
   </section>
 
+  <!-- Divider: Team → Approach -->
+  <div class="team-approach-divider"><div class="team-approach-divider-inner"></div></div>
+
+  <!-- ========================================
+       Our Approach
+       ======================================== -->
   <section class="approach">
     <div class="container">
       <div class="approach-grid">
@@ -568,26 +672,26 @@
           <ul class="approach-list">
             <li>
               <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-              <span>Every strategy is validated with our own capital first</span>
+              <span>Built by investors, for investors</span>
             </li>
             <li>
               <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-              <span>SEC-registered for full regulatory compliance</span>
+              <span>SEC registered and fully compliant</span>
             </li>
             <li>
               <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-              <span>Diversified across strategies and asset classes</span>
+              <span>Fully passive and fixed returns</span>
             </li>
             <li>
               <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-              <span>Clear, consistent communication every step of the way</span>
+              <span>Simple to get started and manage</span>
             </li>
           </ul>
         </div>
         <div class="approach-stats">
           <div class="approach-stat">
-            <div class="stat-value">~6%</div>
-            <p>Annual Yield</p>
+            <div class="stat-value">6%</div>
+            <p>Fixed Annual Yield</p>
           </div>
           <div class="approach-stat">
             <div class="stat-value">SEC</div>
@@ -598,14 +702,20 @@
             <p>Passive & Diversified</p>
           </div>
           <div class="approach-stat">
-            <div class="stat-value">94%</div>
-            <p>Renewal Rate</p>
+            <div class="stat-value">$5M+</div>
+            <p>of Founder Capital Invested</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Bridge: Dark to Light -->
+  <div class="section-bridge bridge-dark-to-light"></div>
+
+  <!-- ========================================
+       CTA
+       ======================================== -->
   <section class="cta">
     <div class="container">
       <div class="cta-content">
@@ -617,42 +727,58 @@
     </div>
   </section>
 
+  <!-- ========================================
+       Disclosure
+       ======================================== -->
+  <div class="disclosure">
+    <div class="container">
+      <p>This presentation is intended as a general summary and should not be solely relied upon for any legal or investment decisions by prospective investors. All investment details, terms, and conditions are outlined in the Private Placement Memorandum (PPM) that is filed with the U.S. Securities and Exchange Commission.</p>
+    </div>
+  </div>
+
+  <!-- ========================================
+       Footer
+       ======================================== -->
   <footer>
     <div class="container">
       <div class="footer-content">
-        <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <img src="./assets/freedom1.png" alt="Freedom Fund" style="max-width: 250px;">
-          </a>
-        </div>
+        <div class="footer-brand"><a href="index.html" class="logo"><img src="./assets/reserves1.svg" alt="Freedom Fund" style="max-width: 250px;"></a></div>
         <div class="footer-contact">
           <a href="tel:801-218-3504">801-218-3504</a>
           <a href="mailto:info@freedomfund.io">info@freedomfund.io</a>
-          <p>240 N E Promontory Suite 200, Farmington, Utah 84025</p>
         </div>
       </div>
       <div class="footer-middle">
         <div class="footer-duns">
-          <img src="./assets/duns-logo.png" alt="D&B Verified" class="duns-logo">
-          <span>DUNS: 117985322</span>
+          <a href="https://www.dnb.com/business-directory/company-profiles.freedom_fund_holdings_llc.412fa8e9893aae3c3fca32f8b8538db6.html#contact-list" target="_blank" rel="noopener noreferrer"><img src="./assets/duns-logo.png" alt="D&B Verified" class="duns-logo"></a>
+          <a href="https://www.dnb.com/business-directory/company-profiles.freedom_fund_holdings_llc.412fa8e9893aae3c3fca32f8b8538db6.html#contact-list" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: none; font-size: 0.85rem; transition: color 0.2s;">DUNS: 117985322</a>
         </div>
         <div class="footer-legal">
-          <span>SEC Registered &amp; Compliant</span>
+          <a href="https://www.sec.gov/edgar/browse/?CIK=2129972" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: none; font-size: 0.85rem; transition: color 0.2s;">SEC Registered & Compliant</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Freedom Fund. All rights reserved.</p>
-        <div style="display:flex; gap: 24px;">
-          <a href="terms.html" style="color: var(--gold); text-decoration: none; font-size: 0.85rem;">Terms &amp; Conditions</a>
-          <a href="privacy.html" style="color: var(--gold); text-decoration: none; font-size: 0.85rem;">Privacy Policy</a>
+        <p>&copy; 2026 Freedom Reserves. All rights reserved.</p>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <a href="terms.html">Terms & Conditions</a>
+          <span style="color: var(--slate);">|</span>
+          <a href="privacy.html">Privacy Policy</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- ========================================
+       Scripts
+       ======================================== -->
   <script>
+    // Force scroll to top on page load
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
 
-
+    // Mobile menu
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileNav = document.getElementById('mobileNav');
 
