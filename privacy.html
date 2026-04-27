@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Freedom Fund Privacy Policy">
   <title>Privacy Policy | Freedom Fund</title>
-  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -218,7 +218,7 @@
   <nav>
     <div class="nav-inner">
       <a href="index.html" class="logo">
-        <img src="./assets/freedom1.png" alt="Freedom Fund" style="max-width: 250px;">
+        <img src="./assets/reserves1.svg" alt="Freedom Fund" style="max-width: 250px;">
       </a>
       <div class="nav-links">
         <a href="index.html#solutions">Solutions</a>
@@ -346,40 +346,45 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-content">
-        <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <img src="./assets/freedom1.png" alt="Freedom Fund" style="max-width: 250px;">
-          </a>
-        </div>
+        <div class="footer-brand"><a href="index.html" class="logo"><img src="./assets/reserves1.svg" alt="Freedom Fund" style="max-width: 250px;"></a></div>
         <div class="footer-contact">
           <a href="tel:801-218-3504">801-218-3504</a>
           <a href="mailto:info@freedomfund.io">info@freedomfund.io</a>
-          <p>240 N E Promontory Suite 200, Farmington, Utah 84025</p>
         </div>
       </div>
       <div class="footer-middle">
         <div class="footer-duns">
-          <img src="./assets/duns-logo.png" alt="D&B Verified" class="duns-logo">
-          <span>DUNS: 117985322</span>
+          <a href="https://www.dnb.com/business-directory/company-profiles.freedom_fund_holdings_llc.412fa8e9893aae3c3fca32f8b8538db6.html#contact-list" target="_blank" rel="noopener noreferrer"><img src="./assets/duns-logo.png" alt="D&B Verified" class="duns-logo"></a>
+          <a href="https://www.dnb.com/business-directory/company-profiles.freedom_fund_holdings_llc.412fa8e9893aae3c3fca32f8b8538db6.html#contact-list" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: none; font-size: 0.85rem; transition: color 0.2s;">DUNS: 117985322</a>
         </div>
         <div class="footer-legal">
-          <span>SEC Registered &amp; Compliant</span>
+          <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0002129972&owner=include&count=40&hidefilings=0" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: none; font-size: 0.85rem; transition: color 0.2s;">SEC Registered & Compliant</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Freedom Fund. All rights reserved.</p>
-        <div style="display:flex; gap: 24px;">
-          <a href="terms.html" style="color: var(--gold); text-decoration: none; font-size: 0.85rem;">Terms &amp; Conditions</a>
-          <a href="privacy.html" style="color: var(--gold); text-decoration: none; font-size: 0.85rem;">Privacy Policy</a>
+        <p>&copy; 2026 Freedom Reserves. All rights reserved.</p>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <a href="terms.html">Terms & Conditions</a>
+          <span style="color: var(--slate);">|</span>
+          <a href="privacy.html">Privacy Policy</a>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
+
+    // Force scroll to top on page load
+        if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileNav = document.getElementById('mobileNav');
 

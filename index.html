@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Freedom Fund - Your Cash Deserves Better. Make It Work Harder.">
+  <meta name="description" content="Freedom Reserves - Your Cash Deserves Better. Make It Work Harder.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://freedomfund.io/">
-  <meta property="og:title" content="Freedom Fund | Cash Reserves Fund">
+  <meta property="og:url" content="https://freedomreserves.com/">
+  <meta property="og:title" content="Freedom Reserves | Cash Reserves Account">
   <meta property="og:description" content="Safety, Liquidity, and Consistent Returns. Finally, All Three.">
-  <meta property="og:image" content="https://freedomfund.io/assets/freedomgold.png">
+  <meta property="og:image" content="https://freedomreserves.com/assets/reserves_final.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Freedom Fund | Cash Reserves Fund">
+  <meta name="twitter:title" content="Freedom Reserves | Cash Reserves Account">
   <meta name="twitter:description" content="Safety, Liquidity, and Consistent Returns. Finally, All Three.">
-  <meta name="twitter:image" content="https://freedomfund.io/assets/freedomgold.png">
-  <title>Freedom Fund | Cash Reserves Fund</title>
-  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <meta name="twitter:image" content="https://freedomreserves.com/assets/reserves_final.png">
+  <title>Freedom Reserves | Cash Reserves Account</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -89,7 +89,7 @@
     .orb-2 { width: 300px; height: 300px; background: rgba(198, 183, 122, 0.15); bottom: 10%; left: -5%; animation-delay: -5s; }
     .orb-3 { width: 200px; height: 200px; background: rgba(198, 183, 122, 0.1); top: 40%; right: 30%; animation-delay: -10s; }
     @keyframes float { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(20px, -30px); } 50% { transform: translate(-10px, 20px); } 75% { transform: translate(30px, 10px); } }
-    .hero-grid { display: grid; grid-template-columns: 1fr 380px; gap: 60px; align-items: center; position: relative; z-index: 10; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center; position: relative; z-index: 10; }
     .hero-content { max-width: 700px; }
     .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: rgba(198, 183, 122, 0.15); border: 1px solid rgba(198, 183, 122, 0.3); border-radius: 100px; font-size: 0.85rem; font-weight: 500; color: var(--gold); margin-bottom: 28px; }
     .hero-badge::before { content: ''; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
@@ -98,12 +98,33 @@
     .hero h1 .gradient-text { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 50%, var(--gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .hero-subtitle { font-size: 1.2rem; line-height: 1.7; color: var(--slate-light); margin-bottom: 40px; }
     .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
-    .floating-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 32px; text-align: center; }
-    .floating-card h4 { color: var(--white); font-size: 0.9rem; font-weight: 500; margin-bottom: 12px; opacity: 0.8; }
-    .floating-stat { font-size: 3.5rem; font-weight: 700; color: var(--gold); margin-bottom: 8px; }
-    .floating-card p { color: var(--slate-light); font-size: 0.95rem; margin-bottom: 20px; }
-    .app-badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(198, 183, 122, 0.15); border: 1px solid rgba(198, 183, 122, 0.3); border-radius: 100px; font-size: 0.8rem; font-weight: 500; color: var(--gold); }
-    .app-badge svg { width: 16px; height: 16px; }
+
+    /* Hero Phone Showcase */
+    .hero-phones { position: relative; width: 100%; height: 520px; display: flex; align-items: center; justify-content: center; perspective: 1200px; }
+    .hero-phone {
+      position: absolute;
+      border-radius: 52px;
+      overflow: visible;
+      background: linear-gradient(165deg, #2a2a2a 0%, #1a1a1a 20%, #111 50%, #0a0a0a 80%, #000 100%);
+      padding: 6px;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 0 0.5px rgba(255, 255, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    }
+    .hero-phone::before { content: ''; position: absolute; top: 16px; left: 50%; transform: translateX(-50%); width: 62px; height: 18px; background: #000; border-radius: 20px; z-index: 10; }
+    .hero-phone::after { display: none; }
+    .hero-phone-screen { width: 100%; height: 100%; border-radius: 46px; overflow: hidden; position: relative; background: #000; }
+    .hero-phone img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-phone-buttons { position: absolute; inset: 0; pointer-events: none; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+    .hero-phone-btn { position: absolute; background: #222; -webkit-backface-visibility: hidden; backface-visibility: hidden; will-change: transform; transform: translateZ(0); }
+    .hero-phone-btn.power { right: -3px; top: 120px; width: 3px; height: 52px; border-radius: 0 2px 2px 0; }
+    .hero-phone-btn.vol-up { left: -3px; top: 90px; width: 3px; height: 28px; border-radius: 2px 0 0 2px; }
+    .hero-phone-btn.vol-down { left: -3px; top: 128px; width: 3px; height: 28px; border-radius: 2px 0 0 2px; }
+    .hero-phone-back { width: 220px; height: 476px; transform: rotate(6deg) translateX(-80px) translateY(10px); z-index: 1; opacity: 0.8; }
+    .hero-phone-front { width: 240px; height: 520px; transform: rotate(-3deg) translateX(90px) translateY(-10px); z-index: 2; background: linear-gradient(165deg, #333 0%, #1a1a1a 20%, #111 50%, #000 100%); box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6), 0 0 40px rgba(198, 183, 122, 0.12), 0 0 0 0.5px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.3); }
+    .hero-phone-glow { position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, rgba(198, 183, 122, 0.25) 0%, transparent 70%); border-radius: 50%; z-index: 0; filter: blur(40px); pointer-events: none; }
+    .hero-app-badge { display: flex; justify-content: center; position: absolute; bottom: -70px; left: 50%; transform: translateX(-50%); z-index: 3; }
+    .hero-app-badge a { display: inline-block; }
+    .hero-app-badge img { height: 44px; width: auto; transition: transform 0.2s ease, opacity 0.2s ease; opacity: 0.8; }
+    .hero-app-badge img:hover { transform: translateY(-2px); opacity: 1; }
 
     /* Stats */
     .stats { background: var(--white); padding: 0; margin-top: -60px; position: relative; z-index: 20; }
@@ -135,118 +156,87 @@
     .fund-highlight strong { color: var(--gold); font-weight: 600; }
     .fund-card-bottom { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 32px 40px; background: linear-gradient(135deg, rgba(198,183,122,0.08), rgba(198,183,122,0.15)); border-top: 1px solid rgba(198,183,122,0.2); }
 
-    /* Growth Visual */
-    .growth-visual { background: linear-gradient(135deg, rgba(198,183,122,0.06), rgba(198,183,122,0.12)); border: 1px solid rgba(198,183,122,0.2); border-radius: 16px; padding: 22px 24px; position: relative; overflow: hidden; flex: 1; display: flex; flex-direction: column; }
-    .growth-visual-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-    .growth-visual-header span { font-size: 0.75rem; font-weight: 600; color: var(--slate); text-transform: uppercase; letter-spacing: 0.05em; }
-    .growth-amounts-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 2px; }
-    .growth-amount { font-size: 1.8rem; font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; }
-    .growth-return { font-size: 0.85rem; color: #22c55e; font-weight: 600; }
-    .growth-legend { display: flex; gap: 18px; margin-bottom: 14px; }
-    .growth-legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; color: var(--slate); font-weight: 500; }
-    .growth-legend-dot { width: 10px; height: 10px; border-radius: 3px; }
-    .growth-legend-dot.initial { background: var(--navy); opacity: 0.15; }
-    .growth-legend-dot.returns { background: var(--gold); }
-    .growth-chart-wrapper { flex: 1; min-height: 110px; position: relative; overflow: hidden; }
-    .growth-chart-wrapper svg { width: 100%; height: 100%; display: block; }
-    .growth-months { display: flex; justify-content: space-between; margin-top: 6px; }
-    .growth-months span { font-size: 0.65rem; color: var(--slate-light); }
-    @keyframes drawLine { from { stroke-dashoffset: 600; } to { stroke-dashoffset: 0; } }
-    @keyframes fillArea { from { opacity: 0; } to { opacity: 1; } }
-    .growth-line-anim { stroke-dasharray: 600; stroke-dashoffset: 600; animation: drawLine 2.5s ease-out forwards; animation-delay: 0.5s; }
-    .growth-fill-anim { opacity: 0; animation: fillArea 1.5s ease-out forwards; animation-delay: 1.2s; }
-    .growth-base-anim { opacity: 0; animation: fillArea 0.8s ease-out forwards; animation-delay: 0.2s; }
-    .growth-dot { opacity: 0; animation: dotAppear 0.3s ease-out forwards; animation-delay: 2.8s; }
-    @keyframes dotAppear { from { opacity: 0; } to { opacity: 1; } }
-    .growth-dot-ring { opacity: 0; animation: ringPulse 2s ease-in-out infinite; animation-delay: 3s; }
-    @keyframes ringPulse { 0% { opacity: 0.6; r: 6; } 100% { opacity: 0; r: 14; } }
+    /* ===== INTERACTIVE GROWTH VISUAL ===== */
+    .growth-visual { background: linear-gradient(160deg, #0b1e32 0%, #0a1a2e 50%, #0d2240 100%); border-radius: 16px; padding: 20px; position: relative; overflow: hidden; flex: 1; display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,0.06); }
+    .growth-investment-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+    .growth-invest-label { color: rgba(255,255,255,0.35); font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+    .growth-invest-amount { color: #ffffff; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.5px; }
+    .growth-invest-rate { color: var(--gold); font-size: 1rem; font-weight: 600; }
+    .growth-period-tabs { display: flex; align-items: center; gap: 2px; background: rgba(255,255,255,0.05); border-radius: 40px; padding: 3px; margin-bottom: 14px; overflow-x: auto; }
+    .period-tab { background: transparent; border: none; color: rgba(255,255,255,0.4); font-size: 0.72rem; font-weight: 500; padding: 6px 12px; border-radius: 30px; cursor: pointer; transition: all 0.25s ease; font-family: 'IBM Plex Sans', sans-serif; white-space: nowrap; flex-shrink: 0; }
+    .period-tab:hover { color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.04); }
+    .period-tab.active { background: rgba(255,255,255,0.1); color: #ffffff; font-weight: 600; }
+    .growth-return-summary { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+    .growth-return-icon { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; }
+    .growth-return-icon svg { width: 18px; height: 18px; }
+    .growth-return-value { color: #4ade80; font-size: 0.95rem; font-weight: 600; letter-spacing: -0.3px; }
+    .growth-chart-area { position: relative; display: flex; gap: 4px; margin-bottom: 4px; }
+    .growth-y-axis { display: flex; flex-direction: column; justify-content: space-between; min-width: 38px; padding: 2px 0; }
+    .growth-y-axis span { color: rgba(255,255,255,0.25); font-size: 0.6rem; font-weight: 500; text-align: right; }
+    .growth-chart-svg-wrap { flex: 1; position: relative; }
+    .growth-chart-svg-wrap svg { width: 100%; height: 140px; display: block; }
+    .growth-chart-tooltip { position: absolute; background: rgba(15,30,50,0.95); border: 1px solid rgba(198,183,122,0.3); border-radius: 8px; padding: 6px 10px; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 10; white-space: nowrap; }
+    .growth-chart-tooltip.visible { opacity: 1; }
+    .growth-chart-tooltip-date { color: rgba(255,255,255,0.5); font-size: 0.6rem; margin-bottom: 2px; }
+    .growth-chart-tooltip-value { color: #ffffff; font-size: 0.8rem; font-weight: 600; }
+    .growth-chart-tooltip-return { color: #4ade80; font-size: 0.65rem; font-weight: 500; }
+    .growth-months { display: flex; justify-content: space-between; padding-left: 42px; padding-right: 2px; margin-bottom: 16px; }
+    .growth-months span { color: rgba(255,255,255,0.3); font-size: 0.6rem; font-weight: 500; }
+    .growth-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .growth-stat-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 4px; transition: background 0.2s ease; }
+    .growth-stat-card:hover { background: rgba(255,255,255,0.06); }
+    .growth-stat-label { color: rgba(255,255,255,0.4); font-size: 0.65rem; font-weight: 400; }
+    .growth-stat-value { color: #ffffff; font-size: 1.15rem; font-weight: 600; letter-spacing: -0.5px; }
+    @keyframes gvDrawLine { from { stroke-dashoffset: 800; } to { stroke-dashoffset: 0; } }
+    @keyframes gvFadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    /* Comparison — Updated */
-    .comparison {
-      padding: 120px 0;
-      background:
-        linear-gradient(
-          180deg,
-          var(--warm-white) 0%,
-          rgba(198, 183, 122, 0.05) 25%,
-          rgba(198, 183, 122, 0.09) 50%,
-          rgba(198, 183, 122, 0.05) 75%,
-          var(--warm-white) 100%
-        );
-      position: relative;
-      overflow: hidden;
-    }
-
-    .comparison .container {
-      position: relative;
-      z-index: 1;
-    }
-    .comparison-table-wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(11, 30, 50, 0.08);
-    }
-    .comparison-table-scroll {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      scrollbar-color: var(--gold) transparent;
-    }
+    /* Comparison */
+    .comparison { padding: 120px 0; background: linear-gradient(180deg, var(--warm-white) 0%, rgba(198, 183, 122, 0.05) 25%, rgba(198, 183, 122, 0.09) 50%, rgba(198, 183, 122, 0.05) 75%, var(--warm-white) 100%); position: relative; overflow: hidden; }
+    .comparison .container { position: relative; z-index: 1; }
+    .comparison-table-wrapper { max-width: 960px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(11, 30, 50, 0.08); }
+    .comparison-table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--gold) transparent; }
     .comparison-table-scroll::-webkit-scrollbar { height: 6px; }
     .comparison-table-scroll::-webkit-scrollbar-track { background: rgba(198,183,122,0.1); }
     .comparison-table-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
     .comparison-table-wrapper table { width: 100%; border-collapse: collapse; background: var(--white); min-width: 640px; }
     .comparison-table-wrapper thead th { padding: 22px 20px; font-size: 0.85rem; font-weight: 600; text-align: center; color: var(--slate); border-bottom: 2px solid rgba(11, 30, 50, 0.06); position: relative; }
     .comparison-table-wrapper thead th:first-child { text-align: left; background: var(--warm-white); position: sticky; left: 0; z-index: 2; min-width: 140px; }
-    .comparison-table-wrapper thead th.highlight {
-      background: linear-gradient(165deg, rgba(198,183,122,0.25) 0%, rgba(198,183,122,0.38) 100%);
-      color: var(--navy);
-      font-size: 0.9rem;
-      border-bottom: 3px solid var(--gold);
-    }
+    .comparison-table-wrapper thead th.highlight { background: linear-gradient(165deg, rgba(198,183,122,0.25) 0%, rgba(198,183,122,0.38) 100%); color: var(--navy); font-size: 0.9rem; border-bottom: 3px solid var(--gold); }
     .comparison-table-wrapper thead th.col-2 { background: rgba(198,183,122,0.12); }
     .comparison-table-wrapper thead th.col-3 { background: rgba(100,116,139,0.08); color: var(--slate); }
     .comparison-table-wrapper thead th.col-4 { background: rgba(100,116,139,0.05); color: var(--slate-light); }
     .comparison-table-wrapper thead th.col-5 { background: rgba(100,116,139,0.03); color: var(--slate-light); opacity: 0.8; }
     .comparison-table-wrapper tbody td { padding: 16px 20px; font-size: 0.9rem; text-align: center; color: var(--navy); border-bottom: 1px solid rgba(11, 30, 50, 0.06); }
     .comparison-table-wrapper tbody td:first-child { text-align: left; font-weight: 500; position: sticky; left: 0; z-index: 1; background: var(--white); min-width: 140px; }
-    .comparison-table-wrapper tbody td.highlight {
-      background: rgba(198, 183, 122, 0.10);
-      font-weight: 600;
-      border-left: 1px solid rgba(198, 183, 122, 0.15);
-      border-right: 1px solid rgba(198, 183, 122, 0.15);
-    }
+    .comparison-table-wrapper tbody td.highlight { background: rgba(198, 183, 122, 0.10); font-weight: 600; border-left: 1px solid rgba(198, 183, 122, 0.15); border-right: 1px solid rgba(198, 183, 122, 0.15); }
     .comparison-table-wrapper tbody td.col-2 { background: rgba(198,183,122,0.04); }
     .comparison-table-wrapper tbody td.col-3 { background: rgba(100,116,139,0.03); color: var(--slate); }
     .comparison-table-wrapper tbody td.col-4 { background: rgba(100,116,139,0.06); color: var(--slate-light); }
     .comparison-table-wrapper tbody td.col-5 { background: rgba(100,116,139,0.02); color: var(--slate-light); opacity: 0.85; }
     .comparison-table-wrapper tbody tr:last-child td { border-bottom: none; }
-    .ff-label { display: block; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; color: var(--gold); font-weight: 700; }
     .check-icon { color: #22c55e; font-weight: 700; font-size: 1.1rem; }
     .x-icon { color: #ef4444; font-weight: 700; font-size: 1.1rem; }
-    .scroll-hint {
-      display: none;
-      text-align: center;
-      margin-top: 16px;
-      font-size: 0.8rem;
-      color: var(--slate-light);
-      animation: fadeHint 2s ease-in-out infinite;
-    }
-    @keyframes fadeHint {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 1; }
-    }
+    .scroll-hint { display: none; text-align: center; margin-top: 16px; font-size: 0.8rem; color: var(--slate-light); animation: fadeHint 2s ease-in-out infinite; }
+    @keyframes fadeHint { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
 
     /* How it Works */
-    .how-it-works { padding: 120px 0; background: var(--warm-white); position: relative; overflow: hidden; }
-    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; position: relative; }
-    .steps::before { content: ''; position: absolute; top: 40px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), var(--gold), transparent); opacity: 0.3; }
-    .step { text-align: center; position: relative; }
-    .step-number { width: 72px; height: 72px; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 100%); color: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; margin: 0 auto 24px; box-shadow: 0 10px 30px rgba(198, 183, 122, 0.3); }
-    .step h3 { color: var(--navy); margin-bottom: 10px; font-size: 1.15rem; }
-    .step p { color: var(--slate); font-size: 0.95rem; line-height: 1.6; }
+    .how-it-works { padding: 120px 0; background: var(--white); position: relative; overflow: hidden; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
+    .step { position: relative; background: var(--warm-white); border-radius: 20px; padding: 36px 28px 32px; text-align: left; border: 1px solid rgba(11, 30, 50, 0.06); transition: all 0.3s ease; }
+    .step:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(11, 30, 50, 0.08); border-color: rgba(198, 183, 122, 0.3); }
+    .step-top { display: flex; align-items: center; justify-content: flex-end; margin-bottom: 20px; }
+    .step-icon { width: 40px; height: 40px; stroke: var(--gold); stroke-width: 1.5; fill: none; opacity: 0.6; }
+    .step-connector { display: none; position: absolute; top: 50%; right: -14px; width: 28px; height: 2px; z-index: 2; }
+    .step-connector::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--gold), rgba(198, 183, 122, 0.3)); border-radius: 1px; }
+    .step-connector::after { content: ''; position: absolute; right: -1px; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+    .step:not(:last-child) .step-connector { display: block; }
+    .step h3 { color: var(--navy); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; }
+    .step p { color: var(--slate); font-size: 0.9rem; line-height: 1.6; }
+
+    /* Section Transitions */
+    .section-bridge { width: 100%; height: 100px; position: relative; z-index: 1; }
+    .bridge-light-to-dark { background: linear-gradient(180deg, var(--white) 0%, var(--navy) 100%); }
+    .bridge-dark-to-light { background: linear-gradient(180deg, var(--navy-dark) 0%, var(--warm-white) 100%); }
 
     /* Trust */
     .trust { padding: 120px 0; background: var(--navy); }
@@ -263,8 +253,11 @@
     .trust-card .big-stat { font-size: 5rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 14px; position: relative; }
     .trust-card p { color: var(--slate-light); font-size: 1.1rem; position: relative; }
 
-    /*App Preview */ 
-    .app-preview { padding: 120px 0; background: var(--navy); position: relative; overflow: hidden; }
+    .trust-app-divider { width: 100%; padding: 0; background: var(--navy); }
+    .trust-app-divider-inner { max-width: 600px; margin: 0 auto; height: 1px; background: linear-gradient(90deg, transparent, rgba(198, 183, 122, 0.3), transparent); }
+
+    /* App Preview */
+    .app-preview { padding: 120px 0; background: var(--navy-dark); position: relative; overflow: hidden; }
     .app-preview .grid-pattern { opacity: 0.5; }
     .app-preview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     .app-preview-content .section-label { color: var(--gold); text-align: left; }
@@ -273,96 +266,107 @@
     .app-features { list-style: none; margin-bottom: 36px; }
     .app-features li { display: flex; align-items: center; gap: 14px; padding: 12px 0; color: var(--white); font-size: 1rem; }
     .app-features li svg { width: 20px; height: 20px; stroke: var(--gold); flex-shrink: 0; }
-    .app-mockup { display: flex; justify-content: center; }
-    .phone-frame { width: 280px; height: 580px; background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 50%, #a89458 100%); border-radius: 50px; padding: 4px; box-shadow: 0 50px 100px rgba(0,0,0,0.5), 0 0 30px rgba(198, 183, 122, 0.3), inset 0 2px 4px rgba(255,255,255,0.3); position: relative; }
-    .phone-frame::before { content: ''; position: absolute; top: 18px; left: 50%; transform: translateX(-50%); width: 90px; height: 28px; background: #000; border-radius: 20px; z-index: 100; }
-    .phone-frame::after { content: ''; position: absolute; right: -3px; top: 120px; width: 3px; height: 60px; background: linear-gradient(180deg, var(--gold-bright), #a89458); border-radius: 0 2px 2px 0; }
-    .phone-button { position: absolute; left: -3px; width: 3px; background: linear-gradient(180deg, var(--gold-bright), #a89458); border-radius: 2px 0 0 2px; }
-    .mute-switch { top: 100px; height: 28px; }
-    .volume-up { top: 150px; height: 45px; }
-    .volume-down { top: 205px; height: 45px; }
-    .phone-screen { width: 100%; height: 100%; background: var(--navy); border-radius: 42px; overflow: hidden; display: flex; flex-direction: column; }
-    .app-header-phone { padding: 50px 20px 16px; display: flex; align-items: center; gap: 8px; }
-    .app-logo-phone { height: 20px; width: auto; }
-    .app-content-phone { flex: 1; padding: 0 16px; overflow: hidden; }
-    .app-title-phone { font-size: 18px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
-    .app-subtitle-phone { font-size: 11px; color: var(--slate-light); margin-bottom: 20px; }
-    .portfolio-card-phone { background: var(--white); border-radius: 16px; padding: 16px; margin-bottom: 12px; }
-    .card-header-phone { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
-    .card-label-phone { font-size: 12px; font-weight: 600; color: var(--navy); display: flex; align-items: center; gap: 6px; }
-    .card-label-phone::before { content: ''; width: 8px; height: 8px; background: var(--gold); border-radius: 2px; }
-    .card-value-group-phone { text-align: right; }
-    .card-value-label-phone { font-size: 9px; color: var(--slate); margin-bottom: 2px; }
-    .card-value-phone { font-size: 18px; font-weight: 700; color: var(--navy); }
-    .stats-row-phone { display: flex; gap: 8px; margin-bottom: 16px; }
-    .stat-box-phone { flex: 1; background: var(--navy); border-radius: 8px; padding: 10px 6px; text-align: center; }
-    .stat-label-phone { font-size: 8px; color: var(--slate-light); margin-bottom: 4px; }
-    .stat-value-phone { font-size: 10px; font-weight: 600; color: var(--white); }
-    .stat-value-phone.positive { color: #4ade80; }
-    .stat-value-phone.gold { color: var(--gold); }
-    .chart-header-phone { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-    .chart-toggle-phone { width: 28px; height: 16px; background: var(--gold); border-radius: 8px; position: relative; }
-    .chart-toggle-phone::after { content: ''; position: absolute; right: 2px; top: 2px; width: 12px; height: 12px; background: white; border-radius: 50%; }
-    .chart-label-phone { font-size: 10px; color: var(--slate); }
-    .chart-container-phone { height: 100px; position: relative; padding-left: 28px; }
-    .chart-y-axis-phone { position: absolute; left: 0; top: 0; bottom: 16px; width: 26px; display: flex; flex-direction: column; justify-content: space-between; font-size: 6px; color: var(--slate); }
-    .chart-area-phone { height: 80px; position: relative; border-bottom: 1px solid #e5e7eb; }
-    .chart-grid-line-phone { position: absolute; left: 0; right: 0; height: 1px; background: #f3f4f6; }
-    .chart-line-phone { position: absolute; bottom: 0; left: 0; right: 0; height: 100%; }
-    .chart-line-phone svg { width: 100%; height: 100%; }
-    .chart-x-axis-phone { display: flex; justify-content: space-between; padding-top: 4px; font-size: 6px; color: var(--slate); }
-    .app-nav-phone { display: flex; justify-content: space-around; padding: 12px 8px 20px; background: var(--navy-dark); border-top: 1px solid rgba(255,255,255,0.05); }
-    .nav-item-phone { display: flex; flex-direction: column; align-items: center; gap: 4px; opacity: 0.5; }
-    .nav-item-phone.active { opacity: 1; }
-    .nav-icon-phone { width: 18px; height: 18px; stroke: var(--slate-light); }
-    .nav-item-phone.active .nav-icon-phone { stroke: var(--gold); }
-    .nav-label-phone { font-size: 7px; color: var(--slate-light); }
-    .nav-item-phone.active .nav-label-phone { color: var(--gold); }
 
-/* Video Mock */
-
-.app-mockup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-
-.video-frame {
-  width: 100%;
-  max-width: 460px;
-  border-radius: 40px;
-  overflow: hidden;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.45);
-}
-
-.app-video {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
-  display: block;
-  background: #000;
-}
-
-.app-store-badge {
-  margin-top: 18px;
-  display: flex;
-  justify-content: center;
-}
-
-.appstore-img {
-  height: 52px;
-  width: auto;
-  display: block;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.appstore-img:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
+    /* ===== iPhone 17 Pro Frame ===== */
+    .app-mockup { display: flex; flex-direction: column; align-items: center; width: 100%; }
+    .iphone-frame {
+      position: relative;
+      width: 300px;
+      height: 620px;
+      border-radius: 54px;
+      background: linear-gradient(165deg, #4a4a4a 0%, #3a3a3a 5%, #2a2a2a 15%, #1a1a1a 35%, #111 60%, #0a0a0a 85%, #000 100%);
+      padding: 5px;
+      box-shadow:
+        0 50px 100px rgba(0, 0, 0, 0.6),
+        0 0 0 0.5px rgba(255, 255, 255, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.4),
+        0 0 80px rgba(198, 183, 122, 0.06);
+    }
+    /* Dynamic Island */
+    .iphone-frame::before {
+      content: '';
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 28px;
+      background: #000;
+      border-radius: 20px;
+      z-index: 10;
+      box-shadow: inset 0 0 4px rgba(0,0,0,0.8);
+    }
+    /* Inner bezel ring */
+    .iphone-frame::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border-radius: 50px;
+      border: 0.5px solid rgba(255,255,255,0.06);
+      pointer-events: none;
+      z-index: 5;
+    }
+    .iphone-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 50px;
+      overflow: hidden;
+      position: relative;
+      background: #000;
+    }
+    .iphone-screen video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* Side buttons */
+    .iphone-btn {
+      position: absolute;
+      background: linear-gradient(180deg, #3a3a3a 0%, #1a1a1a 100%);
+      z-index: 1;
+    }
+    .iphone-btn.power {
+      right: -3px;
+      top: 160px;
+      width: 3px;
+      height: 72px;
+      border-radius: 0 2px 2px 0;
+    }
+    .iphone-btn.vol-up {
+      left: -3px;
+      top: 120px;
+      width: 3px;
+      height: 36px;
+      border-radius: 2px 0 0 2px;
+    }
+    .iphone-btn.vol-down {
+      left: -3px;
+      top: 168px;
+      width: 3px;
+      height: 36px;
+      border-radius: 2px 0 0 2px;
+    }
+    .iphone-btn.action {
+      left: -3px;
+      top: 82px;
+      width: 3px;
+      height: 24px;
+      border-radius: 2px 0 0 2px;
+    }
+    /* Titanium edge shimmer */
+    .iphone-frame-shimmer {
+      position: absolute;
+      inset: 0;
+      border-radius: 54px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 25%, transparent 75%, rgba(255,255,255,0.05) 100%);
+      pointer-events: none;
+      z-index: 3;
+    }
+    .app-store-badge { margin-top: 24px; display: flex; justify-content: center; }
+    .appstore-img { height: 52px; width: auto; display: block; transition: transform 0.2s ease, opacity 0.2s ease; }
+    .appstore-img:hover { transform: translateY(-2px); opacity: 0.9; }
 
     /* Testimonials */
     .testimonials { padding: 120px 0; background: var(--warm-white); overflow: hidden; }
@@ -409,7 +413,6 @@
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     .footer-bottom p { color: var(--slate); font-size: 0.85rem; margin: 0; }
     .footer-legal { display: flex; align-items: center; gap: 24px; }
-    .footer-legal span { color: var(--slate); font-size: 0.85rem; }
     .footer-legal a { color: var(--gold); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
     .footer-legal a:hover { color: var(--gold-bright); }
 
@@ -417,11 +420,21 @@
     @media (max-width: 1024px) {
       .nav-links { display: none; }
       .mobile-menu-btn { display: block; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .floating-card { max-width: 400px; margin-top: 40px; }
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-content { margin: 0 auto; }
+      .hero-buttons { justify-content: center; }
+      .hero-phones { height: 420px; margin-top: 20px; }
+      .hero-phone { border-radius: 44px; padding: 5px; }
+      .hero-phone::before { width: 52px; height: 15px; top: 13px; border-radius: 16px; }
+      .hero-phone-screen { border-radius: 40px; }
+      .hero-phone-btn.power { right: -3px; top: 100px; height: 44px; }
+      .hero-phone-btn.vol-up { left: -3px; top: 75px; height: 24px; }
+      .hero-phone-btn.vol-down { left: -3px; top: 107px; height: 24px; }
+      .hero-phone-back { width: 180px; height: 390px; transform: rotate(6deg) translateX(-60px) translateY(8px); }
+      .hero-phone-front { width: 200px; height: 434px; transform: rotate(-3deg) translateX(70px) translateY(-8px); }
       .stats-container { grid-template-columns: repeat(2, 1fr); }
       .steps { grid-template-columns: repeat(2, 1fr); }
-      .steps::before { display: none; }
+      .step-connector { display: none !important; }
       .testimonial-card { flex: 0 0 calc((100% - 24px) / 2); }
       .trust-grid { grid-template-columns: 1fr; }
       .fund-card-top { grid-template-columns: 1fr; }
@@ -435,37 +448,57 @@
       .footer-legal { flex-direction: column; gap: 8px; }
     }
     @media (max-width: 700px) {
-      .comparison-table-wrapper tbody td:first-child,
-      .comparison-table-wrapper thead th:first-child {
-        box-shadow: 4px 0 12px rgba(11, 30, 50, 0.06);
-      }
+      .comparison-table-wrapper tbody td:first-child, .comparison-table-wrapper thead th:first-child { box-shadow: 4px 0 12px rgba(11, 30, 50, 0.06); }
       .scroll-hint { display: block; }
     }
     @media (max-width: 600px) {
       .hero { padding: 100px 0 60px; min-height: auto; }
       .hero-badge { font-size: 0.75rem; padding: 8px 14px; }
-      .floating-card { padding: 24px; display: none; }
+      .hero-phones { height: 340px; margin-top: 10px; }
+      .hero-phone { border-radius: 38px; padding: 4px; }
+      .hero-phone::before { width: 44px; height: 13px; top: 11px; border-radius: 14px; }
+      .hero-phone-screen { border-radius: 34px; }
+      .hero-phone-btn.power { right: -3px; top: 82px; height: 36px; }
+      .hero-phone-btn.vol-up { left: -3px; top: 62px; height: 20px; }
+      .hero-phone-btn.vol-down { left: -3px; top: 88px; height: 20px; }
+      .hero-phone-back { width: 150px; height: 325px; transform: rotate(6deg) translateX(-50px) translateY(8px); }
+      .hero-phone-front { width: 165px; height: 358px; transform: rotate(-3deg) translateX(55px) translateY(-8px); }
+      .hero-phone-glow { width: 200px; height: 200px; }
+      .hero-app-badge { bottom: -55px; }
+      .hero-app-badge img { height: 36px; }
       .stats { margin-top: 0; }
       .stats-container { grid-template-columns: 1fr; padding: 28px; gap: 28px; }
       .stat-value { font-size: 2rem; }
       .steps { grid-template-columns: 1fr; }
+      .step { padding: 28px 24px 24px; }
       .hero-buttons { flex-direction: column; }
       .hero-buttons .btn { width: 100%; justify-content: center; }
       .fund-showcase, .how-it-works, .testimonials, .trust, .app-preview, .comparison { padding: 80px 0; }
+      .section-bridge { height: 60px; }
       .cta { padding: 100px 0; }
       .fund-card-bottom { flex-direction: column; }
       .comparison-table-wrapper thead th, .comparison-table-wrapper tbody td { padding: 12px 8px; font-size: 0.75rem; }
-      .phone-frame { width: 260px; height: 540px; }
+      .iphone-frame { width: 240px; height: 496px; border-radius: 44px; }
+      .iphone-frame::before { width: 72px; height: 22px; top: 11px; border-radius: 16px; }
+      .iphone-frame::after { border-radius: 40px; }
+      .iphone-screen { border-radius: 40px; }
+      .iphone-btn.power { top: 128px; height: 58px; }
+      .iphone-btn.vol-up { top: 96px; height: 28px; }
+      .iphone-btn.vol-down { top: 134px; height: 28px; }
+      .iphone-btn.action { top: 66px; height: 20px; }
       .testimonials { overflow: hidden; padding-left: 30px; padding-right: 30px; }
       .testimonial-carousel { margin: 0; padding: 0; overflow: hidden; width: 100%; }
       .testimonial-card { width: 100% !important; flex: 0 0 100% !important; min-height: 260px; padding: 28px; box-sizing: border-box; }
       .section-header { margin-bottom: 40px; }
       .trust { padding: 80px 0; }
-.trust-grid { gap: 40px; }
-.trust-content h2 { font-size: 2rem; word-wrap: break-word; }
-.trust-content > p { font-size: 1rem; }
-.trust-card { padding: 36px 24px; }
-.trust-card .big-stat { font-size: 3.5rem; }
+      .trust-grid { gap: 40px; }
+      .trust-content h2 { font-size: 2rem; word-wrap: break-word; }
+      .trust-content > p { font-size: 1rem; }
+      .trust-card { padding: 36px 24px; }
+      .trust-card .big-stat { font-size: 3.5rem; }
+      .growth-stats-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+      .growth-stat-card { padding: 10px; }
+      .growth-stat-value { font-size: 1rem; }
     }
   </style>
 </head>
@@ -474,10 +507,10 @@
   <!-- Navigation -->
   <nav id="navbar">
     <div class="nav-inner">
-      <a href="#" class="logo"><img src="./assets/freedom1.png" alt="Freedom Fund" style="max-width: 250px;"></a>
+      <a href="#" class="logo"><img src="./assets/reserves1.svg" alt="Freedom Fund" style="max-width: 250px;"></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="#fund">The Fund</a>
+        <a href="#account">Overview</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#why-us">Why Us</a>
         <a href="about.html">About</a>
@@ -491,11 +524,11 @@
 
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html" onclick="closeMobileMenu()">Home</a>
-    <a href="#fund" onclick="closeMobileMenu()">The Fund</a>
+    <a href="#account" onclick="closeMobileMenu()">Overview</a>
     <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
     <a href="#why-us" onclick="closeMobileMenu()">Why Us</a>
     <a href="about.html" onclick="closeMobileMenu()">About</a>
-    <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Meet With Us</a>
+    <a href="https://reserves.freedomfund.io/open-account" class="btn btn-primary">See Our Returns</a>
   </div>
 
   <!-- Hero -->
@@ -510,21 +543,40 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <div class="hero-badge">The Smarter Place for Your Cash</div>
-          <h1>Your Cash Deserves Better. <span class="gradient-text">Make It Work Harder.</span></h1>
-          <p class="hero-subtitle">Stop settling for low-yield savings accounts and volatile markets. Freedom Fund's Cash Reserves Fund delivers safety, liquidity, and consistent returns — through institutional relationships cultivated over decades.</p>
+          <div class="hero-badge">Institutional Cash Yield - Now Available Privately</div>
+          <h1>Cash Management.  <span class="gradient-text">Built for Accredited Investors.</span></h1>
+          <p class="hero-subtitle">A modern cash management solution providing direct access to institutional-grade strategies designed to enhance yield while maintaining liquidity and security.</p>
           <div class="hero-buttons">
-            <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Put Your Cash to Work →</a>
+            <a href="https://reserves.freedomfund.io/open-account" class="btn btn-primary">Put Your Cash to Work →</a>
             <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
           </div>
         </div>
-        <div class="floating-card">
-          <h4>Under Partner Management</h4>
-          <div class="floating-stat">~$500M</div>
-          <p>Institutional relationships cultivated over decades</p>
-          <div class="app-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            Mobile App Coming Soon
+        <div class="hero-phones">
+          <div class="hero-phone-glow"></div>
+          <div class="hero-phone hero-phone-back">
+            <div class="hero-phone-buttons">
+              <div class="hero-phone-btn power"></div>
+              <div class="hero-phone-btn vol-up"></div>
+              <div class="hero-phone-btn vol-down"></div>
+            </div>
+            <div class="hero-phone-screen">
+              <img src="./assets/freedomres2.png" alt="Freedom Reserves app - account overview">
+            </div>
+          </div>
+          <div class="hero-phone hero-phone-front">
+            <div class="hero-phone-buttons">
+              <div class="hero-phone-btn power"></div>
+              <div class="hero-phone-btn vol-up"></div>
+              <div class="hero-phone-btn vol-down"></div>
+            </div>
+            <div class="hero-phone-screen">
+              <img src="./assets/freedomres1.png" alt="Freedom Reserves app - portfolio dashboard">
+            </div>
+          </div>
+          <div class="hero-app-badge">
+            <a href="https://apps.apple.com/us/app/freedom-fund/id6759612514" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+              <img src="./assets/appstoreblack.svg" alt="Download on the App Store">
+            </a>
           </div>
         </div>
       </div>
@@ -532,116 +584,115 @@
   </section>
 
   <!-- Stats -->
-  <section class="stats">
     <div class="container">
       <div class="stats-container">
-        <div class="stat"><div class="stat-value"><span>~6%</span></div><p>Annual Yield</p></div>
-        <div class="stat"><div class="stat-value"><span>SEC</span></div><p>Registered & Compliant</p></div>
+        <div class="stat"><div class="stat-value"><span>6%</span></div><p>Fixed Annual Yield</p></div>
         <div class="stat"><div class="stat-value"><span>5-Day</span></div><p>Liquidity</p></div>
-        <div class="stat"><div class="stat-value"><span>94%</span></div><p>Capital Renewal Rate</p></div>
+        <div class="stat"><div class="stat-value"><span>$500M</span></div><p>Under Partner Management</p></div>
+        <div class="stat"><div class="stat-value"><span>Zero</span></div><p>Market Exposure/Speculation</p></div>
       </div>
     </div>
   </section>
 
   <!-- Fund Showcase -->
-  <section class="fund-showcase" id="fund">
+  <section class="fund-showcase" id="account">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Our Fund</span>
-        <h2>One Fund. The Only One Your Cash Needs.</h2>
-        <p>6% yield, 5-day liquidity, and zero speculation through institutional relationships most investors never get access to.</p>
+        <span class="section-label">Our Cash Account</span>
+        <h2>High-Net-Worth Cash. Institutional-Grade Yield.</h2>
+        <p>Zero Market Exposure. Zero Speculation. Zero Fees.</p>
       </div>
       <div class="fund-card">
         <div class="fund-card-top">
           <div class="fund-card-left">
             <div class="fund-tagline">Preserve & Protect</div>
-            <h3>Cash Reserves Fund</h3>
+            <h3>Cash Reserves Account</h3>
             <p>Safety, liquidity, and consistent returns without compromise. Put your idle cash to work through institutional relationships most investors never get access to.</p>
-            <div class="growth-visual">
-              <div class="growth-visual-header">
-                <span>Simulated Growth</span>
-                <span>12 Months</span>
+            <div class="growth-visual" id="growthVisual">
+              <div class="growth-investment-header">
+                <div>
+                  <div class="growth-invest-label">Simulated Investment</div>
+                  <div class="growth-invest-amount">$250,000</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="growth-invest-label">Annual Rate</div>
+                  <div class="growth-invest-rate">6.00%</div>
+                </div>
               </div>
-              <div class="growth-amounts-row">
-                <div class="growth-amount" id="growthAmount">$100,000</div>
-                <div class="growth-return" id="growthReturn">+$0</div>
+              <div class="growth-period-tabs">
+                <button class="period-tab" data-period="1m">1M</button>
+                <button class="period-tab" data-period="3m">3M</button>
+                <button class="period-tab active" data-period="6m">6M</button>
+                <button class="period-tab" data-period="1y">1Y</button>
+                <button class="period-tab" data-period="all">All Time</button>
               </div>
-              <div class="growth-legend">
-                <div class="growth-legend-item"><div class="growth-legend-dot initial"></div>Initial Investment</div>
-                <div class="growth-legend-item"><div class="growth-legend-dot returns"></div>Returns</div>
+              <div class="growth-return-summary">
+                <span class="growth-return-icon">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 17L8.5 10.5L13 13.5L22 5" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 5H22V11" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="growth-return-value" id="returnSummary"></span>
               </div>
-              <div class="growth-chart-wrapper">
-                <svg viewBox="0 0 300 110" preserveAspectRatio="none" id="growthSvg">
-                  <defs>
-                    <linearGradient id="returnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" style="stop-color:rgba(198,183,122,0.6)"/>
-                      <stop offset="100%" style="stop-color:rgba(198,183,122,0.15)"/>
-                    </linearGradient>
-                    <linearGradient id="baseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" style="stop-color:rgba(11,30,50,0.12)"/>
-                      <stop offset="100%" style="stop-color:rgba(11,30,50,0.04)"/>
-                    </linearGradient>
-                  </defs>
-                  <rect class="growth-base-anim" x="0" y="30" width="300" height="80" fill="url(#baseGrad)" rx="0"/>
-                  <line class="growth-base-anim" x1="0" y1="30" x2="300" y2="30" stroke="rgba(11,30,50,0.1)" stroke-width="1" stroke-dasharray="4,4"/>
-                  <path class="growth-fill-anim" d="M0,30 L25,29.5 L50,28.5 L75,27 L100,25 L125,22.5 L150,19.5 L175,16 L200,12 L225,8 L250,5 L275,2.5 L300,1 L300,30 L0,30 Z" fill="url(#returnGrad)"/>
-                  <path class="growth-line-anim" d="M0,30 L25,29.5 L50,28.5 L75,27 L100,25 L125,22.5 L150,19.5 L175,16 L200,12 L225,8 L250,5 L275,2.5 L300,1" fill="none" stroke="#c6b77a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle class="growth-dot-ring" cx="300" cy="1" r="6" fill="none" stroke="rgba(198,183,122,0.4)" stroke-width="2"/>
-                  <circle class="growth-dot" cx="300" cy="1" r="3.5" fill="#c6b77a"/>
-                  <text class="growth-base-anim" x="6" y="44" font-size="7" fill="rgba(11,30,50,0.35)" font-family="IBM Plex Sans, sans-serif" font-weight="500">$100,000 invested</text>
-                </svg>
+              <div class="growth-chart-area">
+                <div class="growth-y-axis" id="gvYAxis"></div>
+                <div class="growth-chart-svg-wrap">
+                  <svg viewBox="0 0 300 120" preserveAspectRatio="none" id="gvChartSvg"></svg>
+                  <div class="growth-chart-tooltip" id="gvTooltip">
+                    <div class="growth-chart-tooltip-date" id="gvTooltipDate"></div>
+                    <div class="growth-chart-tooltip-value" id="gvTooltipValue"></div>
+                    <div class="growth-chart-tooltip-return" id="gvTooltipReturn"></div>
+                  </div>
+                </div>
               </div>
-              <div class="growth-months">
-                <span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span><span>Dec</span>
+              <div class="growth-months" id="gvXAxis"></div>
+              <div class="growth-stats-grid">
+                <div class="growth-stat-card">
+                  <span class="growth-stat-label">Monthly (30 days)</span>
+                  <span class="growth-stat-value" id="gvStatMonthly"></span>
+                </div>
+                <div class="growth-stat-card">
+                  <span class="growth-stat-label">Quarterly (90 days)</span>
+                  <span class="growth-stat-value" id="gvStatQuarterly"></span>
+                </div>
+                <div class="growth-stat-card">
+                  <span class="growth-stat-label">Semi-Annual</span>
+                  <span class="growth-stat-value" id="gvStatSemiAnnual"></span>
+                </div>
+                <div class="growth-stat-card">
+                  <span class="growth-stat-label">Annual</span>
+                  <span class="growth-stat-value" id="gvStatAnnual"></span>
+                </div>
               </div>
             </div>
           </div>
           <div class="fund-card-right">
-            <div class="fund-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Zero Speculative Exposure</span>
-            </div>
-            <div class="fund-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Ultra-Low Volatility / Risk</span>
-            </div>
-            <div class="fund-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>5-Day Liquidity — access your capital fast</span>
-            </div>
-            <div class="fund-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>~$500M under partner management</span>
-            </div>
-            <div class="fund-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>5+ Years partnership experience</span>
-            </div>
-            <div class="fund-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>~6% Yield based on AUM</span>
-            </div>
-            <div class="fund-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>SEC Compliant & Registered</span>
-            </div>
+            <div class="fund-highlight"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Zero Speculation</span></div>
+            <div class="fund-highlight"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Zero Market Exposure</span></div>
+            <div class="fund-highlight"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Zero Fees</span></div>
+            <div class="fund-highlight"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>5-Day Liquidity — access your capital fast</span></div>
+            <div class="fund-highlight"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>$500M under partner management</span></div>
+            <div class="fund-highlight"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>10+ Years partnership experience</span></div>
+            <div class="fund-highlight"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>6% Fixed Yield based on account balance</span></div>
+            <div class="fund-highlight"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>SEC Compliant & Registered</span></div>
           </div>
         </div>
         <div class="fund-card-bottom">
           <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Schedule a Call</a>
-          <a href="https://reserves.freedomfund.io/" class="btn btn-outline">View Investor Deck</a>
+          <a href="https://reserves.freedomfund.io/" class="btn btn-outline">View Brochure</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Comparison Table — Updated -->
+  <!-- Comparison Table -->
   <section class="comparison" id="compare">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Compare</span>
+        <span class="section-label">Compare Us</span>
         <h2>See How We Stack Up</h2>
-        <p>Freedom Fund vs. the alternatives your cash is sitting in today.</p>
+        <p>Freedom Reserves vs. the alternatives your cash is sitting in today.</p>
       </div>
       <div class="comparison-table-wrapper">
         <div class="comparison-table-scroll">
@@ -649,10 +700,7 @@
             <thead>
               <tr>
                 <th></th>
-                <th class="highlight">
-                  <img src="./assets/freedomIconColor.png" alt="Freedom Fund" style="height:22px;width:auto;display:block;margin:0 auto 6px;" onerror="this.style.display='none'">
-                  Cash Reserves
-                </th>
+                <th class="highlight"><img src="./assets/freedomIconColor.png" alt="Freedom Fund" style="height:22px;width:auto;display:block;margin:0 auto 6px;" onerror="this.style.display='none'">Cash Reserves</th>
                 <th class="col-2">Money<br>Market</th>
                 <th class="col-3">CDs</th>
                 <th class="col-4">High-Yield<br>Savings</th>
@@ -660,54 +708,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Annual Yield</td>
-                <td class="highlight"><strong>6%</strong></td>
-                <td class="col-2">3.9%</td>
-                <td class="col-3">3.4%</td>
-                <td class="col-4">3.2%</td>
-                <td class="col-5">2.0%</td>
-              </tr>
-              <tr>
-                <td>Quick Liquidity</td>
-                <td class="highlight"><span class="check-icon">✓</span> 5 days</td>
-                <td class="col-2"><span class="check-icon">✓</span></td>
-                <td class="col-3"><span class="x-icon">✗</span></td>
-                <td class="col-4"><span class="check-icon">✓</span></td>
-                <td class="col-5"><span class="x-icon">✗</span></td>
-              </tr>
-              <tr>
-                <td>No Market Movement Exposure</td>
-                <td class="highlight"><span class="check-icon">✓</span></td>
-                <td class="col-2"><span class="check-icon">✓</span></td>
-                <td class="col-3"><span class="check-icon">✓</span></td>
-                <td class="col-4"><span class="check-icon">✓</span></td>
-                <td class="col-5"><span class="x-icon">✗</span></td>
-              </tr>
-              <tr>
-                <td>Fixed Rate</td>
-                <td class="highlight"><span class="check-icon">✓</span></td>
-                <td class="col-2"><span class="x-icon">✗</span></td>
-                <td class="col-3"><span class="check-icon">✓</span></td>
-                <td class="col-4"><span class="x-icon">✗</span></td>
-                <td class="col-5"><span class="check-icon">✓</span></td>
-              </tr>
-              <tr>
-                <td>Fully Passive</td>
-                <td class="highlight"><span class="check-icon">✓</span></td>
-                <td class="col-2"><span class="check-icon">✓</span></td>
-                <td class="col-3"><span class="check-icon">✓</span></td>
-                <td class="col-4"><span class="check-icon">✓</span></td>
-                <td class="col-5"><span class="check-icon">✓</span></td>
-              </tr>
-              <tr>
-                <td>Cash Access with One Click</td>
-                <td class="highlight"><span class="check-icon">✓</span></td>
-                <td class="col-2"><span class="x-icon">✗</span></td>
-                <td class="col-3"><span class="x-icon">✗</span></td>
-                <td class="col-4"><span class="check-icon">✓</span></td>
-                <td class="col-5"><span class="x-icon">✗</span></td>
-              </tr>
+              <tr><td>Annual Yield</td><td class="highlight"><strong>6%</strong></td><td class="col-2">3.5%</td><td class="col-3">3.4%</td><td class="col-4">3.2%</td><td class="col-5">2.0%</td></tr>
+              <tr><td>Quick Liquidity</td><td class="highlight"><span class="check-icon">✓</span> 5 days</td><td class="col-2"><span class="check-icon">✓</span></td><td class="col-3"><span class="x-icon">✗</span></td><td class="col-4"><span class="check-icon">✓</span></td><td class="col-5"><span class="x-icon">✗</span></td></tr>
+              <tr><td>No Market Movement Exposure</td><td class="highlight"><span class="check-icon">✓</span></td><td class="col-2"><span class="check-icon">✓</span></td><td class="col-3"><span class="check-icon">✓</span></td><td class="col-4"><span class="check-icon">✓</span></td><td class="col-5"><span class="x-icon">✗</span></td></tr>
+              <tr><td>Fixed Rate</td><td class="highlight"><span class="check-icon">✓</span></td><td class="col-2"><span class="x-icon">✗</span></td><td class="col-3"><span class="check-icon">✓</span></td><td class="col-4"><span class="x-icon">✗</span></td><td class="col-5"><span class="check-icon">✓</span></td></tr>
+              <tr><td>Fully Passive</td><td class="highlight"><span class="check-icon">✓</span></td><td class="col-2"><span class="check-icon">✓</span></td><td class="col-3"><span class="check-icon">✓</span></td><td class="col-4"><span class="check-icon">✓</span></td><td class="col-5"><span class="check-icon">✓</span></td></tr>
+              <tr><td>Cash Access with One Click</td><td class="highlight"><span class="check-icon">✓</span></td><td class="col-2"><span class="x-icon">✗</span></td><td class="col-3"><span class="x-icon">✗</span></td><td class="col-4"><span class="check-icon">✓</span></td><td class="col-5"><span class="x-icon">✗</span></td></tr>
+              <tr><td>Zero Fees</td><td class="highlight"><span class="check-icon">✓</span></td><td class="col-2"><span class="x-icon">✗</span></td><td class="col-3"><span class="check-icon">✓</span></td><td class="col-4"><span class="check-icon">✓</span></td><td class="col-5"><span class="check-icon">✓</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -721,42 +728,45 @@
     <div class="container">
       <div class="section-header">
         <span class="section-label">How It Works</span>
-        <h2>A Simple, Transparent Process</h2>
-        <p>From introduction to investment in four straightforward steps.</p>
+        <h2>Open Your Account in Minutes</h2>
+        <p>From sign-up to earning in four straightforward steps.</p>
       </div>
       <div class="steps">
-        <div class="step"><div class="step-number">1</div><h3>Schedule a Call</h3><p>Meet with our team to discuss your goals and learn how the Cash Reserves Fund works.</p></div>
-        <div class="step"><div class="step-number">2</div><h3>Review the Offering</h3><p>Receive detailed materials including the Private Placement Memorandum and fund documentation.</p></div>
-        <div class="step"><div class="step-number">3</div><h3>Fund Your Account</h3><p>Complete your investment through our secure process with full transparency at every step.</p></div>
-        <div class="step"><div class="step-number">4</div><h3>Track Performance</h3><p>Monitor your investment with real-time updates and complete visibility.</p></div>
+        <div class="step"><div class="step-top"><svg class="step-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Create Your Account</h3><p>Complete your basic information and sign your agreement electronically.</p><div class="step-connector"></div></div>
+        <div class="step"><div class="step-top"><svg class="step-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h3>Review & Sign</h3><p>Review the Private Placement Memorandum and sign digitally — all online, no meetings required.</p><div class="step-connector"></div></div>
+        <div class="step"><div class="step-top"><svg class="step-icon" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Fund Your Account</h3><p>Transfer your cash and watch it start earning the next business day.</p><div class="step-connector"></div></div>
+        <div class="step"><div class="step-top"><svg class="step-icon" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><h3>Download the App</h3><p>Track performance, add or withdraw funds, and see your interest grow every day.</p></div>
       </div>
     </div>
   </section>
+
+  <div class="section-bridge bridge-light-to-dark"></div>
 
   <!-- Trust / Why Us -->
   <section class="trust" id="why-us">
     <div class="container">
       <div class="trust-grid">
         <div class="trust-content">
-          <span class="section-label">Why Freedom Fund</span>
-          <h2>We Have Skin in the Game</h2>
-          <p>Our principals invest their own capital in the fund, validating performance before we extend access to clients.</p>
+          <span class="section-label">Why Freedom Reserves</span>
+          <h2>We Invested Alongside You</h2>
+          <p>Our founders use Freedom Reserves personally for their cash management.</p>
           <ul class="trust-list">
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Purpose-Built for Cash Investors</span></li>
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Fully Passive</span></li>
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>SEC Registered & Fully Compliant</span></li>
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Principals have $5M+ Personally Invested</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Built Specifically for High-Net-Worth Cash Reserves</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Fully Passive, Professionally Managed</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Structured for Compliance and Institutional Standards</span></li>
           </ul>
         </div>
         <div class="trust-visual">
           <div class="trust-card">
-            <div class="big-stat">94.44%</div>
-            <p>Investor capital renewal rate after first term</p>
+            <div class="big-stat">$5+ Million</div>
+            <p>of Founder Capital Invested</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="trust-app-divider"><div class="trust-app-divider-inner"></div></div>
 
   <!-- App Preview -->
   <section class="app-preview" id="app">
@@ -764,59 +774,39 @@
     <div class="container">
       <div class="app-preview-grid">
         <div class="app-preview-content">
-          <span class="section-label">Coming Soon</span>
-          <h2>Track Your Money Anywhere</h2>
-          <p>The Freedom Fund mobile app puts your entire portfolio in your pocket. Monitor performance, view statements, and stay connected to your investments anytime, anywhere.</p>
+          <span class="section-label">Meet Our App</span>
+          <h2>Full Visibility. Full Control. Anytime.</h2>
+          <p>Our 5-star rated app is designed for clarity, speed, and control. No lockups. No friction. Just efficient access to your capital when you need it.</p>
           <ul class="app-features">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Real-time portfolio tracking</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Performance analytics & charts</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Secure document access</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Direct communication with our team</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Real-time visibility into your capital and yield</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Transparent performance reporting</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Secure access to withdraw or add funds anytime</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Direct access to our team when you need it</li>
           </ul>
         </div>
-
-<!-- Video -->
-<div class="app-mockup">
-  <div class="video-frame">
-    <video
-      class="app-video"
-      autoplay
-      muted
-      loop
-      playsinline
-      controls
-      preload="metadata"
-    >
-      <source src="./assets/freedomfund-demo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  <div class="app-store-badge">
-    <a
-      href="https://apps.apple.com/us/app/freedom-fund/id6759612514
-      Freedom Fund"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Download on the App Store"
-    >
-      <img
-        src="./assets/appstore.svg"
-        alt="Download on the App Store"
-        class="appstore-img"
-      >
-    </a>
-  </div>
-</div>
-
-              </div>
-
+        <div class="app-mockup">
+          <!-- iPhone 17 Pro Frame -->
+          <div class="iphone-frame">
+            <div class="iphone-frame-shimmer"></div>
+            <div class="iphone-btn power"></div>
+            <div class="iphone-btn vol-up"></div>
+            <div class="iphone-btn vol-down"></div>
+            <div class="iphone-btn action"></div>
+            <div class="iphone-screen">
+              <video autoplay muted loop playsinline preload="metadata">
+                <source src="./assets/FreedomRes.mp4" type="video/mp4">
+              </video>
             </div>
+          </div>
+          <div class="app-store-badge">
+            <a href="https://apps.apple.com/us/app/freedom-fund/id6759612514" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store"></a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="section-bridge bridge-dark-to-light"></div>
 
   <!-- Testimonials -->
   <section class="testimonials" id="testimonials">
@@ -828,30 +818,12 @@
       </div>
       <div class="testimonial-carousel">
         <div class="testimonial-track" id="testimonialTrack">
-          <div class="testimonial-card">
-            <p class="quote">"The experience and integrity of the leadership team were the deciding factor for me. It's clear they've been on both sides of the table and designed this fund accordingly."</p>
-            <div class="author"><span class="author-name">Hondo Vargas</span><span class="author-title">Automotive Lifestyle Club Founder</span></div>
-          </div>
-          <div class="testimonial-card">
-            <p class="quote">"What stood out immediately was how conservative and thoughtful the strategy is. I felt confident my capital was being treated with the same care as the founders' own money."</p>
-            <div class="author"><span class="author-name">Candace King</span><span class="author-title">Construction Business Owner</span></div>
-          </div>
-          <div class="testimonial-card">
-            <p class="quote">"This feels like a fund built by investors, not marketers. The focus on capital preservation and predictable yield aligns perfectly with how I think about wealth."</p>
-            <div class="author"><span class="author-name">Gary Gietz</span><span class="author-title">Home Services Business Owner</span></div>
-          </div>
-          <div class="testimonial-card">
-            <p class="quote">"The communication is clear, timely, and honest. I always know where my money is, how it's working, and what's coming next."</p>
-            <div class="author"><span class="author-name">Lane Monson</span><span class="author-title">Land Developer</span></div>
-          </div>
-          <div class="testimonial-card">
-            <p class="quote">"Freedom Fund made investing straightforward and stress-free. The process was simple, and everything was explained in a way that actually made sense."</p>
-            <div class="author"><span class="author-name">Colby Hepler</span><span class="author-title">Insurance Sales</span></div>
-          </div>
-          <div class="testimonial-card">
-            <p class="quote">"The returns have been exactly what was communicated, and the consistency is what keeps me invested for going on two years now. There are no surprises, just steady execution."</p>
-            <div class="author"><span class="author-name">Camille Hill</span><span class="author-title">Design Space Professional</span></div>
-          </div>
+          <div class="testimonial-card"><p class="quote">"Moved $250K from a money market earning 3.5% to Freedom Reserves making almost double now with the same access to my money. Been great for my company's cash reserves and I am moving my personal reserves next."</p><div class="author"><span class="author-name">Hondo Vargas</span><span class="author-title">Automotive Lifestyle Club Founder</span></div></div>
+          <div class="testimonial-card"><p class="quote">"I moved a portion of my company's cash reserves into Freedom Reserve and the process was incredibly smooth. The communication, reporting, and platform experience feel very institutional-grade."</p><div class="author"><span class="author-name">Candace King</span><span class="author-title">Construction Business Owner</span></div></div>
+          <div class="testimonial-card"><p class="quote">"Freedom Reserve isn't replacing my growth investments. It's improving how I manage my cash reserves and has been a great replacement for my savings and money market accounts that I typically use between investment projects. It's really easy to schedule when I need to withdraw funds from the app."</p><div class="author"><span class="author-name">Gary Gietz</span><span class="author-title">Home Services Business Owner</span></div></div>
+          <div class="testimonial-card"><p class="quote">"I spent years parking cash in money markets and treasury products. Freedom Reserve offers a much more efficient way to manage reserves while maintaining the security and liquidity I need."</p><div class="author"><span class="author-name">Lane Monson</span><span class="author-title">Land Developer</span></div></div>
+          <div class="testimonial-card"><p class="quote">"Freedom Reserve feels less like a typical investment and more like a smarter place to hold capital. It's now where I keep funds that I want working for me without taking unnecessary risk."</p><div class="author"><span class="author-name">Colby Hepler</span><span class="author-title">Insurance Sales</span></div></div>
+          <div class="testimonial-card"><p class="quote">"What stood out to me about Freedom Reserve was that the founders use the same strategy for their own money. That level of alignment and transparency gave me confidence right away."</p><div class="author"><span class="author-name">Camille Hill</span><span class="author-title">Design Space Professional</span></div></div>
         </div>
         <div class="carousel-controls">
           <button class="carousel-btn" id="prevBtn" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
@@ -882,42 +854,41 @@
   <footer>
     <div class="container">
       <div class="footer-content">
-        <div class="footer-brand"><a href="#" class="logo"><img src="./assets/freedom1.png" alt="Freedom Fund" style="max-width: 250px;"></a></div>
+        <div class="footer-brand"><a href="index.html" class="logo"><img src="./assets/reserves1.svg" alt="Freedom Fund" style="max-width: 250px;"></a></div>
         <div class="footer-contact">
           <a href="tel:801-218-3504">801-218-3504</a>
           <a href="mailto:info@freedomfund.io">info@freedomfund.io</a>
-          <p>240 N E Promontory Suite 200, Farmington, Utah 84025</p>
         </div>
       </div>
       <div class="footer-middle">
         <div class="footer-duns">
-          <img src="./assets/duns-logo.png" alt="D&B Verified" class="duns-logo">
-          <span>DUNS: 117985322</span>
+          <a href="https://www.dnb.com/business-directory/company-profiles.freedom_fund_holdings_llc.412fa8e9893aae3c3fca32f8b8538db6.html#contact-list" target="_blank" rel="noopener noreferrer"><img src="./assets/duns-logo.png" alt="D&B Verified" class="duns-logo"></a>
+          <a href="https://www.dnb.com/business-directory/company-profiles.freedom_fund_holdings_llc.412fa8e9893aae3c3fca32f8b8538db6.html#contact-list" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: none; font-size: 0.85rem; transition: color 0.2s;">DUNS: 117985322</a>
         </div>
         <div class="footer-legal">
-          <span>SEC Registered & Compliant</span>
+          <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0002129972&owner=include&count=40&hidefilings=0" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: none; font-size: 0.85rem; transition: color 0.2s;">SEC Registered & Compliant</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Freedom Fund. All rights reserved.</p>
-        <a href="terms.html">Terms & Conditions</a>
+        <p>&copy; 2026 Freedom Reserves. All rights reserved.</p>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <a href="terms.html">Terms & Conditions</a>
+          <span style="color: var(--slate);">|</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
+    if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+    window.scrollTo(0, 0);
+    if (location.pathname === "/index.html") { location.replace("/"); }
 
-    //redirect
-
-    if (location.pathname === "/index.html") {
-  location.replace("/");
-}
-    // Nav scroll
     window.addEventListener('scroll', () => {
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Mobile menu
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileNav = document.getElementById('mobileNav');
     mobileMenuBtn.addEventListener('click', () => {
@@ -931,43 +902,121 @@
       document.body.style.overflow = '';
     }
 
-    // Growth animation
-    function animateGrowth() {
-      const amountEl = document.getElementById('growthAmount');
-      const returnEl = document.getElementById('growthReturn');
-      const startVal = 100000;
-      const endVal = 106000;
-      const duration = 2800;
-      const startTime = performance.now();
-      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
-      function update(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = easeOutCubic(progress);
-        const current = Math.round(startVal + (endVal - startVal) * eased);
-        const gain = current - startVal;
-        const pct = ((gain / startVal) * 100).toFixed(2);
-        amountEl.textContent = '$' + current.toLocaleString();
-        returnEl.textContent = '+$' + gain.toLocaleString() + ' (' + pct + '%)';
-        if (progress < 1) requestAnimationFrame(update);
-      }
-      setTimeout(() => requestAnimationFrame(update), 600);
-    }
-    const growthVisual = document.querySelector('.growth-visual');
-    let hasAnimated = false;
-    const growthObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !hasAnimated) {
-          hasAnimated = true;
-          animateGrowth();
-          growthVisual.querySelectorAll('.growth-line-anim, .growth-fill-anim, .growth-base-anim, .growth-dot, .growth-dot-ring').forEach(el => {
-            const clone = el.cloneNode(true);
-            el.parentNode.replaceChild(clone, el);
-          });
+    var appVideo = document.querySelector('.iphone-screen video');
+    if (appVideo) appVideo.playbackRate = 0.60;
+
+    // ===== INTERACTIVE GROWTH VISUAL =====
+    (function() {
+      const PRINCIPAL = 250000;
+      const DAILY_RATE = 0.0001643836;
+      const START_DATE = new Date();
+      START_DATE.setHours(0, 0, 0, 0);
+      const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+      function calcBalance(days) { return PRINCIPAL + (PRINCIPAL * DAILY_RATE * days); }
+      function calcReturn(days) { return PRINCIPAL * DAILY_RATE * days; }
+      function fmt(n) { return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+      function fmtShort(n) { if (n >= 1000) return '$' + Math.round(n / 1000) + 'k'; return '$' + Math.round(n); }
+      function addDays(date, days) { const d = new Date(date); d.setDate(d.getDate() + days); return d; }
+      function formatDate(date) { return MONTH_NAMES[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); }
+
+      const periods = { '1m': { days: 30, points: 7 }, '3m': { days: 90, points: 7 }, '6m': { days: 180, points: 7 }, '1y': { days: 365, points: 13 }, 'all': { days: 365, points: 13 } };
+
+      document.getElementById('gvStatMonthly').textContent = fmt(calcReturn(30));
+      document.getElementById('gvStatQuarterly').textContent = fmt(calcReturn(90));
+      document.getElementById('gvStatSemiAnnual').textContent = fmt(calcReturn(180));
+      document.getElementById('gvStatAnnual').textContent = fmt(calcReturn(365));
+
+      function buildChart(periodKey) {
+        const config = periods[periodKey];
+        const totalDays = config.days;
+        const numPoints = config.points;
+        const dataPoints = [];
+        for (let i = 0; i < numPoints; i++) {
+          const day = Math.round((i / (numPoints - 1)) * totalDays);
+          const date = addDays(START_DATE, day);
+          const balance = calcBalance(day);
+          const ret = balance - PRINCIPAL;
+          dataPoints.push({ day, date, balance, ret });
         }
+        const minBal = PRINCIPAL;
+        const maxBal = dataPoints[dataPoints.length - 1].balance;
+        const padding = (maxBal - minBal) * 0.15;
+        const yMin = minBal - padding;
+        const yMax = maxBal + padding;
+        const totalReturn = dataPoints[dataPoints.length - 1].ret;
+        const pctReturn = (totalReturn / PRINCIPAL * 100).toFixed(1);
+        document.getElementById('returnSummary').textContent = '+' + fmt(totalReturn) + ' (' + pctReturn + '%)';
+        const yAxis = document.getElementById('gvYAxis');
+        yAxis.innerHTML = '';
+        for (let i = 4; i >= 0; i--) { const val = yMin + (i / 4) * (yMax - yMin); const span = document.createElement('span'); span.textContent = fmtShort(Math.round(val)); yAxis.appendChild(span); }
+        const xAxis = document.getElementById('gvXAxis');
+        xAxis.innerHTML = '';
+        const xCount = Math.min(numPoints, 7);
+        const step = Math.floor((numPoints - 1) / (xCount - 1));
+        for (let i = 0; i < xCount; i++) { const idx = Math.min(i * step, numPoints - 1); const d = dataPoints[idx].date; const span = document.createElement('span'); span.textContent = MONTH_NAMES[d.getMonth()] + ' ' + d.getDate(); xAxis.appendChild(span); }
+        const svgW = 300, svgH = 120;
+        function toX(i) { return (i / (numPoints - 1)) * svgW; }
+        function toY(bal) { return svgH - ((bal - yMin) / (yMax - yMin)) * svgH; }
+        let linePath = '';
+        const coords = dataPoints.map((p, i) => ({ x: toX(i), y: toY(p.balance) }));
+        coords.forEach((c, i) => { linePath += (i === 0 ? 'M' : 'L') + c.x.toFixed(1) + ',' + c.y.toFixed(1) + ' '; });
+        const areaPath = linePath + 'L' + svgW + ',' + svgH + ' L0,' + svgH + ' Z';
+        const svg = document.getElementById('gvChartSvg');
+        svg.innerHTML = '<defs><linearGradient id="gvAreaGrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgba(198,183,122,0.65)"/><stop offset="40%" style="stop-color:rgba(198,183,122,0.3)"/><stop offset="100%" style="stop-color:rgba(198,183,122,0.02)"/></linearGradient></defs>' +
+          [0,1,2,3,4].map(function(i) { var y = (i / 4) * svgH; return '<line x1="0" y1="'+y+'" x2="'+svgW+'" y2="'+y+'" stroke="rgba(255,255,255,'+(i===4?0.07:0.05)+')" stroke-width="0.5"/>'; }).join('') +
+          '<path d="' + areaPath + '" fill="url(#gvAreaGrad)" style="opacity:0; animation: gvFadeIn 0.6s ease-out 0.5s forwards;"/>' +
+          '<path d="' + linePath + '" fill="none" stroke="#c6b77a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="800" stroke-dashoffset="800" style="animation: gvDrawLine 1.2s ease-out 0.2s forwards;"/>' +
+          coords.map(function(c, i) {
+            var isLast = i === coords.length - 1;
+            var r = isLast ? 4.5 : 3;
+            var delay = 0.3 + (i / coords.length) * 0.8;
+            var dot = '<circle cx="'+c.x.toFixed(1)+'" cy="'+c.y.toFixed(1)+'" r="'+r+'" fill="#c6b77a" style="opacity:0; animation: gvFadeIn 0.3s ease-out '+delay+'s forwards;"/>';
+            if (isLast) dot += '<circle cx="'+c.x.toFixed(1)+'" cy="'+c.y.toFixed(1)+'" r="8" fill="none" stroke="rgba(198,183,122,0.35)" stroke-width="2" style="opacity:0; animation: gvFadeIn 0.3s ease-out '+(delay+0.2)+'s forwards;"/>';
+            return dot;
+          }).join('') +
+          '<rect x="0" y="0" width="'+svgW+'" height="'+svgH+'" fill="transparent" id="gvHoverTarget"/>';
+        var hoverTarget = document.getElementById('gvHoverTarget');
+        var tooltip = document.getElementById('gvTooltip');
+        var tooltipDate = document.getElementById('gvTooltipDate');
+        var tooltipValue = document.getElementById('gvTooltipValue');
+        var tooltipReturn = document.getElementById('gvTooltipReturn');
+        var svgEl = document.getElementById('gvChartSvg');
+        hoverTarget.addEventListener('mousemove', function(e) {
+          var rect = svgEl.getBoundingClientRect();
+          var mouseX = ((e.clientX - rect.left) / rect.width) * svgW;
+          var nearest = 0, minDist = Infinity;
+          coords.forEach(function(c, i) { var dist = Math.abs(c.x - mouseX); if (dist < minDist) { minDist = dist; nearest = i; } });
+          var dp = dataPoints[nearest];
+          tooltipDate.textContent = formatDate(dp.date);
+          tooltipValue.textContent = fmt(dp.balance);
+          tooltipReturn.textContent = '+' + fmt(dp.ret) + ' (' + (dp.ret / PRINCIPAL * 100).toFixed(2) + '%)';
+          var tooltipX = (coords[nearest].x / svgW) * rect.width;
+          var tooltipY = (coords[nearest].y / svgH) * rect.height;
+          tooltip.style.left = (tooltipX + (nearest > numPoints / 2 ? -130 : 14)) + 'px';
+          tooltip.style.top = (tooltipY - 16) + 'px';
+          tooltip.classList.add('visible');
+        });
+        hoverTarget.addEventListener('mouseleave', function() { tooltip.classList.remove('visible'); });
+      }
+
+      document.querySelectorAll('.period-tab').forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          document.querySelectorAll('.period-tab').forEach(function(t) { t.classList.remove('active'); });
+          this.classList.add('active');
+          buildChart(this.dataset.period);
+        });
       });
-    }, { threshold: 0.5 });
-    growthObserver.observe(growthVisual);
+
+      var growthVisual = document.getElementById('growthVisual');
+      var hasBuilt = false;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !hasBuilt) { hasBuilt = true; buildChart('6m'); }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(growthVisual);
+    })();
 
     // Testimonial Carousel
     const track = document.getElementById('testimonialTrack');
@@ -978,108 +1027,23 @@
     let currentIndex = 0;
     let autoScrollInterval;
     let isTransitioning = false;
-
-    function getVisibleCards() {
-      return window.innerWidth < 600 ? 1 : window.innerWidth < 1024 ? 2 : 3;
-    }
-
-    function getCardWidth() {
-      const carousel = document.querySelector('.testimonial-carousel');
-      if (window.innerWidth < 600) return carousel.offsetWidth;
-      const visibleCards = getVisibleCards();
-      return (carousel.offsetWidth - (gap * (visibleCards - 1))) / visibleCards;
-    }
-
-    function setupCards() {
-      if (window.innerWidth >= 600) {
-        const cardWidth = getCardWidth();
-        track.querySelectorAll('.testimonial-card').forEach(card => {
-          card.style.width = cardWidth + 'px';
-          card.style.flex = `0 0 ${cardWidth}px`;
-        });
-      } else {
-        track.querySelectorAll('.testimonial-card').forEach(card => {
-          card.style.width = '';
-          card.style.flex = '';
-        });
-      }
-    }
-
-    function updateCarousel(animate = true) {
-      const cardWidth = getCardWidth();
-      const offset = currentIndex * (cardWidth + gap);
-      track.style.transition = animate ? 'transform 0.5s ease' : 'none';
-      track.style.transform = `translateX(-${offset}px)`;
-    }
-
-    function nextSlide() {
-      if (isTransitioning) return;
-      isTransitioning = true;
-      currentIndex++;
-      updateCarousel(true);
-      setTimeout(() => {
-        if (currentIndex >= originalCards) {
-          currentIndex = 0;
-          updateCarousel(false);
-        }
-        isTransitioning = false;
-      }, 500);
-    }
-
-    function prevSlide() {
-      if (isTransitioning) return;
-      isTransitioning = true;
-      if (currentIndex === 0) {
-        currentIndex = originalCards;
-        updateCarousel(false);
-        setTimeout(() => {
-          currentIndex = originalCards - 1;
-          updateCarousel(true);
-          setTimeout(() => { isTransitioning = false; }, 500);
-        }, 50);
-      } else {
-        currentIndex--;
-        updateCarousel(true);
-        setTimeout(() => { isTransitioning = false; }, 500);
-      }
-    }
-
-    function startAutoScroll() {
-      stopAutoScroll();
-      autoScrollInterval = setInterval(nextSlide, 5500);
-    }
-    function stopAutoScroll() {
-      if (autoScrollInterval) clearInterval(autoScrollInterval);
-    }
-
-    function setupInfiniteLoop() {
-      const cards = track.querySelectorAll('.testimonial-card');
-      const visibleCards = getVisibleCards();
-      for (let i = 0; i < visibleCards; i++) {
-        const clone = cards[i].cloneNode(true);
-        track.appendChild(clone);
-      }
-    }
-
+    function getVisibleCards() { return window.innerWidth < 600 ? 1 : window.innerWidth < 1024 ? 2 : 3; }
+    function getCardWidth() { const carousel = document.querySelector('.testimonial-carousel'); if (window.innerWidth < 600) return carousel.offsetWidth; const visibleCards = getVisibleCards(); return (carousel.offsetWidth - (gap * (visibleCards - 1))) / visibleCards; }
+    function setupCards() { if (window.innerWidth >= 600) { const cardWidth = getCardWidth(); track.querySelectorAll('.testimonial-card').forEach(card => { card.style.width = cardWidth + 'px'; card.style.flex = '0 0 ' + cardWidth + 'px'; }); } else { track.querySelectorAll('.testimonial-card').forEach(card => { card.style.width = ''; card.style.flex = ''; }); } }
+    function updateCarousel(animate) { const cardWidth = getCardWidth(); const offset = currentIndex * (cardWidth + gap); track.style.transition = animate ? 'transform 0.5s ease' : 'none'; track.style.transform = 'translateX(-' + offset + 'px)'; }
+    function nextSlide() { if (isTransitioning) return; isTransitioning = true; currentIndex++; updateCarousel(true); setTimeout(() => { if (currentIndex >= originalCards) { currentIndex = 0; updateCarousel(false); } isTransitioning = false; }, 500); }
+    function prevSlide() { if (isTransitioning) return; isTransitioning = true; if (currentIndex === 0) { currentIndex = originalCards; updateCarousel(false); setTimeout(() => { currentIndex = originalCards - 1; updateCarousel(true); setTimeout(() => { isTransitioning = false; }, 500); }, 50); } else { currentIndex--; updateCarousel(true); setTimeout(() => { isTransitioning = false; }, 500); } }
+    function startAutoScroll() { stopAutoScroll(); autoScrollInterval = setInterval(nextSlide, 8000); }
+    function stopAutoScroll() { if (autoScrollInterval) clearInterval(autoScrollInterval); }
+    function setupInfiniteLoop() { const cards = track.querySelectorAll('.testimonial-card'); const visibleCards = getVisibleCards(); for (let i = 0; i < visibleCards; i++) { track.appendChild(cards[i].cloneNode(true)); } }
     prevBtn.addEventListener('click', () => { stopAutoScroll(); prevSlide(); startAutoScroll(); });
     nextBtn.addEventListener('click', () => { stopAutoScroll(); nextSlide(); startAutoScroll(); });
     track.addEventListener('mouseenter', stopAutoScroll);
     track.addEventListener('mouseleave', startAutoScroll);
-
     let touchStartX = 0;
     track.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; stopAutoScroll(); }, { passive: true });
-    track.addEventListener('touchend', (e) => {
-      const diff = touchStartX - e.changedTouches[0].screenX;
-      if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
-      startAutoScroll();
-    }, { passive: true });
-
-    window.addEventListener('resize', () => {
-      setupCards();
-      currentIndex = Math.min(currentIndex, originalCards - 1);
-      updateCarousel(false);
-    });
-
+    track.addEventListener('touchend', (e) => { const diff = touchStartX - e.changedTouches[0].screenX; if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide(); startAutoScroll(); }, { passive: true });
+    window.addEventListener('resize', () => { setupCards(); currentIndex = Math.min(currentIndex, originalCards - 1); updateCarousel(false); });
     setupInfiniteLoop();
     setupCards();
     updateCarousel(false);
