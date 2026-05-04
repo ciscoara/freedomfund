@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Freedom Reserves FAQ — answers to the questions investors most often ask about the Cash Reserves Account.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://freedomreserves.com/faq.html">
+  <meta property="og:title" content="Freedom Reserves | FAQ">
+  <meta property="og:description" content="Answers to the questions investors most often ask before opening a Cash Reserves Account.">
+  <meta property="og:image" content="https://freedomreserves.com/assets/reserves_final.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Freedom Reserves | FAQ">
+  <meta name="twitter:description" content="Answers to the questions investors most often ask before opening a Cash Reserves Account.">
+  <title>Freedom Reserves | FAQ</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0b1e32;
+      --navy-dark: #060f1a;
+      --navy-light: #1a3354;
+      --gold: #c6b77a;
+      --gold-bright: #d4c78a;
+      --gold-light: rgba(198, 183, 122, 0.15);
+      --slate: #64748B;
+      --slate-light: #94A3B8;
+      --warm-white: #FAF9F7;
+      --white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'IBM Plex Sans', -apple-system, sans-serif; font-weight: 400; color: var(--navy); line-height: 1.6; background: var(--white); overflow-x: hidden; }
+    h1, h2, h3 { font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; }
+    h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); margin-bottom: 24px; }
+    p { color: var(--slate); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Navigation */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; transition: all 0.3s ease; background: rgba(11, 30, 50, 0.95); backdrop-filter: blur(20px); }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .logo { font-size: 1.1rem; font-weight: 600; letter-spacing: 0.12em; color: var(--white); text-decoration: none; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links .btn-primary { color: #0b1e32 !important; }
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001; }
+    .mobile-menu-btn span { display: block; width: 24px; height: 2px; background: var(--white); margin: 5px 0; transition: 0.3s; }
+    .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+    .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--navy); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+    .mobile-nav.active { display: flex; }
+    .mobile-nav a { color: var(--white); text-decoration: none; font-size: 1.5rem; font-weight: 500; }
+    .mobile-nav a:hover { color: var(--gold); }
+    .mobile-nav .btn { margin-top: 20px; }
+    .mobile-nav .btn-primary { color: var(--navy) !important; background: var(--gold); }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 100px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; }
+    .btn-primary { background: var(--gold); color: var(--navy); box-shadow: 0 4px 20px rgba(198, 183, 122, 0.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(198, 183, 122, 0.5); }
+    .btn-dark { background: var(--navy); color: var(--white); }
+    .btn-dark:hover { background: var(--navy-light); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--navy); border: 2px solid var(--navy); padding: 12px 24px; }
+    .btn-outline:hover { background: var(--navy); color: var(--white); }
+
+    /* Page hero */
+    .page-hero { padding: 160px 0 80px; background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 100%); text-align: center; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 60% at 50% 30%, rgba(198, 183, 122, 0.18), transparent); pointer-events: none; }
+    .page-hero-inner { position: relative; z-index: 1; }
+    .section-label { display: inline-block; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .page-hero h1 { color: var(--white); margin-bottom: 18px; }
+    .page-hero p { color: var(--slate-light); font-size: 1.15rem; max-width: 640px; margin: 0 auto; }
+
+    /* FAQ groups */
+    .faq-page { padding: 90px 0 120px; background: var(--white); }
+    .faq-intro { max-width: 720px; margin: 0 auto 56px; text-align: center; }
+    .faq-intro p { font-size: 1.05rem; line-height: 1.7; }
+    .faq-group { max-width: 820px; margin: 0 auto 56px; }
+    .faq-group h2 { color: var(--navy); padding-bottom: 14px; border-bottom: 2px solid rgba(198, 183, 122, 0.4); margin-bottom: 8px; }
+    .faq-item { border-bottom: 1px solid rgba(11, 30, 50, 0.08); }
+    .faq-question { width: 100%; background: none; border: none; padding: 24px 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: inherit; font-size: 1.05rem; font-weight: 500; color: var(--navy); text-align: left; gap: 24px; transition: color 0.2s ease; line-height: 1.4; }
+    .faq-question:hover { color: var(--gold); }
+    .faq-icon { width: 22px; height: 22px; flex-shrink: 0; position: relative; }
+    .faq-icon::before, .faq-icon::after { content: ''; position: absolute; top: 50%; left: 50%; background: var(--gold); border-radius: 1px; transition: transform 0.3s ease, opacity 0.3s ease; }
+    .faq-icon::before { width: 14px; height: 2px; transform: translate(-50%, -50%); }
+    .faq-icon::after { width: 2px; height: 14px; transform: translate(-50%, -50%); }
+    .faq-item.active .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding-bottom 0.4s ease; }
+    .faq-item.active .faq-answer { max-height: 600px; padding-bottom: 24px; }
+    .faq-answer p { color: var(--slate); padding: 0 8px; line-height: 1.75; font-size: 0.98rem; }
+
+    /* Closing CTA */
+    .cta { padding: 100px 0; background: linear-gradient(180deg, var(--warm-white) 0%, var(--white) 100%); text-align: center; position: relative; }
+    .cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(198, 183, 122, 0.15) 0%, transparent 70%); pointer-events: none; }
+    .cta-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .cta h2 { margin-bottom: 16px; }
+    .cta p { font-size: 1.1rem; margin-bottom: 32px; }
+
+    /* Disclosure & Footer */
+    .disclosure { background: var(--navy); padding: 36px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .disclosure p { font-size: 0.85rem; color: var(--slate); max-width: 900px; margin: 0 auto; text-align: center; line-height: 1.8; }
+    .disclosure p + p { margin-top: 14px; }
+    footer { background: var(--navy); padding: 50px 0 30px; }
+    .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; margin-bottom: 30px; }
+    .footer-brand .logo img { height: 32px; width: auto; }
+    .footer-contact { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .footer-contact a, .footer-contact p { color: var(--slate); text-decoration: none; font-size: 0.9rem; margin: 0; transition: color 0.2s; }
+    .footer-contact a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .footer-bottom p { color: var(--slate); font-size: 0.85rem; margin: 0; }
+    .footer-legal { display: flex; align-items: center; gap: 24px; }
+    .footer-legal a { color: var(--gold); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--gold-bright); }
+
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+      .footer-content { flex-direction: column; align-items: center; text-align: center; }
+      .footer-contact { flex-direction: column; gap: 8px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal { flex-direction: column; gap: 8px; }
+    }
+    @media (max-width: 600px) {
+      .page-hero { padding: 130px 0 60px; }
+      .faq-page { padding: 70px 0 90px; }
+      .faq-question { font-size: 0.98rem; padding: 20px 4px; }
+      .faq-answer p { font-size: 0.92rem; }
+      .cta { padding: 70px 0; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What type of fund is it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Freedom Reserves is structured as a Regulation D, Rule 506(c) private debt fund."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How was Freedom Reserves created?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Freedom Reserves was created after its principals sought a capital solution that emphasized liquidity, capital preservation, and consistency. They leveraged institutional banking relationships and deployed their own capital to validate a fully hedged, market-neutral strategy. The fund structure was built to provide qualified investors access to that same disciplined approach."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn’t everyone have access to this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The strategy requires institutional banking relationships, operational infrastructure, and capital thresholds not accessible to individual investors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a PPM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Private Placement Memorandum (PPM) is the legal document provided to potential investors in a private investment offering. It outlines the terms, objectives, financial details, and potential risks of the investment, ensuring transparency and compliance with SEC rules."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does my account need to be open before I can withdraw?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After the initial 30 days, you can have funds available within 5 business days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I need my money back sooner than 5 business days?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Although it is possible, we cannot guarantee receipt of funds within less than 5 business days from the time we are notified."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the potential risks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While the strategy is fully hedged, risk cannot be eliminated entirely. Capital is deployed through institutional banking partnerships and exposed to Tier-1 global banks. The primary risk would involve systemic disruptions across major financial institutions or settlement systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Interest earned is considered ordinary income."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><img src="./assets/reserves1.svg" alt="Freedom Reserves" style="max-width: 250px;"></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#account">Overview</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#why-us">Why Us</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+        <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Meet With Us</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" onclick="closeMobileMenu()">Home</a>
+    <a href="index.html#account" onclick="closeMobileMenu()">Overview</a>
+    <a href="index.html#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+    <a href="index.html#why-us" onclick="closeMobileMenu()">Why Us</a>
+    <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+    <a href="about.html" onclick="closeMobileMenu()">About</a>
+    <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-primary">Meet With Us</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <span class="section-label">Frequently Asked</span>
+        <h1>Frequently Asked Questions</h1>
+        <p>The questions investors most often raise before opening a Cash Reserves Account &mdash; answered plainly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-page">
+    <div class="container">
+      <div class="faq-intro">
+        <p>If you don&rsquo;t see your question here, the fastest way to get a real answer is to <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" style="color: var(--gold); text-decoration: none; font-weight: 600;">schedule a call</a> with our team.</p>
+      </div>
+
+      <div class="faq-group">
+        <h2>The Account</h2>
+        <div class="faq-item">
+          <button class="faq-question" id="faq-q-1" aria-expanded="false" aria-controls="faq-a-1">
+            <span>What type of fund is it?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" id="faq-a-1" role="region" aria-labelledby="faq-q-1"><p>Freedom Reserves is structured as a Regulation D, Rule 506(c) private debt fund.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2">
+            <span>How was Freedom Reserves created?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" id="faq-a-2" role="region" aria-labelledby="faq-q-2"><p>Freedom Reserves was created after its principals sought a capital solution that emphasized liquidity, capital preservation, and consistency. They leveraged institutional banking relationships and deployed their own capital to validate a fully hedged, market-neutral strategy. The fund structure was built to provide qualified investors access to that same disciplined approach.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3">
+            <span>Why doesn&rsquo;t everyone have access to this?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" id="faq-a-3" role="region" aria-labelledby="faq-q-3"><p>The strategy requires institutional banking relationships, operational infrastructure, and capital thresholds not accessible to individual investors.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" id="faq-q-4" aria-expanded="false" aria-controls="faq-a-4">
+            <span>What is a PPM?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" id="faq-a-4" role="region" aria-labelledby="faq-q-4"><p>The Private Placement Memorandum (PPM) is the legal document provided to potential investors in a private investment offering. It outlines the terms, objectives, financial details, and potential risks of the investment, ensuring transparency and compliance with SEC rules.</p></div>
+        </div>
+      </div>
+
+      <div class="faq-group">
+        <h2>Liquidity &amp; Withdrawals</h2>
+        <div class="faq-item">
+          <button class="faq-question" id="faq-q-5" aria-expanded="false" aria-controls="faq-a-5">
+            <span>How long does my account need to be open before I can withdraw?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" id="faq-a-5" role="region" aria-labelledby="faq-q-5"><p>After the initial 30 days, you can have funds available within 5 business days.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" id="faq-q-6" aria-expanded="false" aria-controls="faq-a-6">
+            <span>What if I need my money back sooner than 5 business days?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" id="faq-a-6" role="region" aria-labelledby="faq-q-6"><p>Although it is possible, we cannot guarantee receipt of funds within less than 5 business days from the time we are notified.</p></div>
+        </div>
+      </div>
+
+      <div class="faq-group">
+        <h2>Risk &amp; Taxes</h2>
+        <div class="faq-item">
+          <button class="faq-question" id="faq-q-7" aria-expanded="false" aria-controls="faq-a-7">
+            <span>What are the potential risks?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" id="faq-a-7" role="region" aria-labelledby="faq-q-7"><p>While the strategy is fully hedged, risk cannot be eliminated entirely. Capital is deployed through institutional banking partnerships and exposed to Tier-1 global banks. The primary risk would involve systemic disruptions across major financial institutions or settlement systems.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" id="faq-q-8" aria-expanded="false" aria-controls="faq-a-8">
+            <span>What about taxes?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" id="faq-a-8" role="region" aria-labelledby="faq-q-8"><p>Interest earned is considered ordinary income.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-content">
+      <span class="section-label">Still Have Questions?</span>
+      <h2>Let&rsquo;s Talk</h2>
+      <p>The fastest way to get a real answer is a 20-minute conversation with our team.</p>
+      <a href="https://app.onecal.io/b/jess-phillips/freedom-fund-discussion" class="btn btn-dark">Meet With Us &rarr;</a>
+    </div>
+  </section>
+
+ <!-- Disclosure -->
+ <div class="disclosure">
+    <div class="container">
+      <p>This presentation is intended as a general summary and should not be solely relied upon for any legal or investment decisions by prospective investors. All investment details, terms, and conditions are outlined in the Private Placement Memorandum (PPM) that is filed with the U.S. Securities and Exchange Commission.</p>
+      <p>Freedom Reserves and its founders are not licensed financial advisors, brokers, or investment professionals. The information provided is for educational and informational purposes only and should not be considered financial, legal, or investment advice.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand"><a href="index.html" class="logo"><img src="./assets/reserves1.svg" alt="Freedom Fund" style="max-width: 250px;"></a></div>
+        <div class="footer-contact">
+          <a href="tel:801-218-3504">801-218-3504</a>
+          <a href="mailto:info@freedomfund.io">info@freedomfund.io</a>
+        </div>
+      </div>
+      <div class="footer-middle">
+        <div class="footer-duns">
+          <a href="https://www.dnb.com/business-directory/company-profiles.freedom_fund_holdings_llc.412fa8e9893aae3c3fca32f8b8538db6.html#contact-list" target="_blank" rel="noopener noreferrer"><img src="./assets/duns-logo.png" alt="D&B Verified" class="duns-logo"></a>
+          <a href="https://www.dnb.com/business-directory/company-profiles.freedom_fund_holdings_llc.412fa8e9893aae3c3fca32f8b8538db6.html#contact-list" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: none; font-size: 0.85rem; transition: color 0.2s;">DUNS: 117985322</a>
+        </div>
+        <div class="footer-legal">
+          <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0002129972&owner=include&count=40&hidefilings=0" target="_blank" rel="noopener noreferrer" style="color: var(--slate); text-decoration: none; font-size: 0.85rem; transition: color 0.2s;">SEC Registered & Compliant</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Freedom Reserves. All rights reserved.</p>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <a href="faq.html">FAQ</a>
+          <span style="color: var(--slate);">|</span>
+          <a href="terms.html">Terms & Conditions</a>
+          <span style="color: var(--slate);">|</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    });
+    function closeMobileMenu() {
+      mobileMenuBtn.classList.remove('active');
+      mobileNav.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.parentElement;
+        var isOpen = item.classList.contains('active');
+        item.classList.toggle('active');
+        btn.setAttribute('aria-expanded', !isOpen);
+      });
+    });
+  </script>
+</body>
+</html>
