@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freedom Reserves | Quiet Wealth Energy</title>
+<meta name="description" content="Fixed 7.00% APY with institutional-grade protection. Accredited investors only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1e32; --navy-dark:#060f1a; --navy-panel:#1a3354; --gold:#c6b77a; --gold-light:#d4c78a;
+    --ink:#0b1e32; --muted:#94A3B8; --slate:#64748B; --line:rgba(255,255,255,0.08); --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0;font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:var(--navy);color:#fff;line-height:1.5;-webkit-font-smoothing:antialiased;
+    display:flex;flex-direction:column;min-height:100vh;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;width:100%;}
+  main{flex:1;display:flex;flex-direction:column;justify-content:center;}
+
+  header{display:flex;align-items:center;justify-content:space-between;padding:24px 0;}
+  .logo img{height:36px;width:auto;}
+  .logo-fallback{display:none;font-weight:800;font-size:18px;}
+  .header-cta{background:var(--gold);color:var(--ink);font-weight:700;font-size:13.5px;padding:10px 20px;border-radius:999px;white-space:nowrap;}
+
+  /* ---------- Hero: two-column (copy + image) ---------- */
+  .hero-grid{
+    position:relative;display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;
+    align-items:center;padding:28px 0 36px;
+  }
+  .hero-grid::before{
+    content:"";position:absolute;top:-160px;left:-80px;width:560px;height:420px;
+    background:radial-gradient(ellipse,rgba(198,183,122,.16) 0%,rgba(198,183,122,0) 70%);pointer-events:none;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;background:rgba(198,183,122,.12);
+    border:1px solid rgba(198,183,122,.35);color:var(--gold-light);font-size:12.5px;font-weight:700;
+    letter-spacing:.03em;padding:7px 15px;border-radius:999px;margin-bottom:16px;
+  }
+  h1{font-size:clamp(27px,3.8vw,42px);line-height:1.15;font-weight:800;margin:0 0 12px;letter-spacing:-.01em;}
+  h1 .accent{color:var(--gold-light);}
+  .subhead{font-size:clamp(14.5px,1.6vw,16.5px);color:var(--muted);max-width:480px;margin:0 0 22px;}
+
+  .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-bottom:4px;}
+  .btn-primary{background:var(--gold);color:var(--ink);font-weight:800;font-size:15.5px;padding:14px 28px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(198,183,122,.2);}
+  .btn-brochure{font-weight:600;font-size:14px;color:#fff;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;}
+  .cta-microcopy{width:100%;font-size:12.5px;color:var(--muted);}
+
+  .story-row{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 6px;}
+  .story-chip{
+    background:var(--navy-panel);border:1px solid var(--line);border-radius:999px;
+    padding:8px 15px;font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.85);
+  }
+  .story-chip b{color:var(--gold-light);}
+  .story-chip .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);}
+
+  /* Testimonial stack (replaces hero image) */
+  .testi-label{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:20px;}
+  .testi-label::before{content:"";width:16px;height:1px;background:var(--gold);}
+  .testi-stack{display:flex;flex-direction:column;gap:20px;}
+  .testi-card{
+    position:relative;border-radius:18px;padding:26px 28px 24px;
+    box-shadow:0 20px 45px rgba(0,0,0,.35);border:1px solid var(--line);
+  }
+  .testi-card::before{content:"\201C";position:absolute;top:12px;right:20px;font-size:36px;font-family:Georgia,serif;line-height:1;color:rgba(198,183,122,.25);}
+  .testi-card.light{background:linear-gradient(145deg,#fff 0%,#f5f4f0 100%);}
+  .testi-card.light .quote{color:var(--navy);}
+  .testi-card.light .author-name{color:var(--navy);}
+  .testi-card.light .author-title{color:var(--slate);}
+  .testi-card.dark{background:linear-gradient(145deg,var(--navy) 0%,var(--navy-panel) 100%);border-color:rgba(198,183,122,.25);}
+  .testi-card.dark .quote{color:#fff;}
+  .testi-card.dark .author-name{color:#fff;}
+  .testi-card.dark .author-title{color:var(--gold);}
+  .testi-card .quote{font-size:13.5px;line-height:1.65;font-style:italic;margin:0 0 18px;max-width:88%;}
+  .testi-card .author{display:flex;flex-direction:column;gap:3px;}
+  .testi-card .author-name{font-size:13px;font-weight:700;}
+  .testi-card .author-title{font-size:11px;}
+  .testi-card:nth-child(2){margin-left:26px;}
+  .testi-card:nth-child(4){margin-left:26px;}
+
+  .eligibility-bar{
+    display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,rgba(198,183,122,.10),rgba(198,183,122,.02));
+    border:1px solid rgba(198,183,122,.3);border-radius:999px;padding:12px 20px;font-size:13px;
+    text-align:center;margin:36px auto 0;max-width:640px;
+  }
+  .eligibility-bar span{display:inline-flex;align-items:center;gap:7px;color:#fff;}
+  .eligibility-bar b{color:var(--gold-light);}
+  .eligibility-bar .sep{color:var(--line);}
+
+  footer{border-top:1px solid var(--line);padding:18px 0 20px;margin-top:22px;}
+  .footer-top{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;margin-bottom:12px;}
+  .footer-links{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);}
+  .legal{font-size:10.5px;line-height:1.5;color:var(--slate);max-width:980px;margin:0 0 10px;}
+  .footer-bottom{font-size:11px;color:var(--slate);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+
+  @media (max-width:760px){
+    .hero-grid{grid-template-columns:1fr;align-items:start;}
+    .testi-stack{order:2;}
+    .testi-card:nth-child(2),.testi-card:nth-child(4){margin-left:0;}
+  }
+  @media (max-width:600px){
+    .header-cta{display:none;}
+    .testi-card .quote{max-width:100%;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+    <header>
+      <a class="logo" href="https://freedomreserves.com" aria-label="Freedom Reserves">
+        <img src="https://freedomreserves.com/assets/reserves1.svg" alt="Freedom Reserves" onerror="this.style.display='none';document.getElementById('logo-fallback').style.display='inline';">
+        <span id="logo-fallback" class="logo-fallback">Freedom Reserves</span>
+      </a>
+      <a class="header-cta" href="https://investor.freedomreserves.com/sign-up-welcome">Start an Account →</a>
+    </header>
+  </div>
+
+  <main>
+    <div class="wrap">
+      <!-- ============================================================
+           CAMPAIGN ZONE — angle: "Lion, Not a Sheep" (social proof / disruptor)
+           Swap eyebrow / headline / subhead / testimonials below per ad.
+           ============================================================ -->
+      <section class="hero-grid">
+        <div>
+          <div class="eyebrow">🦁 Lions, Not Sheep</div>
+          <h1>Some People Follow the Herd. <span class="accent">Others Lead It.</span></h1>
+          <p class="subhead">The smart money already made the move to a fixed 7.00% APY with institutional-grade protection. Don't just take our word for it — hear it straight from the people who made the jump.</p>
+          <div class="cta-row">
+            <a class="btn-primary" href="https://investor.freedomreserves.com/sign-up-welcome">Start an Account →</a>
+            <a class="btn-brochure" href="https://reserves.freedomreserves.com/" target="_blank" rel="noopener">View Brochure for More Details</a>
+            <span class="cta-microcopy">⏱ Takes less than 3 minutes.</span>
+          </div>
+
+          <div class="story-row">
+            <div class="story-chip"><span class="dot"></span><b>7%</b> Fixed APY</div>
+            <div class="story-chip"><span class="dot"></span><b>3-Day</b> Fund Access</div>
+            <div class="story-chip"><span class="dot"></span><b>$500M</b> Under Bank Mgmt</div>
+            <div class="story-chip"><span class="dot"></span><b>Zero</b> Market Exposure</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="testi-label">What Clients Are Saying</div>
+          <div class="testi-stack">
+            <div class="testi-card light">
+              <p class="quote">"I moved $250K from a money market, and so far it's been easy to use. I still have the access I need, which was the big thing for me."</p>
+              <div class="author"><span class="author-name">Hondo Vargas</span><span class="author-title">Automotive Lifestyle Club Founder</span></div>
+            </div>
+            <div class="testi-card dark">
+              <p class="quote">"We moved a portion of our company cash over, and the whole thing was pretty smooth. It's been simple to keep track of and manage."</p>
+              <div class="author"><span class="author-name">Candace King</span><span class="author-title">Construction Business Owner</span></div>
+            </div>
+            <div class="testi-card light">
+              <p class="quote">"I've kept cash in savings and money markets for years, but this has been easier to work with. The app makes it simple when I need to move money."</p>
+              <div class="author"><span class="author-name">Gary Gietz</span><span class="author-title">Home Services Business Owner</span></div>
+            </div>
+            <div class="testi-card dark">
+              <p class="quote">"I wanted something that made it easier to manage reserve cash without overcomplicating it. This has done that well."</p>
+              <div class="author"><span class="author-name">Lane Monson</span><span class="author-title">Land Developer</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="eligibility-bar">
+        <span>🔒 <b>Accredited Investors Only</b></span>
+        <span class="sep">|</span>
+        <span>💰 <b>$100k Minimum</b> to Open — Withdraw Anytime After</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <img src="https://freedomreserves.com/assets/gold-freedomreserves-logo.svg" alt="Freedom Reserves" style="height:18px;" onerror="this.style.display='none'">
+        <div class="footer-links">
+          <a href="tel:801-218-3504">801-218-3504</a>
+          <a href="mailto:info@freedomreserves.com">info@freedomreserves.com</a>
+          <a href="https://freedomreserves.com" target="_blank" rel="noopener">freedomreserves.com</a>
+          <a href="https://freedomreserves.com/terms" target="_blank" rel="noopener">Terms</a>
+          <a href="https://freedomreserves.com/privacy" target="_blank" rel="noopener">Privacy</a>
+        </div>
+      </div>
+      <p class="legal">This is a general summary, not investment advice. Terms are outlined in the Private Placement Memorandum (PPM) filed with the SEC. Freedom Reserves and its founders are not licensed financial advisors, brokers, or investment professionals. Offering available to accredited investors only. $100,000 minimum to open; funds may be withdrawn anytime after the initial opening balance.</p>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Freedom Reserves. All rights reserved.</span>
+        <span>SEC Registered & Compliant · DUNS: 117985322</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
